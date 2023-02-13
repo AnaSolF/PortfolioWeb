@@ -1,0 +1,68 @@
+.contentBanner{
+margin: 0;
+width: 100%;
+height: 100vh;
+background-image: url(/assets/Images/Fondo1.gif);
+background-position: no-repeat no-repeat;
+background-size: cover;
+}
+
+
+/* #logoM{
+display: flex;
+} */
+
+#miLog{
+    width: 500px;
+    height: 600px;
+    /* justify-self: center; */
+}
+
+
+.NavHome {
+display: none;
+}
+
+.logo{
+    display: none;
+}
+
+#logoAp{
+width: 20px;
+}
+
+.nav-item a{
+    color: white;
+}
+
+.Lw{
+    display: flex;
+    justify-content: center;
+}
+
+@media screen and (min-width: 800px){
+    
+    .NavHome{
+        display: flex;
+        flex-direction: row;
+        padding-top: 50px;
+    }
+
+    .NavHome li{
+        padding: 10px 20px;
+    }
+
+    .NavHome li :hover{
+        background-color: rgba(0, 0, 0, 0.329);
+        padding: 20px 30px;
+    }
+
+    .NavHome li a{
+        color:white;
+    }
+
+    #logoWhite img{
+        width: 500px;
+    }
+    
+} 
