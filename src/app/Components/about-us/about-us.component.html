@@ -1,13 +1,30 @@
 <div class="container"> 
 <h2>About Us</h2>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto exercitationem suscipit dolores hic eos fugiat ab atque! Sequi illum, magni harum similique voluptatibus voluptate earum hic. Rerum, animi sequi. Magnam!
-Et iusto fuga pariatur! Itaque totam quidem doloribus iure asperiores placeat vitae veritatis provident cumque fugit perspiciatis magnam perferendis, obcaecati veniam consequuntur! Eum rerum nisi adipisci nesciunt, tempora voluptates. Deleniti.
-Assumenda accusamus ab et? Iusto voluptatibus illo aspernatur numquam, architecto dolorum eum nulla molestias eius recusandae, earum consequatur voluptates accusantium a quidem fugiat libero quae quibusdam quia eos qui dolorem.
-Libero laborum consectetur molestias rerum adipisci officia voluptas sequi! Necessitatibus tempora, hic ullam voluptatum commodi neque cumque sed. Ratione eligendi tempore pariatur libero quam suscipit dolore ducimus ad beatae itaque?
-Magnam maxime vitae possimus neque architecto consectetur facilis, iure obcaecati aperiam assumenda est! Fuga quae excepturi perferendis quas dolore, mollitia corporis. Dicta aliquid debitis dolorum, fuga dignissimos ab hic saepe?
-Reiciendis, praesentium veniam pariatur ut dolorum voluptas nisi aut ipsa qui officiis officia corrupti debitis, perferendis distinctio saepe blanditiis culpa. Magni aspernatur facere amet doloribus placeat, eveniet rerum nulla esse.
-Reprehenderit recusandae labore cum obcaecati magnam suscipit magni, distinctio laboriosam repellat commodi veniam quos molestias quae quibusdam culpa? Eum labore nesciunt praesentium facilis quo est reiciendis culpa quis asperiores laboriosam.
-Dolorum, illo distinctio atque quod vitae dicta veritatis modi officiis molestiae assumenda harum sunt quaerat sint cumque animi rem laboriosam magnam, provident dolore, enim nisi sapiente doloribus quidem reiciendis! Quia.
-</p>
-<button class="fijo"><a href="#banner">Regresar</a></button>
+<div class="container">
+
+    <!-- <thead style="text-align: center;">
+      <tr>
+        <th scope="col">Nombre </th>
+        <th scope="col">Teléfono</th>
+        <th scope="col">Ciudad</th>
+        <th scope="col">País</th>
+        <th scope="col">Sobre Mí</th>
+      </tr>
+    </thead> -->
+    <!-- <tbody> -->
+      <div *ngFor="let dato of lista">
+        <div class="sm"> <strong> Sobre mí: </strong>{{dato.parrafo}}<div *ngIf="switch==true"><input type="text" name="parrafo" [(ngModel)]="datosActuales.parrafo"></div></div>
+        <div class="sm"><strong> Nombre: </strong> {{dato.nombre}}<div *ngIf="switch==true"><input type="text" name="nombre" [(ngModel)]="datosActuales.nombre"></div>
+      </div>
+        <div class="sm"> <strong> Teléfono: </strong>{{dato.telefono}}<div *ngIf="switch==true"><input type="text" name="telefono" [(ngModel)]="datosActuales.telefono"></div></div>
+        <div class="sm"> <strong>Ciudad: </strong> {{dato.ciudad}}<div *ngIf="switch==true"><input type="text" name="ciudad" [(ngModel)]="datosActuales.ciudad"></div></div>
+        <div class="sm"> <strong> País: </strong>{{dato.pais}}<div *ngIf="switch==true"><input type="text" name="pais" [(ngModel)]="datosActuales.pais"> </div></div>
+      
+        <div *ngIf="switch==false"><div class="sm"><button class="btn btn-warning" (click)="edit()" >Editar</button><br></div></div>
+        <div *ngIf="switch==true"><button class="btn btn-primary" onclick="guardar()">Guardar Cambios</button></div>
+      </div>
+      <button class="fijo"><a href="#banner">Regresar</a></button>
+    </div>
 </div>
+
+

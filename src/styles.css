@@ -1,3 +1,4 @@
+
 *{
     box-sizing: border-box;
     margin: 0;
@@ -48,10 +49,15 @@ h2{
 .hidden{
     border: none;
     background: none;
+    padding: 10px;
 }
 
 .bi-trash{
     color: red;
+}
+
+.bi-pencil-square{
+    color: blue;
 }
 
 @media screen and (min-width: 800px){
