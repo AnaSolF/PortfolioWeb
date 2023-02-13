@@ -45,6 +45,15 @@ h2{
     color: white;
 }
 
+.hidden{
+    border: none;
+    background: none;
+}
+
+.bi-trash{
+    color: red;
+}
+
 @media screen and (min-width: 800px){
     .navbar{
         display: none

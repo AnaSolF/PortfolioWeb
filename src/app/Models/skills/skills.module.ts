@@ -9,4 +9,11 @@ import { CommonModule } from '@angular/common';
     CommonModule
   ]
 })
-export class SkillsModule { }
+export class Skills { 
+  porcentaje!: string; 
+  tarea!: string;
+  id!: string;
+
+  constructor(id: String = "", tarea: String = "", porcentaje: String = "") { }
+
+}
