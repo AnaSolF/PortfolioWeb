@@ -16,6 +16,8 @@ import { PortfolioService } from './Services/portfolio.service';
 import { UrlBaseService } from './Services/url-base.service';
 import { ContactComponent } from './Components/contact/contact.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     PortfolioService,

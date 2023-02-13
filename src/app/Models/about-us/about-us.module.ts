@@ -9,4 +9,14 @@ import { CommonModule } from '@angular/common';
     CommonModule
   ]
 })
-export class AboutUsModule { }
+export class AboutUsModule {
+  id!: String;
+  nombre!: String;
+  telefono!: String
+  ciudad!: String
+  pais!: String
+  parrafo!: String
+
+  constructor(id: String, nombre: String, telefono: String, ciudad: String, pais: String, parrafo: String) {
+  }
+ }
