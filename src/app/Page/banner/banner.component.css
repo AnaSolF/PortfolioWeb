@@ -19,7 +19,19 @@ display: none;
     color: white;
 }
 
-@media screen and (min-width: 822px) {
+.LogoWhite{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+#LW{
+    justify-content: center;
+    width: 300px;
+    height: 300px;
+}
+
+@media screen and (min-width: 800px) {
 
     #bar{
         display: flex;
@@ -31,8 +43,7 @@ display: none;
         display: flex;
         flex-direction: row;
         float: right;
-        padding-top: 70px;
-        
+        padding-top: 70px;  
     }
 
     .NavHome li{
@@ -58,5 +69,30 @@ display: none;
 
     #logoAp{
         width: 20px;
+        float: right;
     }
+
+    .LogoWhite{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
+
+    #LW{
+        width: 100%;
+        height: 100%;
+    }
+    
 }
+
+@media screen and (min-width: 280px){
+
+}.LogoWhite{
+        display: flex;
+        width: 100%;
+    }
+    
+    #LW{
+        width: 250px;
+        height: 250px;
+    }
