@@ -1,13 +1,25 @@
 <div class="container">
 <h2>Skills</h2>
-<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro magni rerum natus reprehenderit! Aut nostrum voluptatibus corporis praesentium dolorum temporibus beatae ad. Voluptatibus ea laborum esse hic sit dignissimos id!
-Odio ipsum temporibus perferendis repellat unde. Voluptas ullam doloremque cumque est, repudiandae molestias repellendus architecto minima cupiditate impedit numquam dolorum quas aliquid ipsam id voluptatem. Quaerat, praesentium? Commodi, at velit?
-Itaque vitae accusamus tempora eveniet provident numquam ipsam, sunt veritatis similique accusantium eius ad harum vel iste reiciendis illum eos. Dicta fuga delectus ea numquam at tempore modi repudiandae nihil?
-Quisquam, dignissimos exercitationem! Eum porro voluptas cumque reprehenderit illo distinctio voluptatum, eveniet modi harum ab quos perferendis libero quibusdam, cupiditate neque sunt commodi ea quam dolores nihil fuga minus labore!
-Illum doloremque odio laudantium velit laboriosam repudiandae corporis placeat dolorem explicabo vel amet quis maxime nostrum aperiam, illo ut debitis ipsam, repellendus fugiat culpa tenetur ea! Blanditiis officiis voluptates nam.
-Necessitatibus laboriosam laborum alias minima corporis facilis pariatur mollitia commodi, ipsum magni molestias ipsa blanditiis asperiores. Obcaecati, ipsa sapiente aspernatur beatae nemo natus qui optio quaerat magnam quo vel aliquid.
-Debitis modi fuga, soluta doloribus nesciunt tempora repellendus. Rem id quis tempore animi cum molestiae dignissimos pariatur tempora corporis. Sapiente, nisi neque! Itaque culpa minima numquam voluptatum atque doloremque quia.
-Asperiores amet hic voluptas expedita enim nulla cumque dolores. Nam asperiores, consectetur esse ut illum quaerat accusamus voluptatem vel voluptas obcaecati aspernatur molestiae et veritatis ipsam. Consequatur error ullam repudiandae?
-Dolor mollitia magnam eaque perferendis consequatur atque libero sit reprehenderit at. Eos, natus dignissimos expedita delectus et, labore beatae illum ab quam laboriosam optio fugit asperiores temporibus facilis? Beatae, explicabo?</p>
-<button class="fijo"><a href="#banner">Regresar</a></button>
+<div class="container">
+    <button class="btn btn-success" routerLink="agregar">Nueva Skill</button>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Skill</th>
+        <th scope="col">Porcentaje</th>
+        <th scope="col">Acción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let skill of lista">
+        <td>{{skill.tarea}}</td>
+        <td>{{skill.porcentaje}}</td>
+        <td>
+        <button class="hidden" (click)="eliminar(skill.id)"><i class="bi bi-trash"></i></button>
+        <!-- <button class="btn btn-warning" [routerLink]="['/editar', tarea.id]" >Editar</button></td> -->
+      </tr>
+      
+    </tbody>
+  </table>
+  <button class="btn btn-success" routerLink="sobre-mi">Ir a Sobre Mi</button>
 </div>
