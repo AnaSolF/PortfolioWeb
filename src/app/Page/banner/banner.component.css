@@ -5,47 +5,34 @@ height: 100vh;
 background-image: url(/assets/Images/Fondo1.gif);
 background-position: no-repeat no-repeat;
 background-size: cover;
-}
-
-
-/* #logoM{
 display: flex;
-} */
-
-#miLog{
-    width: 500px;
-    height: 600px;
-    /* justify-self: center; */
+flex-direction: column;
 }
 
-
-.NavHome {
+.NavHome,
+#logoA,
+.logo {
 display: none;
-}
-
-.logo{
-    display: none;
-}
-
-#logoAp{
-width: 20px;
 }
 
 .nav-item a{
     color: white;
 }
 
-.Lw{
-    display: flex;
-    justify-content: center;
-}
+@media screen and (min-width: 822px) {
 
-@media screen and (min-width: 800px){
-    
+    #bar{
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+    }
+
     .NavHome{
         display: flex;
         flex-direction: row;
-        padding-top: 50px;
+        float: right;
+        padding-top: 70px;
+        
     }
 
     .NavHome li{
@@ -53,16 +40,23 @@ width: 20px;
     }
 
     .NavHome li :hover{
-        background-color: rgba(0, 0, 0, 0.329);
-        padding: 20px 30px;
+        background-color: rgba(255, 255, 255, 0.319);
+        padding: 10px 30px;
     }
 
     .NavHome li a{
         color:white;
     }
 
-    #logoWhite img{
-        width: 500px;
+   .logo{
+        display: flex;
+        width:100px; 
+        height: 100px; 
+        float: left;
+        margin-top: 35px;
+    }  
+
+    #logoAp{
+        width: 20px;
     }
-    
-} 
+}
