@@ -8,6 +8,7 @@ import { ProyectosComponent } from './Components/proyectos/proyectos.component';
 import { RegisterComponent } from './Components/register/register.component';
 import { SkillsComponent } from './Components/skills/skills.component';
 import { BannerComponent } from './Page/banner/banner.component';
+import { ModalComponent } from './Components/modal/modal.component';
 
 const routes: Routes = [
   { path: '', component: BannerComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'skills', component: SkillsComponent },
   { path: 'contact', component: ContactComponent },
+  { path: 'modal', component: ModalComponent },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 

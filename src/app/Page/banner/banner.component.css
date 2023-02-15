@@ -98,4 +98,8 @@ display: none;
         height: 200px;
     }
 
+    .card{
+        width: 200px;
+    }
+
 }

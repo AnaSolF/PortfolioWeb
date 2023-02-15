@@ -11,12 +11,14 @@ import { HeaderComponent } from './Page/header/header.component';
 import { BannerComponent } from './Page/banner/banner.component';
 import { LoginComponent } from './Components/login/login.component';
 import { RegisterComponent } from './Components/register/register.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule, ModalDismissReasons, NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { PortfolioService } from './Services/portfolio.service';
 import { UrlBaseService } from './Services/url-base.service';
 import { ContactComponent } from './Components/contact/contact.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ModalComponent } from './Components/modal/modal.component';
+
 
 
 @NgModule({
@@ -32,7 +34,9 @@ import { FormsModule } from '@angular/forms';
     LoginComponent,
     RegisterComponent,
     ContactComponent,
+    ModalComponent,
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -40,9 +44,12 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule
   ],
+
   providers: [
     PortfolioService,
-    UrlBaseService
+    UrlBaseService,
+    NgbModalConfig,
+    NgbModal
   ],
   bootstrap: [AppComponent]
 })

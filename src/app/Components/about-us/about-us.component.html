@@ -1,30 +1,27 @@
-<div class="container"> 
-<h2>About Us</h2>
 <div class="container">
+  <h2>About Us</h2>
 
-    <!-- <thead style="text-align: center;">
-      <tr>
-        <th scope="col">Nombre </th>
-        <th scope="col">Teléfono</th>
-        <th scope="col">Ciudad</th>
-        <th scope="col">País</th>
-        <th scope="col">Sobre Mí</th>
-      </tr>
-    </thead> -->
-    <!-- <tbody> -->
-      <div *ngFor="let dato of lista">
-        <div class="sm"> <strong> Sobre mí: </strong>{{dato.parrafo}}<div *ngIf="switch==true"><input type="text" name="parrafo" [(ngModel)]="datosActuales.parrafo"></div></div>
-        <div class="sm"><strong> Nombre: </strong> {{dato.nombre}}<div *ngIf="switch==true"><input type="text" name="nombre" [(ngModel)]="datosActuales.nombre"></div>
-      </div>
-        <div class="sm"> <strong> Teléfono: </strong>{{dato.telefono}}<div *ngIf="switch==true"><input type="text" name="telefono" [(ngModel)]="datosActuales.telefono"></div></div>
-        <div class="sm"> <strong>Ciudad: </strong> {{dato.ciudad}}<div *ngIf="switch==true"><input type="text" name="ciudad" [(ngModel)]="datosActuales.ciudad"></div></div>
-        <div class="sm"> <strong> País: </strong>{{dato.pais}}<div *ngIf="switch==true"><input type="text" name="pais" [(ngModel)]="datosActuales.pais"> </div></div>
-      
-        <div *ngIf="switch==false"><div class="sm"><button class="btn btn-warning" (click)="edit()" >Editar</button><br></div></div>
-        <div *ngIf="switch==true"><button class="btn btn-primary" onclick="guardar()">Guardar Cambios</button></div>
-      </div>
-      <button class="fijo"><a href="#banner">Regresar</a></button>
+  <div *ngFor="let dato of lista">
+    <div class="sm"> <strong> Sobre mí: </strong>{{dato.parrafo}}<div *ngIf="switch==true"><input type="text"
+          name="parrafo" [(ngModel)]="datosActuales.parrafo"></div>
     </div>
+    <div class="sm"><strong> Nombre: </strong> {{dato.nombre}}<div *ngIf="switch==true"><input type="text" name="nombre"
+          [(ngModel)]="datosActuales.nombre"></div>
+    </div>
+    <div class="sm"> <strong> Teléfono: </strong>{{dato.telefono}}<div *ngIf="switch==true"><input type="text"
+          name="telefono" [(ngModel)]="datosActuales.telefono"></div>
+    </div>
+    <div class="sm"> <strong>Ciudad: </strong> {{dato.ciudad}}<div *ngIf="switch==true"><input type="text" name="ciudad"
+          [(ngModel)]="datosActuales.ciudad"></div>
+    </div>
+    <div class="sm"> <strong> País: </strong>{{dato.pais}}<div *ngIf="switch==true"><input type="text" name="pais"
+          [(ngModel)]="datosActuales.pais"> </div>
+    </div>
+
+    <div *ngIf="switch==false">
+      <!-- <div class="sm"><button class="btn btn-warning" (click)="edit()">Editar</button><br></div> -->
+    </div>
+    <div *ngIf="switch==true"><button class="btn btn-primary" onclick="guardar()">Guardar Cambios</button></div>
+  </div>
+  <button class="fijo"><a href="#banner">Regresar</a></button>
 </div>
-
-

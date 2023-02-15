@@ -1,7 +1,7 @@
 <div class="container">
 <h2>Skills</h2>
 
-    <button class="btn btn-success" routerLink="agregar">Nueva Skill</button>
+   
 <table class="table">
     <thead>
       <tr>
@@ -16,11 +16,13 @@
         <td>{{skill.porcentaje}}</td>
         <td>
         <button class="hidden" (click)="eliminar(skill.id)"><i class="bi bi-trash"></i></button>
-        <button class="hidden" (click)="eliminar(skill.id)"><i class="bi bi-pencil-square"></i></button>
+        <button class="hidden"><i class="bi bi-pencil-square"></i></button>
         <!-- <button class="btn btn-warning" [routerLink]="['/editar', tarea.id]" >Editar</button></td> -->
       </tr>
       
     </tbody>
   </table>
   <button class="fijo"><a href="#banner">Regresar</a></button>
+  <button class="btn btn-success" routerLink="agregar">Nueva Skill</button>
+ 
 </div>
