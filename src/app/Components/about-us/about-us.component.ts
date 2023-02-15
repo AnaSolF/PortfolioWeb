@@ -3,6 +3,7 @@ import { PortfolioService } from 'src/app/Services/portfolio.service';
 import { UrlBaseService } from 'src/app/Services/url-base.service';
 import { AboutUsModule } from 'src/app/Models/about-us/about-us.module';
 
+
 @Component({
   selector: 'app-about-us',
   templateUrl: './about-us.component.html',
@@ -14,9 +15,8 @@ export class AboutUsComponent implements OnInit {
   ruta: any = "SobreMi"; 
   switch: boolean = false;
 
-
   constructor(private urlbase: UrlBaseService,
-    private portfolioService: PortfolioService,
+    private portfolioService: PortfolioService
   ) { }
   
   ngOnInit(): void { 

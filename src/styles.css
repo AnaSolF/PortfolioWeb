@@ -1,32 +1,33 @@
-
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-body { min-height: 100vh; 
-min-width: 100%;}
+body {
+    min-height: 100vh;
+    min-width: 100%;
+    background-color: black;
+}
 
-a{
+a {
     text-decoration: none;
-
 }
 
 ul li {
-list-style-type: none;
+    list-style-type: none;
 }
 
-.container{
+.container {
     width: 100%;
-    height: 100vh;
-    padding: 30px; 
-    margin-bottom: 5%;
-    margin-top: 3%;
+    min-height: 100vh;
+    padding: 30px 30px 60px;
+    margin-top: 30px;
     text-align: justify;
+    background-color:antiquewhite;
 }
 
-h2{
+h2 {
     margin: 30px 45px 30px 5px;
     padding: 25px 35px;
     background-color: azure;
@@ -34,54 +35,58 @@ h2{
 }
 
 
-.fijo{
+.fijo {
     padding: 10px 15px;
-  
     border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.56);
     float: right;
-} 
+}
 
-.fijo a{
+.fijo a {
     color: white;
 }
 
-.hidden{
+#aLog a{
+    color: white;
+    margin-left: 0;
+    cursor: pointer;
+}
+
+.hidden {
     border: none;
     background: none;
     padding: 10px;
 }
 
-.bi-trash{
+.bi-trash {
     color: red;
 }
 
-.bi-pencil-square{
+.bi-pencil-square {
     color: blue;
 }
 
-@media screen and (min-width: 800px){
-    .navbar{
+@media screen and (min-width: 800px) {
+    .navbar {
         display: none
-    } 
+    }
 
-    .container{
+    .container {
         width: 100%;
         height: 100%;
         margin-bottom: 15%;
     }
 
-    .fijo{
+    .fijo {
         padding: 10px 30px 10px 30px;
         border-radius: 10px;
         background-color: rgba(0, 0, 0, 0.239);
         float: right;
-        
-    } 
-    
-    .fijo a{
+
+    }
+
+    .fijo a {
         color: white;
     }
-    
-}
 
+}
