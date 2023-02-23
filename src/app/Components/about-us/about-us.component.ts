@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PortfolioService } from 'src/app/Services/portfolio.service';
 import { UrlBaseService } from 'src/app/Services/url-base.service';
 import { AboutUsModule } from 'src/app/Models/about-us/about-us.module';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 
 
 @Component({
@@ -10,27 +11,40 @@ import { AboutUsModule } from 'src/app/Models/about-us/about-us.module';
   styleUrls: ['./about-us.component.css']
 })
 export class AboutUsComponent implements OnInit {
-  lista: any = [];
   datosActuales: AboutUsModule = { id: "", nombre: "", telefono: "", ciudad: "", pais: "", parrafo: "" };
-  ruta: any = "SobreMi"; 
+  ruta: any = "SobreMi";
   switch: boolean = false;
+  nuevosDatos: AboutUsModule = { id: "", nombre: "", telefono: "", ciudad: "", pais: "", parrafo: "" };
+  id: string = "31";
 
-  constructor(private urlbase: UrlBaseService,
-    private portfolioService: PortfolioService
+  constructor(
+    private portfolioService: PortfolioService,
+    private activatedRoute: ActivatedRoute,
+    private router: Router
   ) { }
-  
-  ngOnInit(): void { 
-    this.listarDatos() 
+
+  ngOnInit(): void {
+     this.listarDatos()
   };
-  
+
   listarDatos() {
-    this.portfolioService.getElements(this.ruta).subscribe(
+    this.portfolioService.getUnElemento(this.ruta, this.id).subscribe(
       res => {
-        this.lista = res;
-      console.log(this.lista)},
-      err => console.log(err)
+        this.nuevosDatos = res;
+        console.log(this.nuevosDatos)
+      },
     )
   }
+
+  editarDatos() {
+    this.portfolioService.saveElemento(this.ruta, this.nuevosDatos).subscribe(
+      res => {
+        this.nuevosDatos = res;
+        console.log(res)
+      }
+    )
+  }
+
   edit() {
     this.switch = !this.switch;
   }
