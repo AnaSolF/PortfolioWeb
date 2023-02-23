@@ -1,27 +1,27 @@
 <div class="container">
   <h2>About Us</h2>
 
-  <div *ngFor="let dato of lista">
-    <div class="sm"> <strong> Sobre mí: </strong>{{dato.parrafo}}<div *ngIf="switch==true"><input type="text"
-          name="parrafo" [(ngModel)]="datosActuales.parrafo"></div>
+  <div>
+    <div class="sm"> <strong> Sobre mí: </strong>{{nuevosDatos.parrafo}}<div *ngIf="switch==true"><input type="text"
+          name="parrafo" [(ngModel)]="nuevosDatos.parrafo"></div>
     </div>
-    <div class="sm"><strong> Nombre: </strong> {{dato.nombre}}<div *ngIf="switch==true"><input type="text" name="nombre"
-          [(ngModel)]="datosActuales.nombre"></div>
+    <div class="sm"><strong> Nombre: </strong> {{nuevosDatos.nombre}}<div *ngIf="switch==true"><input type="text" name="nombre"
+          [(ngModel)]="nuevosDatos.nombre"></div>
     </div>
-    <div class="sm"> <strong> Teléfono: </strong>{{dato.telefono}}<div *ngIf="switch==true"><input type="text"
-          name="telefono" [(ngModel)]="datosActuales.telefono"></div>
+    <div class="sm"> <strong> Teléfono: </strong>{{nuevosDatos.telefono}}<div *ngIf="switch==true"><input type="text"
+          name="telefono" [(ngModel)]="nuevosDatos.telefono"></div>
     </div>
-    <div class="sm"> <strong>Ciudad: </strong> {{dato.ciudad}}<div *ngIf="switch==true"><input type="text" name="ciudad"
-          [(ngModel)]="datosActuales.ciudad"></div>
+    <div class="sm"> <strong>Ciudad: </strong> {{nuevosDatos.ciudad}}<div *ngIf="switch==true"><input type="text" name="ciudad"
+          [(ngModel)]="nuevosDatos.ciudad"></div>
     </div>
-    <div class="sm"> <strong> País: </strong>{{dato.pais}}<div *ngIf="switch==true"><input type="text" name="pais"
-          [(ngModel)]="datosActuales.pais"> </div>
+    <div class="sm"><strong> País: </strong>{{nuevosDatos.pais}}<div *ngIf="switch==true"><input type="text" name="pais"
+          [(ngModel)]="nuevosDatos.pais"> </div>
     </div>
 
     <div *ngIf="switch==false">
-      <!-- <div class="sm"><button class="btn btn-warning" (click)="edit()">Editar</button><br></div> -->
+      <div class="sm"><button class="btn btn-warning"(click)="edit()">Editar</button><br></div>
     </div>
-    <div *ngIf="switch==true"><button class="btn btn-primary" onclick="guardar()">Guardar Cambios</button></div>
+    <div *ngIf="switch==true"><button class="btn btn-primary" (click)="editarDatos() " (click)="edit()">Guardar Cambios</button></div>
   </div>
   <button class="fijo"><a href="#banner">Regresar</a></button>
 </div>
