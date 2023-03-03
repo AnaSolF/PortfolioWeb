@@ -1,20 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { PortfolioService } from 'src/app/Services/portfolio.service';
-import { UrlBaseService } from 'src/app/Services/url-base.service';
-import { AboutUsModule } from 'src/app/Models/about-us/about-us.module';
+
 import { ActivatedRoute, Route, Router } from '@angular/router';
+import { AboutMeModule } from 'src/app/Models/about-me/about-me.module';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
-  selector: 'app-about-us',
-  templateUrl: './about-us.component.html',
-  styleUrls: ['./about-us.component.css']
+  selector: 'app-about-me',
+  templateUrl: './about-me.component.html',
+  styleUrls: ['./about-me.component.css']
 })
-export class AboutUsComponent implements OnInit {
-  datosActuales: AboutUsModule = { id: "", nombre: "", telefono: "", ciudad: "", pais: "", parrafo: "" };
+export class AboutMeComponent implements OnInit {
+  @Input()
+  datosActuales: AboutMeModule = { id: "", nombre: "", telefono: "", ciudad: "", pais: "", parrafo: "" };
   ruta: any = "SobreMi";
   switch: boolean = false;
-  nuevosDatos: AboutUsModule = { id: "", nombre: "", telefono: "", ciudad: "", pais: "", parrafo: "" };
+  @Input()
+  nuevosDatos: AboutMeModule = { id: "", nombre: "Ana Sol", telefono: "3513285087", ciudad: "Córdoba", pais: "Argentina", parrafo: "Prueba." };
   id: string = "31";
 
   constructor(
@@ -31,7 +34,6 @@ export class AboutUsComponent implements OnInit {
     this.portfolioService.getUnElemento(this.ruta, this.id).subscribe(
       res => {
         this.nuevosDatos = res;
-        console.log(this.nuevosDatos)
       },
     )
   }
@@ -40,7 +42,6 @@ export class AboutUsComponent implements OnInit {
     this.portfolioService.saveElemento(this.ruta, this.nuevosDatos).subscribe(
       res => {
         this.nuevosDatos = res;
-        console.log(res)
       }
     )
   }
@@ -48,5 +49,6 @@ export class AboutUsComponent implements OnInit {
   edit() {
     this.switch = !this.switch;
   }
+
 
 }

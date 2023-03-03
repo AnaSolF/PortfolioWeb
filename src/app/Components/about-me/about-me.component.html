@@ -1,0 +1,29 @@
+<div class="container">
+  <h2>About Me</h2>
+
+  <div class="AM">
+    <div *ngIf="switch==true"><button class="btn btn-close" style="float: right;" (click)="edit()"></button></div>
+    <div class="sm"><strong> Sobre mí: </strong>{{nuevosDatos.parrafo}}<div *ngIf="switch==true"><input type="text" class="form-control"
+      name="parrafo" [(ngModel)]="nuevosDatos.parrafo"></div>
+    </div>
+    <div class="sm"><strong> Nombre: </strong> {{nuevosDatos.nombre}}<div *ngIf="switch==true"><input type="text" class="form-control" name="nombre"
+          [(ngModel)]="nuevosDatos.nombre"></div>
+    </div>
+    <div class="sm"> <strong> Teléfono: </strong>{{nuevosDatos.telefono}}<div *ngIf="switch==true"><input type="text" class="form-control"
+          name="telefono" [(ngModel)]="nuevosDatos.telefono"></div>
+    </div>
+    <div class="sm"> <strong>Ciudad: </strong> {{nuevosDatos.ciudad}}<div *ngIf="switch==true"><input type="text" class="form-control" name="ciudad"
+          [(ngModel)]="nuevosDatos.ciudad"></div>
+    </div>
+    <div class="sm"><strong> País: </strong>{{nuevosDatos.pais}}<div *ngIf="switch==true"><input type="text" class="form-control" name="pais"
+          [(ngModel)]="nuevosDatos.pais"> </div>
+    </div>
+    <div *ngIf="switch==false">
+      <div class="sm"><button class="btn btn-warning"(click)="edit()">Editar</button><br></div>
+    </div>
+    <div *ngIf="switch==true"><button class="btn btn-primary" (click)="editarDatos() " (click)="edit()">Guardar Cambios</button></div>
+  </div>
+  <button class="fijo" routerLink="banner">Regresar</button>
+
+
+</div>

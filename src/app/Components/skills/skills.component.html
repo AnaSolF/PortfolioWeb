@@ -1,8 +1,8 @@
 <div class="container">
-<h2>Skills</h2>
+  <h2>Skills</h2>
 
-   
-<table class="table">
+
+  <table class="table">
     <thead>
       <tr>
         <th scope="col">Skill</th>
@@ -13,16 +13,23 @@
     <tbody>
       <tr *ngFor="let skill of lista">
         <td>{{skill.tarea}}</td>
-        <td>{{skill.porcentaje}}</td>
+        <td><circle-progress [percent]="skill.porcentaje" [radius]="100" [outerStrokeWidth]="16" [innerStrokeWidth]="8"
+            [outerStrokeColor]="'#78C000'" [innerStrokeColor]="'#C7E596'" [animation]="true"
+            [animationDuration]="300"></circle-progress>
+        </td>
         <td>
-        <button class="hidden" (click)="eliminar(skill.id)"><i class="bi bi-trash"></i></button>
-        <button class="hidden"><i class="bi bi-pencil-square"></i></button>
-        <!-- <button class="btn btn-warning" [routerLink]="['/editar', tarea.id]" >Editar</button></td> -->
+          <button class="hidden" (click)="eliminar(skill.id)"><i class="bi bi-trash"></i></button>
+          <button class="hidden" [routerLink]="['/edit', skill.id]"><i class="bi bi-pencil-square"></i></button>
+        </td>
       </tr>
-      
+
     </tbody>
+
   </table>
-  <button class="fijo"><a href="#banner">Regresar</a></button>
-  <button class="btn btn-success" routerLink="agregar">Nueva Skill</button>
- 
-</div>
+  <!-- <div *ngIf="switch==true"> -->
+    
+  <button class="fijo" routerLink="banner">Regresar</button>
+  <button class="btn btn-success" [routerLink]="['/agregar']">Nueva Skill</button>
+  <!-- [nombre]="cliente.nombre"
+    [cif]="cliente.cif"
+    [direccion]="cliente.direccion"</app-edit> -->
