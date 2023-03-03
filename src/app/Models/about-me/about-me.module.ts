@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
     CommonModule
   ]
 })
-export class AboutUsModule {
+export class AboutMeModule {
   id!: String;
   nombre!: String;
   telefono!: String

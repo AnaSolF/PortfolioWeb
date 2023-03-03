@@ -2,39 +2,43 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AboutUsComponent } from './Components/about-us/about-us.component';
+import { AboutMeComponent } from './Components/about-me/about-me.component';
 import { FormacionComponent } from './Components/formacion/formacion.component';
 import { ProyectosComponent } from './Components/proyectos/proyectos.component';
 import { SkillsComponent } from './Components/skills/skills.component';
 import { FooterComponent } from './Page/footer/footer.component';
-import { HeaderComponent } from './Page/header/header.component';
 import { BannerComponent } from './Page/banner/banner.component';
 import { LoginComponent } from './Components/login/login.component';
 import { RegisterComponent } from './Components/register/register.component';
-import { NgbModule, ModalDismissReasons, NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule, ModalDismissReasons, NgbModal, NgbModalConfig, NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { PortfolioService } from './Services/portfolio.service';
 import { UrlBaseService } from './Services/url-base.service';
+import { AuthService } from './Services/auth.service';
 import { ContactComponent } from './Components/contact/contact.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ModalComponent } from './Components/modal/modal.component';
+import { NgCircleProgressModule } from 'ng-circle-progress';
+import { EditComponent } from './Page/edit/edit.component';
+import { AgregarComponent } from './Page/agregar/agregar.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    AboutUsComponent,
+    AboutMeComponent,
     FormacionComponent,
     ProyectosComponent,
     SkillsComponent,
     FooterComponent,
-    HeaderComponent,
     BannerComponent,
     LoginComponent,
     RegisterComponent,
     ContactComponent,
     ModalComponent,
+    EditComponent,
+    AgregarComponent
   ],
 
   imports: [
@@ -42,14 +46,25 @@ import { ModalComponent } from './Components/modal/modal.component';
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
-    FormsModule
+    FormsModule, 
+    NgbModalModule,
+    NgCircleProgressModule.forRoot({
+      // set defaults here
+      radius: 100,
+      outerStrokeWidth: 16,
+      innerStrokeWidth: 8,
+      outerStrokeColor: "#78C000",
+      innerStrokeColor: "#C7E596",
+      animationDuration: 300,
+    })
   ],
 
   providers: [
     PortfolioService,
     UrlBaseService,
     NgbModalConfig,
-    NgbModal
+    NgbModal,
+    AuthService //Ver si usar
   ],
   bootstrap: [AppComponent]
 })

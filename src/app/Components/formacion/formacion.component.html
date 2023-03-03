@@ -6,5 +6,10 @@
       <p class="card-text">Un texto de ejemplo rápido para colocar cerca del título de la tarjeta y componer la mayor parte del contenido de la tarjeta.</p>
     </div>
   </div>
-<button class="fijo"><a href="#banner">Regresar</a></button>
+<button class="fijo" routerLink="banner">Regresar</button>
+
+  <div class="Ed" *ngIf="mostrar==false" >
+  <app-edit>[titulo]="titulo"</app-edit>
+</div>
+  <button class="btn btn-danger" (click)="mostrarInput()">Editar</button>
 </div>

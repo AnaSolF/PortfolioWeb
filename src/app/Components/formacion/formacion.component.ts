@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-formacion',
@@ -6,5 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./formacion.component.css']
 })
 export class FormacionComponent {
+
+  switch: boolean = false;
+  mostrar: boolean = true;
+  titulo: string = "Hola"
+  
+  edit() {
+    this.switch = !this.switch;
+  }
+
+  mostrarInput() {
+    this.mostrar = !this.mostrar;
+  }
 
 }

@@ -1,9 +1,12 @@
-import { Component } from '@angular/core';
-import { OnInit } from '@angular/core';
+import { Component, Output, ViewChild } from '@angular/core';
+import { OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Skills } from 'src/app/Models/skills/skills.module';
 import { PortfolioService } from 'src/app/Services/portfolio.service';
+import { NgCircleProgressModule } from 'ng-circle-progress';
+import { LoginComponent } from '../login/login.component';
+
 
 @Component({
   selector: 'app-skills',
@@ -12,13 +15,19 @@ import { PortfolioService } from 'src/app/Services/portfolio.service';
 })
 
 export class SkillsComponent implements OnInit {
+  @Input()
   lista: any = [];
-  skillActual: Skills = { id: "", tarea: "", porcentaje: "" };
+  @Input()
+  skillActual: Skills = { id: "", tarea: "HTML", porcentaje: "80" };
+  @Input()
+  nuevaSkill : Skills = { id: "", tarea: "", porcentaje: "" };
   ruta: any = "tareas";
   id: string = "";
-  content: any;
-
-  // switch: boolean = false;
+  // content: any;
+  switch: boolean = false;
+  porcentaje!: number;
+  content: any = "";
+  titulo: any = "Editar"
 
   constructor(private portfolioService: PortfolioService,
     private router: Router,
@@ -31,24 +40,22 @@ export class SkillsComponent implements OnInit {
   listarSkills() {
     this.portfolioService.getElements(this.ruta).subscribe(
       res => { this.lista = res; },
-      err => console.log(err),
     );
   }
 
   eliminar(id: string) {
     this.portfolioService.deleteElemento(this.ruta, id).subscribe(
       res => { this.ngOnInit() },
-      err => console.log(err)
     );
   }
 
-  openModal() {
+  open(content: string) {
     this.modalService.open(this.content)
   };
 
-  // inputEditar(id: Tarea) {
-  //   this.switch = !this.switch;
-  // }
+  edit() {
+    this.switch = !this.switch;
+  }
 
 }
 
