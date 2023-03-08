@@ -21,6 +21,7 @@ import { ModalComponent } from './Components/modal/modal.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { EditComponent } from './Page/edit/edit.component';
 import { AgregarComponent } from './Page/agregar/agregar.component';
+import { NavBarComponent } from './Page/nav-bar/nav-bar.component';
 
 
 
@@ -38,7 +39,8 @@ import { AgregarComponent } from './Page/agregar/agregar.component';
     ContactComponent,
     ModalComponent,
     EditComponent,
-    AgregarComponent
+    AgregarComponent,
+    NavBarComponent
   ],
 
   imports: [

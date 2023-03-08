@@ -1,15 +1,50 @@
-<div class="container">
-<h2>Formacion</h2>
-<div class="card" style="width: 18rem;">
-    <img [src]="" class="card-img-top" alt="...">
-    <div class="card-body">
-      <p class="card-text">Un texto de ejemplo rápido para colocar cerca del título de la tarjeta y componer la mayor parte del contenido de la tarjeta.</p>
-    </div>
-  </div>
-<button class="fijo" routerLink="banner">Regresar</button>
+<a name="Education"></a>
+<div class="container" id="containerDos">
 
-  <div class="Ed" *ngIf="mostrar==false" >
+  <div id="content">
+    <ngb-carousel>
+     [showNavigationArrows]="true"
+   [showNavigationIndicators]="true"
+   interval = "12000",
+   [keyboard]="true"
+   [pauseOnHover]="true"
+   [wrap]="true"
+   [activeId]="'secondSlide'"
+
+     <ng-template ngbSlide>
+       <div class="picsum-img-wrapper">
+         <img src="/assets/Images/coffee-7794531_1920.jpg" alt="Angular Carousel 1">
+       </div>
+       <div class="carousel-caption">
+         <h4 >Bienvenid@s</h4>
+         <!-- <p class="PCarousel">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> -->
+       </div>
+     </ng-template>
+     <ng-template ngbSlide>
+       <div class="picsum-img-wrapper">
+         <img src="/assets/Images/doodle-7786568_1920.png" alt="Angular Carousel 2">
+       </div>
+       <div class="carousel-caption">
+         <h4>Title Goes Here</h4>
+         <!-- <p class="PCarousel">Consectetur tortor volutpat pretium.</p> -->
+       </div>
+     </ng-template>
+     <ng-template ngbSlide>
+       <div class="picsum-img-wrapper">
+         <img src="/assets/Images/sheets-7722898_1920.jpg" alt="Angular Carousel 3">
+       </div>
+       <div class="carousel-caption">
+         <h4>Title Goes Here</h4>
+         <!-- <p class="PCarousel">Consectetur tortor volutpat pretium.</p> -->
+       </div>
+     </ng-template>
+   </ngb-carousel>
+   
+   </div>
+   
+
+  <div class="Ed" *ngIf="!mostrar" >
   <app-edit>[titulo]="titulo"</app-edit>
 </div>
-  <button class="btn btn-danger" (click)="mostrarInput()">Editar</button>
+  <button class="btn btn-danger">Editar</button>
 </div>

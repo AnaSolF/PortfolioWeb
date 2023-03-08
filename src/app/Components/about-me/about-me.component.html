@@ -1,11 +1,17 @@
-<div class="container">
-  <h2>About Me</h2>
-
+<a name="about-me"></a>
+<div class="container" style="display: flex;">
+  <div class="nav"><app-nav-bar id="nB"></app-nav-bar></div>
   <div class="AM">
     <div *ngIf="switch==true"><button class="btn btn-close" style="float: right;" (click)="edit()"></button></div>
-    <div class="sm"><strong> Sobre mí: </strong>{{nuevosDatos.parrafo}}<div *ngIf="switch==true"><input type="text" class="form-control"
-      name="parrafo" [(ngModel)]="nuevosDatos.parrafo"></div>
+    <div class="sm"><strong> Sobre mí: </strong>{{nuevosDatos.parrafo}}<div *ngIf="switch==true">
+      <div class="form-floating">
+        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" name="parrafo" [(ngModel)]="nuevosDatos.parrafo"></textarea>
+        <label for="floatingTextarea">Ingrese una descripción.</label>
+      </div>
+      <!-- <input type="text" class="form-control"
+      name="parrafo" [(ngModel)]="nuevosDatos.parrafo"></div> -->
     </div>
+
     <div class="sm"><strong> Nombre: </strong> {{nuevosDatos.nombre}}<div *ngIf="switch==true"><input type="text" class="form-control" name="nombre"
           [(ngModel)]="nuevosDatos.nombre"></div>
     </div>
@@ -19,11 +25,11 @@
           [(ngModel)]="nuevosDatos.pais"> </div>
     </div>
     <div *ngIf="switch==false">
-      <div class="sm"><button class="btn btn-warning"(click)="edit()">Editar</button><br></div>
+      <div class="sm"><button class="btn btn-warning ancho"(click)="edit()">Editar</button><br></div>
     </div>
-    <div *ngIf="switch==true"><button class="btn btn-primary" (click)="editarDatos() " (click)="edit()">Guardar Cambios</button></div>
+    <div *ngIf="switch==true"><button class="btn btn-primary ancho" (click)="editarDatos()"(click)="edit()">Guardar Cambios</button></div>
   </div>
-  <button class="fijo" routerLink="banner">Regresar</button>
+  <!-- <button class="fijo" routerLink="banner">Regresar</button> -->
 
 
 </div>

@@ -1,20 +1,28 @@
 .container{
-    display: flex;
-    flex-direction: column;
-    justify-content:space-around;
-}
+   background-image: url(/assets/Images/Frost.jpg);
+} 
 
 .AM{
-    background-color: azure;
-    padding: 30px; 
-    text-align:center ;
-   
+width: 35%;
+margin-left: 50%;
+padding: 5% 5% 10% 5%;
+height: 55vh;
+color: white;
 }
 
 .btn-primary{
     margin: 20px;
 }
 
-.fijo{
-width: 180px;
+@media screen and (max-width: 800px) {
+
+    .AM{
+        width: 100%;
+        margin: 0 auto;
+        height: 100vh;
+        padding: 8px;
+        margin: 0 auto;
+        text-align: center;
+    }
+       
 }

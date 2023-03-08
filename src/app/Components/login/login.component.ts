@@ -10,15 +10,16 @@ import { PortfolioService } from 'src/app/Services/portfolio.service';
 })
 
 export class LoginComponent {
-  @Input() childMessage!: string;
-  @Input() childTitle!: string;
-  @Input() parentTitle!: string;
-  // btn: string = " Login";
-
-
+  email!: string;
+  password!: string;
   content: any;
   constructor(private portfolioService: PortfolioService,
     private router: Router,
     private modalService: NgbModal) { };
+  
+    login() {
+      console.log(this.email);
+      console.log(this.password);
+    }
 
 }

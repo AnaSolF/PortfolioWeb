@@ -11,6 +11,7 @@ import { ModalComponent } from './Components/modal/modal.component';
 import { EditComponent } from './Page/edit/edit.component';
 import { AboutMeComponent } from './Components/about-me/about-me.component';
 import { AgregarComponent } from './Page/agregar/agregar.component';
+import { NavBarComponent } from './Page/nav-bar/nav-bar.component';
 
 
 const routes: Routes = [
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'modal', component: ModalComponent },
   { path: 'agregar', component: AgregarComponent },
+  { path: 'navBar', component: NavBarComponent },
   { path: 'edit/:id', component: EditComponent },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];

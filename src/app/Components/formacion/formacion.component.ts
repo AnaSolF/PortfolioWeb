@@ -15,8 +15,4 @@ export class FormacionComponent {
     this.switch = !this.switch;
   }
 
-  mostrarInput() {
-    this.mostrar = !this.mostrar;
-  }
-
 }
