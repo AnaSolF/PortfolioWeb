@@ -6,7 +6,6 @@ import { SkillsComponent } from '../skills/skills.component';
 	selector: 'app-modal',
 	templateUrl: './modal.component.html',
 	providers: [NgbModalConfig, NgbModal],
-	standalone: false,
 	styleUrls: ['./modal.component.css']
 })
 

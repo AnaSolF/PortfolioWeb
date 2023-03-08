@@ -1,6 +1,25 @@
-
-<div class="container">
-    <p>register works!</p>
-
-    <button class="fijo" routerLink="banner">Regresar</button>
+<a name="Register"></a>
+<div class="container" id="containerDos" style="display: flex; flex-direction: column;">
+<div class="regForm">
+    <form>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Correo electrónico</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <div id="emailHelp" class="form-text">Nunca compartiremos su correo electrónico con nadie más.</div>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+        <input type="password" class="form-control" id="exampleInputPassword1">
+      </div>
+      <button type="submit" class="btn btn-info " style=" width: 100%;">Registrarme</button>
+      <p class="small" style="padding-top: 10px;">Olvidó su usuario y/o contraseña?</p>
+    </form>
+</div>
+<div class="crear">
+  <div class="quest">Ya tienes una cuenta?</div>
+  <button class="btn btn-warning ancho"><app-modal></app-modal></button>
+  <div class="nav-item" id="aLog">
+    <p class="small">Al iniciar sesión acepta nuestros términos de uso</p>
+  </div>
+</div>
 </div>

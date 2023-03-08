@@ -1,9 +1,7 @@
-<div class="contentBanner" id="banner">
-
+<div class="contentBanner" id="banner"><a href="#arriba"></a>
   <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#"><img src="/assets/Images/APLogo-20-20.png" alt="logo" id="logoAp" style="width: 100px
-      ;"></a>
+      <a class="navbar-brand" href="#"><img src="/assets/Images/APLogo-20-20.png" alt="logo" id="logoAp" style="width: 100px; margin-left: 30px; margin-bottom: 5px;" ></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
         aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation" style="margin-right: 30px
       ;">
@@ -15,28 +13,27 @@
             <app-modal id="log"></app-modal>
           </li>
 
-          <li class="nav-item" routerLink="about-me">
-            About Me
+          <li class="nav-item">
+            <a href="#about-me">About Me</a>  
           </li>
 
-          <li class="nav-item" routerLink="register">
-            Register
+          <li class="nav-item">
+            <a href="#Register">Register</a>
           </li>
 
-          <li class="nav-item" routerLink="formacion">
-            Education
+          <li class="nav-item">
+            <a href="#Education">Formación</a>  
+
+          <li class="nav-item">
+            <a href="#Proyectos">Proyectos</a>  
           </li>
 
-          <li class="nav-item" routerLink="proyectos">
-            Proyectos
+          <li class="nav-item">
+            <a href="#Skills">Skills</a>    
           </li>
 
-          <li class="nav-item" routerLink="skills">
-            Skills
-          </li>
-
-          <li class="nav-item" routerLink="contact">
-            Contact
+          <li class="nav-item">
+            <a href="#Contact">Contact</a>      
           </li>
         </ul>
 
@@ -51,28 +48,41 @@
       <li class="nav-item" id="aLog">
         <app-modal></app-modal>
       </li>
-       <li class="nav-item" routerLink="register">
-        Register
-      </li> 
-      <li class="nav-item" routerLink="about-me">
-        About Me
+      <li class="nav-item">
+        <a href="#about-me">About Me</a>  
       </li>
-      <li class="nav-item" routerLink="formacion">
-        Formación
+
+      <li class="nav-item">
+        <a href="#Register">Register</a>
       </li>
-      <li class="nav-item" routerLink="proyectos">
-        Proyectos
+
+      <li class="nav-item">
+        <a href="#Education">Formación</a>  
+
+      <li class="nav-item">
+        <a href="#Proyectos">Proyectos</a>  
       </li>
-      <li class="nav-item" routerLink="skills">
-        Skills
+
+      <li class="nav-item">
+        <a href="#Skills">Skills</a>    
       </li>
-      <li class="nav-item" routerLink="contact">
-        <!-- <a href="#contacto">Contact</a> -->Contact
+
+      <li class="nav-item">
+        <a href="#Contact">Contact</a>      
       </li>
+    
     </ul>
   </nav>
 
   <div class="LogoWhite animate__animated animate__bounce"><img src="/assets/Images/DarkLogoXL.png" alt="LogoWhite"
       id="LW"></div>
-
 </div>
+
+
+<div class="containerTres">
+<app-register></app-register>
+<app-about-me></app-about-me>
+<app-formacion></app-formacion>
+<app-proyectos></app-proyectos>
+<app-skills></app-skills>
+<app-footer></app-footer>  </div>

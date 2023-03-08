@@ -1,4 +1,22 @@
-/* .container{
-   
-   
+
+
+/* 
+.circle{
+    width: 100px;
+    min-height: 100vh;
 } */
+
+@media screen and (max-width: 800px) {
+    #containerDos{
+        color: white;
+        width: 100%;
+        display: flex;
+        background-color: black;
+        flex-direction: row;
+    }
+    
+    .circle{
+        flex-direction: row;
+        margin: 30 auto;
+    }
+}

@@ -40,15 +40,12 @@ export class EditComponent implements OnInit {
     this.portfolioService.editarElemento(this.ruta, this.id, this.skillActual).subscribe(
       res => {
         this.skillActual = res
-        this.router.navigate(["/skills"])},
-    )
+         this.router.navigate(["/skills"])},
+      )
   }
 
   edit() {
     this.switch = !this.switch;
   }
 
-  mostrarInput() {
-    this.mostrar = !this.mostrar;
-  }
 }
