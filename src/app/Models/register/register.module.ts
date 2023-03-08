@@ -9,4 +9,9 @@ import { CommonModule } from '@angular/common';
     CommonModule
   ]
 })
-export class RegisterModule { }
+export class RegisterModule {
+  email: string = "";
+  password: string = "";
+
+  constructor(email: String, password: String ) {}
+ }

@@ -4,14 +4,14 @@
     <form>
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Correo electrónico</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" [(ngModel)]="datosRegistrados.email">
         <div id="emailHelp" class="form-text">Nunca compartiremos su correo electrónico con nadie más.</div>
       </div>
       <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-        <input type="password" class="form-control" id="exampleInputPassword1">
+        <input type="password" class="form-control" id="exampleInputPassword1" name="password" [(ngModel)]="datosRegistrados.password">
       </div>
-      <button type="submit" class="btn btn-info " style=" width: 100%;">Registrarme</button>
+      <button type="submit" class="btn btn-info" style=" width: 100%;" (click)="guardarRegistro()">Registrarme</button>
       <p class="small" style="padding-top: 10px;">Olvidó su usuario y/o contraseña?</p>
     </form>
 </div>
