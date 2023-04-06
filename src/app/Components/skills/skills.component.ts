@@ -27,7 +27,8 @@ export class SkillsComponent implements OnInit {
   switch: boolean = false;
   porcentaje!: number;
   content: any = "";
-  titulo: any = "Editar"
+  titulo: any = "Editar";
+  mostrar: boolean = false;
 
   constructor(private portfolioService: PortfolioService,
     private router: Router,
@@ -39,7 +40,9 @@ export class SkillsComponent implements OnInit {
 
   listarSkills() {
     this.portfolioService.getElements(this.ruta).subscribe(
-      res => { this.lista = res; },
+      res => {
+        this.lista = res;
+      },
     );
   }
 
@@ -56,6 +59,11 @@ export class SkillsComponent implements OnInit {
   edit() {
     this.switch = !this.switch;
   }
+
+  mostrarButtons() {
+    this.mostrar = !this.mostrar;
+  }
+
 
 }
 

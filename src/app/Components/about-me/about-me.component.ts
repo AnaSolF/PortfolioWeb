@@ -4,6 +4,7 @@ import { PortfolioService } from 'src/app/Services/portfolio.service';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { AboutMeModule } from 'src/app/Models/about-me/about-me.module';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { AuthService } from 'src/app/Services/auth.service';
 
 
 @Component({
@@ -19,11 +20,14 @@ export class AboutMeComponent implements OnInit {
   @Input()
   nuevosDatos: AboutMeModule = { id: "", nombre: "Ana Sol", telefono: "3513285087", ciudad: "Córdoba", pais: "Argentina", parrafo: "Prueba." };
   id: string = "31";
+  token!:any;
+  mostrar!: boolean;
 
   constructor(
     private portfolioService: PortfolioService,
     private activatedRoute: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private authService : AuthService
   ) { }
 
   ngOnInit(): void {
@@ -50,5 +54,15 @@ export class AboutMeComponent implements OnInit {
     this.switch = !this.switch;
   }
 
+  btnLog() { 
+		this.authService.logIn()
+	}
 
+  public logIn(): boolean{
+    return (localStorage.getItem("auth_token")) === this.token;
+  }
+  
+  mostrarButtons() {
+    this.mostrar = !this.mostrar;
+  }
 }

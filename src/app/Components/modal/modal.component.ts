@@ -13,7 +13,8 @@ export class ModalComponent {
 	// @Input() childTitle!: string;
 	// @Input() parentMessage!: string;
 	// @Input() parentTitle: string = this.childTitle;
-	content!: any;
+
+	login!: any;
 
 	//Ejemplo
     

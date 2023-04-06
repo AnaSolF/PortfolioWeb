@@ -14,44 +14,27 @@ export class PortfolioService {
   urlBase!: any;
 
   constructor(private http: HttpClient, private baseUrl: UrlBaseService, private router: Router) { }
-  urlParametro: any;
+  ruta: any;
   url = `${this.baseUrl.urlBase}`;
 
-  getElements(urlParametro: any): Observable<any> {
-    return this.http.get(this.url + urlParametro)
+  getElements(ruta: any): Observable<any> {
+    return this.http.get(this.url + ruta)
   }
 
-  getUnElemento(urlParametro: any, id: string): Observable<any> {
-    return this.http.get(this.url + urlParametro + "/" + id);
+  getUnElemento(ruta: any, id: string): Observable<any> {
+    return this.http.get(this.url + ruta + "/" + id);
   }
 
-  saveElemento(urlParametro: any, tarea: any): Observable<any> {
-    return this.http.post(this.url + urlParametro, tarea)
+  saveElemento(ruta: any, tarea: any): Observable<any> {
+    return this.http.post(this.url + ruta, tarea)
   }
 
-  editarElemento(urlParametro: any, id: string, tarea: any): Observable<any> {
-    return this.http.put(this.url + urlParametro + "/" + id, tarea)
+  editarElemento(ruta: any, id: string, tarea: any): Observable<any> {
+    return this.http.put(this.url + ruta + "/" + id, tarea)
   }
 
-  deleteElemento(urlParametro: any, id: string): Observable<any> {
-    return this.http.delete(this.url + urlParametro + "/" + id);
-  }
-
-  login(email: string, password: string) {
-    this.http.post(this.url + this.urlParametro + "/authenticate", { email: email, password: password }).subscribe((resp: any)=> {
-      this.router.navigate(["banner"]);
-      localStorage.setItem("auth_token", resp.token);
-    })
-  }
-
-  //cerrar sesión
-  logOut() {
-    localStorage.removeItem("token");
-  };
-  
-  //verificar sesión de usuario
-  public get logIn(): boolean{
-    return (localStorage.getItem("token")) !== null;
+  deleteElemento(ruta: any, id: string): Observable<any> {
+    return this.http.delete(this.url + ruta + "/" + id);
   }
 
 }

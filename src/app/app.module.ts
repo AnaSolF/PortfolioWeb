@@ -16,13 +16,18 @@ import { UrlBaseService } from './Services/url-base.service';
 import { AuthService } from './Services/auth.service';
 import { ContactComponent } from './Components/contact/contact.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModalComponent } from './Components/modal/modal.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { EditComponent } from './Page/edit/edit.component';
 import { AgregarComponent } from './Page/agregar/agregar.component';
 import { NavBarComponent } from './Page/nav-bar/nav-bar.component';
-
+import { MiCuentaComponent } from './Components/mi-cuenta/mi-cuenta.component';
+import { EditFormComponent } from './Page/edit-form/edit-form.component';
+import { EditProjectComponent } from './Page/edit-project/edit-project.component';
+import { AgregarProComponent } from './Page/agregar-pro/agregar-pro.component';
+import { AgregarFormComponent } from './Page/agregar-form/agregar-form.component';
+import { ButtonsComponent } from './Page/buttons/buttons.component';
 
 
 @NgModule({
@@ -40,7 +45,13 @@ import { NavBarComponent } from './Page/nav-bar/nav-bar.component';
     ModalComponent,
     EditComponent,
     AgregarComponent,
-    NavBarComponent
+    NavBarComponent,
+    MiCuentaComponent,
+    EditFormComponent,
+    EditProjectComponent,
+    AgregarProComponent,
+    AgregarFormComponent,
+    ButtonsComponent
   ],
 
   imports: [
@@ -66,8 +77,14 @@ import { NavBarComponent } from './Page/nav-bar/nav-bar.component';
     UrlBaseService,
     NgbModalConfig,
     NgbModal,
-    AuthService //Ver si usar
+    AuthService, //Ver si usar
+    ReactiveFormsModule,
   ],
+
+  exports: [
+    ReactiveFormsModule,
+  ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

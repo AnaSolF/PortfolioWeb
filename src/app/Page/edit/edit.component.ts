@@ -12,14 +12,14 @@ export class EditComponent implements OnInit {
   id: string = "";
   skillActual: any = { id: "", tarea: "", porcentaje: "" };
   ruta: string = "tareas";
-  @Input()
-  switch: boolean = true;
-  @Input()
-  mostrar: boolean = false;
-  @Input()
-  titulo: string = "Buenos días";
-  lista: any;
-  mostrarSw = 1;
+  // @Input()
+  // switch: boolean = true;
+  // @Input()
+  // mostrar: boolean = false;
+  // @Input()
+  // titulo: string = "Buenos días";
+  // lista: any;
+  // mostrarSw = 1;
   // @Input()
   // nombre = '';
   // @Input()
@@ -44,8 +44,8 @@ export class EditComponent implements OnInit {
       )
   }
 
-  edit() {
-    this.switch = !this.switch;
-  }
+  // edit() {
+  //   this.switch = !this.switch;
+  // }
 
 }

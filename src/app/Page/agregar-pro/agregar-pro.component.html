@@ -1,0 +1,21 @@
+<div class="container">
+    <h2>Agregar proyecto</h2>
+        <form id="formAgregar">
+            <div class="mb-3">
+              <label class="form-label">Nuevo Proyecto</label>
+              <input type="text" class="form-control" id="destacado" name="destacado" [(ngModel)]="nuevoPro.destacado">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Título</label>
+              <input type="text" class="form-control" id="titulo" name="titulo" [(ngModel)]="nuevoPro.titulo">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Texto</label>
+                <input type="text" class="form-control" id="texto" name="texto" [(ngModel)]="nuevoPro.texto">
+              </div>
+            <div class="buttons"><button class="btn btn-primary" (click)="agregarPro()" routerLink="proyectos">Agregar</button><button class=" btn btn-warning" routerLink="proyectos">Regresar</button></div>
+           
+          </form> 
+        
+    </div>     
+    

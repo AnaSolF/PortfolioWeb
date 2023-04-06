@@ -1,7 +1,7 @@
 <a name="Skills"></a>
 <div class="container" style="display: flex;">
-  <!-- <h2>Skills</h2> -->
-<div class="circle">
+  <h2>Skills</h2> 
+<div class="circle" style="display: flex;flex-wrap: wrap; margin-top: 50px auto;">
       <div *ngFor="let skill of lista">
         <div>{{skill.tarea}}</div>
         <div><circle-progress [percent]="skill.porcentaje" [radius]="100" [outerStrokeWidth]="16" [innerStrokeWidth]="8"
@@ -20,12 +20,14 @@
   <!-- <div *ngIf="switch==true"> -->
     
   <!-- <button class="fijo" routerLink="banner">Regresar</button> -->
-  <button class="btn btn-success" [routerLink]="['/agregar']">Nueva Skill</button><br>
   
-  <a href="arriba" style="margin-left: 48%;"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="black" class="bi bi-arrow-up-circle-fill, btn-flotante" viewBox="0 0 16 16">
+
+
+  <a href="arriba" style="margin-left: 48%;"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="red" class="bi bi-arrow-up-circle-fill, btn-flotante" viewBox="0 0 16 16">
     <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
   </svg></a>
 </div>
+<button class="btn btn-success" id="btnSkill" [routerLink]="['/agregar']">Nueva Skill</button><br>
 </div>
   <!-- [nombre]="cliente.nombre"
     [cif]="cliente.cif"

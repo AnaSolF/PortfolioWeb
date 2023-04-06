@@ -1,9 +1,48 @@
-.content{
-    width: 100%;
-    min-height: 100vh;
+.container {
+  /* background-color: #191b1f; */
+  background-image: url(/assets/Images/background-313415.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  
 }
 
-ngb-carousel {
+.cont {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10%;
+  width: 100%;
+}
+
+.card {
+  width: 300px;
+  height: 300px;
+  ;
+  margin: 30px auto;
+  padding-left: 10px;
+  background-image: url(/assets/Images/Fon.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media screen and (min-width: 800px) {
+  .cont {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .card {
+    width: 280px;
+    height: 250px;
+    margin: 20px;
+  }
+}
+
+
+/*ngb-carousel {
     max-width: 900px;
     margin: 30px auto;
     
@@ -55,19 +94,19 @@ ngb-carousel {
     width: 100%;
     display: flex;
   } */
-  
-  h2{
+
+/* h2{
     background-color: azure;
     border-radius: 20px;
     margin: 30px 30px;
-  }
-  
-   /* #ti{
+  } */
+
+/* #ti{
     padding: 10px 0px 30px 20px;
     background-color: azure;
     border-radius: 20px;
     margin-right: 50px;
-  } */
+  } 
   
   h4{
    padding-bottom: 40%;
@@ -77,5 +116,9 @@ ngb-carousel {
   .card{
     margin: 10px auto;
   }
-  
-  
+
+  */
+
+/* .container{
+    background-color: black;
+  } */

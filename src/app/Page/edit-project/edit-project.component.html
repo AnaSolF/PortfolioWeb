@@ -1,0 +1,23 @@
+<div class="container">
+	
+    <h2>Editar</h2>
+<!-- <div class="formulario" *ngIf="switch==true" >	 -->
+<form id="formEdit">
+<div class="mb-3">
+  <label class="form-label">Nuevo Proyecto</label>
+  <input type="text" class="form-control" id="destacado" name="destacado" [(ngModel)]="proyectoActual.destacado">
+</div>
+<div class="mb-3">
+  <label class="form-label">Texto</label>
+  <input type="text" class="form-control" id="titulo" name="titulo" [(ngModel)]="proyectoActual.titulo">
+</div>
+<div class="mb-3">
+    <label class="form-label">Texto</label>
+    <input type="text" class="form-control" id="texto" name="texto" [(ngModel)]="proyectoActual.texto">
+  </div>
+<div class="buttons"><button class="btn btn-success" (click)="guardar()">Editar</button>
+<button class=" btn btn-warning volver" routerLink="Proyectos">Regresar</button></div>
+
+</form>
+
+</div>

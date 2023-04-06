@@ -9,4 +9,14 @@ import { CommonModule } from '@angular/common';
     CommonModule
   ]
 })
-export class FormacionModule { }
+export class Formacion { 
+  id!: string;
+  titulo!: string;
+  descripcion!: string;
+  imagen!: string; 
+
+  constructor( id: String, titulo: String, descripcion: String, imagen: String) {
+    
+  }
+
+}

@@ -1,50 +1,26 @@
 <a name="Education"></a>
-<div class="container" id="containerDos">
-
-  <div id="content">
-    <ngb-carousel>
-     [showNavigationArrows]="true"
-   [showNavigationIndicators]="true"
-   interval = "12000",
-   [keyboard]="true"
-   [pauseOnHover]="true"
-   [wrap]="true"
-   [activeId]="'secondSlide'"
-
-     <ng-template ngbSlide>
-       <div class="picsum-img-wrapper">
-         <img src="/assets/Images/coffee-7794531_1920.jpg" alt="Angular Carousel 1">
-       </div>
-       <div class="carousel-caption">
-         <h4 >Bienvenid@s</h4>
-         <!-- <p class="PCarousel">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> -->
-       </div>
-     </ng-template>
-     <ng-template ngbSlide>
-       <div class="picsum-img-wrapper">
-         <img src="/assets/Images/doodle-7786568_1920.png" alt="Angular Carousel 2">
-       </div>
-       <div class="carousel-caption">
-         <h4>Title Goes Here</h4>
-         <!-- <p class="PCarousel">Consectetur tortor volutpat pretium.</p> -->
-       </div>
-     </ng-template>
-     <ng-template ngbSlide>
-       <div class="picsum-img-wrapper">
-         <img src="/assets/Images/sheets-7722898_1920.jpg" alt="Angular Carousel 3">
-       </div>
-       <div class="carousel-caption">
-         <h4>Title Goes Here</h4>
-         <!-- <p class="PCarousel">Consectetur tortor volutpat pretium.</p> -->
-       </div>
-     </ng-template>
-   </ngb-carousel>
-   
-   </div>
-   
-
-  <div class="Ed" *ngIf="!mostrar" >
-  <app-edit>[titulo]="titulo"</app-edit>
+<div class="container">
+  <h2>Formación</h2>
+  <div class="cont">
+  <div class="tarjeta" *ngFor="let formacion of lista">
+    <div class="card">
+      <div class="card-header">
+        {{formacion.imagen}}
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">{{formacion.titulo}}</h5>
+        <p class="card-text">{{formacion.descripcion}}
+      </div>
+      <!-- <button class="fijo" routerLink="banner">Regresar</button> -->
+    </div>
+    <br>
+    <div *ngIf="mostrar==false">
+    <button class="hidden" (click)="eliminar(formacion.id)"><i class="bi bi-trash"></i></button>
+    <button class="hidden" [routerLink]="['/edit-form', formacion.id]"><i class="bi bi-pencil-square"></i></button>
+  </div>
+  </div>
 </div>
-  <button class="btn btn-danger">Editar</button>
+  <div *ngIf="mostrar==false">
+  <button class="btn btn-danger" [routerLink]="['/agregar-form']">Agregar</button>
+</div>
 </div>

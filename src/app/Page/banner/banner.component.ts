@@ -14,14 +14,16 @@ export class BannerComponent {
   message: any;
   myModal: any;
   data: any;
+  mostrar: boolean = false;
   @Input()
-  childMessage: string = "Login";
-
+  childMessage: string = "Login";//ver
   constructor(private modalService: NgbModal) { }
 
   openModal() {
     this.modalService.open(this.content)
   };
 
-
+  mostrarButtons() {
+    this.mostrar = !this.mostrar;
+  }
 }
