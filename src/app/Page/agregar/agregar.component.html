@@ -1,6 +1,6 @@
-<div class="container" id="containerDos">
-
-    <form id="formAgregar" style="margin-top: 25%;">
+<div class="container">
+<h2>Agregar Skill</h2>
+    <form id="formAgregar">
         <div class="mb-3">
           <label class="form-label">New Skill</label>
           <input type="text" class="form-control" id="tarea" name="tarea" [(ngModel)]="nuevaSkill.tarea">
@@ -9,6 +9,8 @@
           <label class="form-label">Porcentaje</label>
           <input type="number" class="form-control" id="porcentaje" name="porcentaje" [(ngModel)]="nuevaSkill.porcentaje">
         </div>
-        <button class="btn btn-primary" (click)="agregarSkill()" routerLink="skills">Agregar</button>
+        <div class="buttons"><button class="btn btn-primary" (click)="agregarSkill()" routerLink="skills">Agregar</button><button class=" btn btn-warning" routerLink="skills">Regresar</button></div>
+       
       </form> 
+    
 </div>     

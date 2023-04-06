@@ -1,12 +1,67 @@
-.container {
-    color: white;
+.container{
+    background-image: url(/assets/Images/rain-316580_1280.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    width: 100%;
+}
+
+.circle {
+    color: white !important;
     width: 100%;
     display: flex;
-    background-color: black;
     flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.circle {
+    color:white;
 }
 
 #btnSkill{
-    width: 30%;
-    margin: 50px auto;
+ float: right;
 }
+
+.btn-flotante {
+    position: fixed;
+    bottom: 100px;
+    z-index: 99;
+    left: 87%;
+}
+
+.btn-flotante a {
+    text-decoration: none;
+}
+
+.tarea{
+    color:#78C000;
+    margin-left: 30px;
+    background-image: url(/assets/Images/Fon.png);
+    text-align: center;
+    padding-bottom: 40px;
+    border-radius: 10px;
+}
+
+.porcentaje{
+    color: white !important;
+   
+}
+
+
+/* @media screen and (min-width: 800px) {
+    .circle {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    } 
+    
+    .tarea{
+    padding-top: 50px;
+    }
+
+    #btnSkill{
+        width: 20%;
+    }
+} */

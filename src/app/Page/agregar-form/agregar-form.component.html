@@ -1,0 +1,22 @@
+<div class="container">
+    <h2>Agregar Skill</h2>
+        <form id="formAgregar">
+            <div class="mb-3">
+                <div class="mb-3">
+                    <label class="form-label">Imagen</label>
+                    <input type="text" class="form-control" id="imagen" name="imagen" [(ngModel)]="nuevaForm.imagen">
+                  </div>
+              <label class="form-label">Título</label>
+              <input type="text" class="form-control" id="titulo" name="titulo" [(ngModel)]="nuevaForm.titulo">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Descripción</label>
+              <input type="text" class="form-control" id="descripcion" name="descripcion" [(ngModel)]="nuevaForm.descripcion">
+            </div>
+            <div class="buttons">
+            <button class="btn btn-primary" (click)="agregarForm()" routerLink="skills">Agregar</button>
+            <button class=" btn btn-warning" routerLink="formacion">Regresar</button></div>
+           
+          </form> 
+        
+    </div>     
