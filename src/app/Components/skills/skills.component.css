@@ -5,6 +5,7 @@
     background-attachment: fixed;
     background-size: cover;
     width: 100%;
+    min-height: 100vh;
 }
 
 .circle {
@@ -50,11 +51,12 @@
 }
 
 
-/* @media screen and (min-width: 800px) {
+@media screen and (min-width: 800px) {
     .circle {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
+        margin-top: 80px;
     } 
     
     .tarea{
@@ -64,4 +66,11 @@
     #btnSkill{
         width: 20%;
     }
-} */
+
+    .cont {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        min-height: 100vh;
+    } 
+}

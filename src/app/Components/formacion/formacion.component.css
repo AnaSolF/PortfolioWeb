@@ -5,14 +5,9 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  
-}
-
-.cont {
   display: flex;
   flex-direction: column;
-  margin-top: 10%;
-  width: 100%;
+  min-height: 100vh;
 }
 
 .card {
@@ -28,17 +23,17 @@
 }
 
 @media screen and (min-width: 800px) {
-  .cont {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-
   .card {
     width: 280px;
     height: 250px;
     margin: 20px;
   }
+  .cont {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    min-height: 100vh;
+} 
 }
 
 
