@@ -1,6 +1,6 @@
-import { ThisReceiver } from '@angular/compiler';
-import { Component } from '@angular/core';
-import { NgbNavConfig, NgbNavModule, NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { RegisterModule } from 'src/app/Models/register/register.module';
 import { AuthService } from 'src/app/Services/auth.service';
 import { PortfolioService } from 'src/app/Services/portfolio.service';
@@ -8,30 +8,61 @@ import { PortfolioService } from 'src/app/Services/portfolio.service';
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
-  styleUrls: ['./nav-bar.component.css'],
-	// standalone: true,
-	
-	providers: [NgbNavConfig], // add NgbNavConfig to the component providers
+  styleUrls: ['./nav-bar.component.css']
 })
-export class NavBarComponent  {
-	ruta: string = "login";
-	registro: RegisterModule = { email: "", password: "" };
-	mostrar!: boolean;
-	constructor(config: NgbNavConfig,
-	private portfolioService: PortfolioService, private authService : AuthService) {
-		// customize default values of navs used by this component tree
-		config.destroyOnHide = false;
-		config.roles = false;	
-	}
+export class NavBarComponent implements OnInit {
+  content: any;
+  title!: string;
+  message: any;
+  myModal: any;
+  data: any;
+  mostrar: boolean = false;
+  token: any;
+  ruta: string = "authenticate";
+  id!: any;
+  modeloActual: RegisterModule = { email: "", password: "", token: 0 };
+  @Input()
+  childMessage!: any
+  @Input()
+  messageHome!: any;
+  state!: any;
+  @Input()
+  mensajeBoton: string = "";
 
-	mostrarButtons() {
-		this.mostrar = !this.mostrar;
-	  }
+  constructor(
+    private modalService: NgbModal,
+    private portfolioService: PortfolioService,
+    private authService: AuthService,
+    private router: Router
+  ) { }
 
-	btnLog() { 
-		this.authService.logIn()
-		
-	}
-  
+  ngOnInit(): void {
+    this.mostrarBtn()
+  }
 
+  openModal() {
+    this.modalService.open(this.content)
+  };
+
+
+  mostrarBtn() {
+    this.authService.mostrarButtons().then((valorMostrar) => {
+      this.mostrar = valorMostrar;
+    });
+  }
+
+  //cerrar sesión
+  logOut() {
+    this.messageHome == true
+    localStorage.removeItem("token_auth");
+    this.reloadPage()
+  }
+
+  registro() {
+    this.router.navigate(["/register"])
+  }
+
+  reloadPage() {
+    window.location.reload();
+  }
 }

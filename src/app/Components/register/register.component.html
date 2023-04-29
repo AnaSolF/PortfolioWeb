@@ -1,29 +1,33 @@
-<a name="Register"></a>
-<div class="container" style="display: flex; flex-direction: column;">
-<div class="regForm">
+<div class="cont" style="display: flex; flex-direction: column;">
+  <div class="regForm">
     <form>
       <div class="mb-3">
         <label for="exampleInputEmail" class="form-label">Correo electrónico</label>
-        <input required type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" [(ngModel)]="datosRegistrados.email">
+        <input required type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+          name="email" [(ngModel)]="datosRegistrados.email">
         <div id="emailHelp" class="form-text">Nunca compartiremos su correo electrónico con nadie más.</div>
       </div>
       <div class="mb-3">
         <label for="exampleInputPassword5" class="form-label">Contraseña</label>
-        <input required type="password" class="form-control" id="exampleInputPassword3" name="password" [(ngModel)]="datosRegistrados.password">
+        <input required type="password" class="form-control" id="exampleInputPassword3" name="password"
+          [(ngModel)]="datosRegistrados.password">
       </div>
       <div class="mb-3">
         <label for="exampleInputPassword" class="form-label">Repita su contraseña</label>
-        <input  required type="password" class="form-control" id="exampleInputPassword4" name="password" [(ngModel)]="confirmPassword">
+        <input required type="password" class="form-control" id="exampleInputPassword4" name="password"
+          [(ngModel)]="confirmPassword">
       </div>
-      <button type="submit" class="btn btn-info" style=" width: 100%; margin-top: 20px;" (click)="registro()">Registrarme</button>
+      <button type="submit" class="btn btn-info" style=" width: 100%; margin-top: 20px;"
+        (click)="registro()">Registrarme</button>
       <p class="small" style="padding-top: 10px;">Olvidó su usuario y/o contraseña?</p>
     </form>
-</div>
-<div class="crear">
-  <div class="quest">Ya tienes una cuenta?</div>
-  <button class="btn btn-warning ancho"><app-modal></app-modal></button>
-  <div class="nav-item" id="aLog">
-    <p class="small">Al iniciar sesión acepta nuestros términos de uso.</p>
+  </div>
+  <div class="crear">
+    <div class="quest">Ya tienes una cuenta?</div>
+    <a style="color: black; margin: 0 auto;"><app-modal></app-modal></a>
+    <div class="nav-item" id="aLog">
+      <p class="small">Al iniciar sesión acepta nuestros términos de uso.</p>
+    </div>
   </div>
 </div>
-</div>
+<app-btn-fixed></app-btn-fixed>

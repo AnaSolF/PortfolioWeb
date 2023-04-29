@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Skills } from 'src/app/Models/skills/skills.module';
+// import { Skills} from 'src/app/Models/skills/skills.module';
 import { PortfolioService } from 'src/app/Services/portfolio.service';
 
 @Component({
@@ -40,7 +40,8 @@ export class EditComponent implements OnInit {
     this.portfolioService.editarElemento(this.ruta, this.id, this.skillActual).subscribe(
       res => {
         this.skillActual = res
-         this.router.navigate(["/skills"])},
+        this.router.navigate(["/skills"])
+      },
       )
   }
 

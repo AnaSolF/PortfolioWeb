@@ -1,117 +1,12 @@
 <div class="contentBanner" id="banner"><a href="#arriba"></a>
 
   <video autoplay oncanplay="this.play()" onloadedmetadata="this.muted = true" loop id="myVideo"> 
-      <source src="/assets/Images/las-lineas-46765.mp4" type="video/mp4">
+      <source src="/assets/Images/cubo-81185 (1).mp4" type="video/mp4">
     </video>
-  <nav class="navbar navbar-expand-lg navbar-dark" >
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#"><img src="/assets/Images/APLogo-20-20.png" alt="logo" id="logoAp"
-          style="width: 130px;height: 100px; margin-left: 30px; margin-bottom: 5px;"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
-        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation" style="margin-right: 30px
-      ;">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li *ngIf="mostrar== true">
-            <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white"
-                class="bi bi-box-arrow-left" viewBox="0 0 16 16">
-                <path fill-rule="evenodd"
-                  d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z" />
-                <path fill-rule="evenodd"
-                  d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z" />
-              </svg></a>
-          </li>
-
-          <li class="nav-item" id="aLog">
-            <app-modal #login></app-modal>
-          </li>
-
-          <li class="nav-item">
-            <a href="#about-me">About Me</a>
-          </li>
-
-          <li class="nav-item" routerLink="register">
-            Register
-          </li>
-
-          <li class="nav-item">
-            <a href="#Education">Formación</a>
-
-          <li class="nav-item">
-            <a href="#Proyectos">Proyectos</a>
-          </li>
-
-          <li class="nav-item">
-            <a href="#Skills">Skills</a>
-          </li>
-
-          <li class="nav-item">
-            <a href="#Contact">Contact</a>
-          </li>
-        </ul>
-
-      </div>
-    </div>
-  </nav>
-
-  <nav id="bar">
-    <div class="logo"><img src="/assets/Images/APLogo-20-20.png" alt="logo"></div>
-
-    <ul class="NavHome">
-      <li class="nav-item" id="aLog">
-        <app-modal></app-modal>
-      </li>
-      <li class="nav-item">
-        <a href="#about-me">About Me</a>
-      </li>
-
-      <li class="nav-item" routerLink="register">
-        Register
-      </li>
-
-      <li class="nav-item">
-        <a href="#Education">Formación</a>
-
-      <li class="nav-item">
-        <a href="#Proyectos">Proyectos</a>
-      </li>
-
-      <li class="nav-item">
-        <a href="#Skills">Skills</a>
-      </li>
-
-      <li class="nav-item">
-        <a href="#Contact">Contact</a>
-      </li>
-      <li *ngIf="mostrar== true">
-        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white"
-            class="bi bi-box-arrow-left" viewBox="0 0 16 16">
-            <path fill-rule="evenodd"
-              d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z" />
-            <path fill-rule="evenodd"
-              d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z" />
-          </svg>
-        </a>
- </li>
-
-    </ul>
-  </nav>
+    <app-nav-bar [childMessage]="parentMessage" [mensajeBoton]="buttonMessage"></app-nav-bar>
 
   <div class="LogoWhite animate__animated animate__bounce" >
-    
-    <!-- <img src="/assets/Images/sunset-3480.gif" alt="sun" id="sun"> -->
-    <img src="/assets/Images/DarkLogoXL.png" alt="LogoWhite"
-    id="LW" class="efecto-espejo" ></div>
+
+    <img src="/assets/Images/logoLarge1.png" alt="LogoWhite"
+    id="LW"></div>
 </div>
-
-
-<div class="containerTres">
-  <app-about-me></app-about-me>
-  <app-formacion></app-formacion>
-  <app-proyectos></app-proyectos>
-  <app-skills></app-skills>
-</div>
-
-<app-footer></app-footer>

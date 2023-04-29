@@ -21,12 +21,15 @@ import { ModalComponent } from './Components/modal/modal.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { EditComponent } from './Page/edit/edit.component';
 import { AgregarComponent } from './Page/agregar/agregar.component';
-import { NavBarComponent } from './Page/nav-bar/nav-bar.component';
 import { EditFormComponent } from './Page/edit-form/edit-form.component';
 import { EditProjectComponent } from './Page/edit-project/edit-project.component';
 import { AgregarProComponent } from './Page/agregar-pro/agregar-pro.component';
 import { AgregarFormComponent } from './Page/agregar-form/agregar-form.component';
 import { ButtonsComponent } from './Page/buttons/buttons.component';
+import { BtnFixedComponent } from './Page/btn-fixed/btn-fixed.component';
+import { MiCuentaComponent } from './Components/mi-cuenta/mi-cuenta.component';
+import { NavBarComponent } from './Page/nav-bar/nav-bar.component';
+
 
 @NgModule({
   declarations: [
@@ -43,12 +46,14 @@ import { ButtonsComponent } from './Page/buttons/buttons.component';
     ModalComponent,
     EditComponent,
     AgregarComponent,
-    NavBarComponent,
     EditFormComponent,
     EditProjectComponent,
     AgregarProComponent,
     AgregarFormComponent,
     ButtonsComponent,
+    BtnFixedComponent,
+    MiCuentaComponent,
+    NavBarComponent,
   ],
 
   imports: [
@@ -56,7 +61,7 @@ import { ButtonsComponent } from './Page/buttons/buttons.component';
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
-    FormsModule, 
+    FormsModule,
     NgbModalModule,
     NgCircleProgressModule.forRoot({
       // set defaults here

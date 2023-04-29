@@ -9,19 +9,16 @@ import { PortfolioService } from 'src/app/Services/portfolio.service';
   styleUrls: ['./edit-form.component.css']
 })
 export class EditFormComponent implements OnInit {
-  
-  
   ruta: string = "formacion";
   formActual: Formacion = { id: "", titulo: "", descripcion: "", imagen: "" };
   id!: string;
 
-
-  constructor( private portfolioService: PortfolioService, private activatedRoute: ActivatedRoute, private router: Router) { }
+  constructor(private portfolioService: PortfolioService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.id = this.activatedRoute.snapshot.params['id'];
     this.portfolioService.getUnElemento(this.ruta, this.id).subscribe(
-        res => { this.formActual = res },
+      res => { this.formActual = res },
     )
   }
 
@@ -29,8 +26,9 @@ export class EditFormComponent implements OnInit {
     this.portfolioService.editarElemento(this.ruta, this.id, this.formActual).subscribe(
       res => {
         this.formActual = res
-         this.router.navigate(["/formacion"])},
-      )
+        this.router.navigate(["/formacion"])
+      },
+    )
   }
 
 }

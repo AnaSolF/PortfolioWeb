@@ -8,7 +8,7 @@ import { PortfolioService } from 'src/app/Services/portfolio.service';
   templateUrl: './agregar-pro.component.html',
   styleUrls: ['./agregar-pro.component.css']
 })
-export class AgregarProComponent implements OnInit{
+export class AgregarProComponent implements OnInit {
 
   nuevoPro: Projects = { id: "", destacado: "", titulo: "", texto: "" };
   ruta: string = "proyectos"
@@ -16,9 +16,10 @@ export class AgregarProComponent implements OnInit{
 
   agregarPro() {
     this.portfolioService.saveElemento(this.ruta, this.nuevoPro).subscribe(
-      res =>this.router.navigate(["/proyectos"])
+      res => this.router.navigate(["/proyectos"])
     )
   }
+
   ngOnInit(): void {
   }
 

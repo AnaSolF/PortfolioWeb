@@ -1,82 +1,83 @@
- .container{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    height: 70vh;
-    background-image: url(/assets/Images/Deep\ Sea\ Space.jpg);
-} 
-
-h2{
+.cont {
     width: 100%;
+    background-color: rgba(0, 0, 0, 0.304);
+    
 }
 
-.regForm{
-width: 35%;
-margin-left: 50%;
-margin-top: 1%;
-background-color: whitesmoke;
-padding: 6% 5% 3% 5%;
-height: 70vh;
-color: black;
+h6 {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 20px;
 }
 
-#floatingInput{
+.regForm {
+    width: 80%;
+    background-color: whitesmoke;
+    padding: 3% 5% 3% 5%;
+    height: 70vh;
+    margin: 0 auto;
+    color: black;
+    box-shadow: -10px 9px 20px -6px rgba(151, 159, 162, 0.75);
+    -webkit-box-shadow: -10px 9px 20px -6px rgba(148, 153, 155, 0.75);
+    -moz-box-shadow: -10px 9px 20px -6px rgba(148, 153, 155, 0.75);
+}
+
+#floatingInput {
     margin-bottom: 10%;
 }
 
-.crear{
+.crear {
     display: flex;
     flex-direction: column;
-    background-color: rgb(241, 241, 225);
-    width: 35%;
-    height:55%;
+    background-color: rgb(214, 214, 183);
+    width: 80%;
+    height: 55%;
+    margin: 0 auto;
     padding: 1% 20px 0px 20px;
-    margin-left: 50%;
+
 }
 
 .quest,
 .nav-item {
     font-size: smaller;
     color: black !important;
-    margin-top: 30px;
+    padding-top: 30px;
     padding-bottom: 10px;
-    padding-left: 40px;
+    margin:  0 auto;
+    text-align: center;
 }
+ 
 
-
-.small{
+.small {
     font-size: x-small;
     text-align: center;
 }
 
-.ancho{
-    width: 80%;
-    margin-left: 10%;
- }
-
- .form-text{
+.form-text {
     font-size: x-small;
- }
+}
 
 
-@media screen and (max-width: 800px) {
+@media only screen and (min-width: 800px) {
+    .cont {
+        width: 100%;
+        margin: 0 auto;
+    }
 
-    .container{
-        height: 70vh;
-        flex-direction: column;
-        padding-top: 60px;
-    } 
+    h6 {
+        padding-bottom: 30px;
+    }
 
-    .regForm{
-        width: 80%;
+    .regForm {
+        width: 30%;
         margin: 0 auto;
         height: 70vh;
     }
-       
-    .crear{
-        width:80%;
+
+    .crear {
+        width: 30%;
         height: 50%;
         padding: 8px;
         margin: 0 auto;
-    } 
-} 
+    }
+}

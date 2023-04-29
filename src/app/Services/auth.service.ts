@@ -1,4 +1,7 @@
 import { EventEmitter, Injectable, Output } from '@angular/core';
+import { RegisterModule } from '../Models/register/register.module';
+import { PortfolioService } from 'src/app/Services/portfolio.service';
+import { Location } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -6,39 +9,52 @@ import { EventEmitter, Injectable, Output } from '@angular/core';
 export class AuthService {
   token!: any;
   mostrar!: any;
-  constructor() { }
-  
-
-  mostrarButtons() {
-		this.mostrar = !this.mostrar;
-	  }
+  location: any;
+  idUsuario: any;
+  rutaAuthenticate: any;
+  usuario: any;
+  modelo: RegisterModule = { email: "", password: "", token: 0 };
+  lista: any = [];
+  constructor(private portfolioService: PortfolioService) { }
 
   logIn() {
-    this.token =  localStorage.getItem ( "auth_token" );
+    this.token = localStorage.getItem("auth_token");
     if (this.token != null) {
-      this.mostrar==true
-    } 
+      this.mostrar == true
+    }
     return this.mostrar;
   }
   
-  //cerrar sesión
-  logOut() {
-  };
 
-  // visible: boolean = true;
-  // @Output() open: EventEmitter<any> = new EventEmitter();
-  // @Output() close: EventEmitter<any> = new EventEmitter();
+  mostrarButtons(): Promise<boolean> {
+    return Promise.all([
+      localStorage.getItem("id"),
+      this.compararToken("authenticate", localStorage.getItem("id") ?? "0")
+    ]).then(([id, tokenValido]) => {
+      return id !== null && id !== "0" && tokenValido;
+     
+    });
+  }
 
-  // // <button class="Buttons" (click)="toggle()">Cerrar</button>
-  // toggle() {
-  //   this.visible = !this.visible;
-  //   if (this.visible) {
-  //     this.open.emit(null);
-  //   } else {
-  //     this.close.emit(null);
-  //   }
-  // }
+  compararToken(rutaAuthenticate: string, idUsuario: string): Promise<boolean> {
+    return new Promise<boolean>((resolve, reject) => {
+      this.portfolioService.getUnElemento(rutaAuthenticate, idUsuario).subscribe(
+        res => {
+          this.modelo = res;
+          this.token = localStorage.getItem("token_auth")?.toString();
+          const resultado = this.token === (this.modelo.token).toString();
+          resolve(resultado);
+        },
+        error => {
+          reject(error);
+        }
+      );
+    });
+
+  }
 }
+  
+
 
 
 	

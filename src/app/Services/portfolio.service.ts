@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { UrlBaseService } from './url-base.service';
 import { Router } from '@angular/router';
 import { Token } from '@angular/compiler';
+import { RegisterModule } from '../Models/register/register.module';
 
 @Injectable({
   providedIn: 'root'
@@ -12,10 +13,23 @@ import { Token } from '@angular/compiler';
 export class PortfolioService {
 
   urlBase!: any;
-
-  constructor(private http: HttpClient, private baseUrl: UrlBaseService, private router: Router) { }
+  id!: string;
   ruta: any;
   url = `${this.baseUrl.urlBase}`;
+  idUsuario: any;
+  rutaAuthenticate: any;
+  localStorageToken: any;
+  usuario: any;
+  modelo: RegisterModule = { email: "", password: "", token: 0 };
+  lista: any = [];
+  mostrar!: boolean;
+  token: any;
+  urlApi: any;
+
+  constructor(private http: HttpClient,
+    private baseUrl: UrlBaseService,
+    private router: Router) { }
+  
 
   getElements(ruta: any): Observable<any> {
     return this.http.get(this.url + ruta)
@@ -35,6 +49,24 @@ export class PortfolioService {
 
   deleteElemento(ruta: any, id: string): Observable<any> {
     return this.http.delete(this.url + ruta + "/" + id);
+  }
+
+    //poner en todos los componentes
+  mostrarButtons() {
+    this.mostrar = false;
+      this.idUsuario = localStorage.getItem("id") != null && localStorage.getItem("id") != "0" ? localStorage.getItem("id")?.toString() : "0";
+      this.rutaAuthenticate = "authenticate";
+      if (this.idUsuario != "0" && this.idUsuario != null) {
+        this.getUnElemento(this.rutaAuthenticate, this.idUsuario).subscribe(
+          res => {
+            this.modelo = res;
+            this.token = localStorage.getItem("token_auth")?.toString();
+            this.mostrar = this.token == (this.modelo.token).toString();
+            console.log(res);       
+          }
+        )
+      }
+      return this.mostrar;
   }
 
 }

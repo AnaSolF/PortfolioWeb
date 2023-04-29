@@ -1,88 +1,59 @@
-<a name="about-me"></a>
-
-<div class="container">
-  <h2>About me</h2>
-  <div class="cont">
-  <!--<div class="car">
-    <ngb-carousel>
-      [showNavigationArrows]="true"
-      [showNavigationIndicators]="true"
-      interval = "12000",
-      [keyboard]="true"
-      [pauseOnHover]="true"
-      [wrap]="true"
-      [activeId]="'secondSlide'"
-
-       <ng-template ngbSlide>
-        <div class="picsum-img-wrapper">
-          <img src="/assets/Images/coffee-7794531_1920.jpg" alt="Angular Carousel 1">
-        </div>
-        <div class="carousel-caption">
-          <h4>Bienvenid@s</h4>
-          
-        </div>
-      </ng-template>
-      <ng-template ngbSlide>
-        <div class="picsum-img-wrapper">
-          <img src="/assets/Images/doodle-7786568_1920.png" alt="Angular Carousel 2">
-        </div>
-        <div class="carousel-caption">
-          <h4>Title Goes Here</h4>
-          
-        </div>
-      </ng-template>
-      <ng-template ngbSlide>
-        <div class="picsum-img-wrapper">
-          <img src="/assets/Images/sheets-7722898_1920.jpg" alt="Angular Carousel 3">
-        </div>
-        <div class="carousel-caption">
-          <h4>Title Goes Here</h4>
-          
-        </div>
-      </ng-template>
-    </ngb-carousel>-->
-
-  <!-- </div>  -->
-  <div class="AM">
-    <div *ngIf="switch==true"><button class="btn btn-close" style="float: right;" (click)="edit()"></button></div>
-    <div class="sm" id="parrafo">{{nuevosDatos.parrafo}}<div *ngIf="switch==true">
-      <div class="form-floating">
-        <textarea maxlength="500" class="form-control" placeholder="Leave a comment here" id="floatingTextarea"
-          name="parrafo" [(ngModel)]="nuevosDatos.parrafo"></textarea>
-
-      </div>
-    <!-- <input type="text" class="form-control"
-      name="parrafo" [(ngModel)]="nuevosDatos.parrafo"></div> -->
-  </div>
-  <div class="sm">
-        <label for="name"><strong> Nombre: </strong></label> {{nuevosDatos.nombre}}<div class="Input"
-          *ngIf="switch==true"><input type="text" class="form-control" name="nombre" [(ngModel)]="nuevosDatos.nombre">
+<div id="imagen"></div>
+<h2 style="padding-top: 50px
+;">Sobre mí</h2>
+<div class="cont">
+  <div class="par3">
+    <div class="sm" id="parrafo">
+      <p>{{nuevosDatos.parrafo}}</p>
+      <div *ngIf="switch==true">
+        <div class="form-floating">
+          <div class="form-floating">
+            <textarea maxlength="150" class="form-control" placeholder="Leave a comment here" id="floatingTextarea"
+              name="parrafo" [(ngModel)]="nuevosDatos.parrafo"></textarea>
+            <label for="floatingTextarea">Comments</label>
+          </div>
         </div>
       </div>
-      <div class="sm"> <label for="phone"><strong> Teléfono: </strong></label> {{nuevosDatos.telefono}}<div class="Input"
-          *ngIf="switch==true"> <input type="text" class="form-control" name="telefono"
-            [(ngModel)]="nuevosDatos.telefono"></div>
-      </div>
-      <div class="sm"> <label for="city"><strong>Ciudad: </strong></label> {{nuevosDatos.ciudad}}<div  class="Input"
-          *ngIf="switch==true"><input type="text" class="form-control" name="ciudad" [(ngModel)]="nuevosDatos.ciudad">
-        </div>
-      </div>
-      <div class="sm"> <label for="country"><strong> País: </strong></label> {{nuevosDatos.pais}}<div  class="Input"
-          *ngIf="switch==true"><input type="text" class="form-control" name="pais" [(ngModel)]="nuevosDatos.pais">
-        </div>
-        <div *ngIf="mostrar== false">
-        <div *ngIf="switch==false">
-
-          <div class="sm"><button class="btn btn-warning ancho" (click)="edit()">Editar</button><br></div>
-        </div>
-      </div>
-
-      <div *ngIf="switch==true"><a href="#" class="btn btn-primary ancho" (click)="editarDatos()"
-          (click)="edit()">Guardar Cambios</a></div>
     </div>
   </div>
+  <div class="AM">
+    <div class="sm">
+      <div class="icono"><img src="/assets/Images/icons8-tarjeta-de-identificación-80.png" alt="tarjeta"></div>
+      <label for="name"><strong> Nombre: </strong></label> {{nuevosDatos.nombre}}<div class="Input"
+        *ngIf="switch==true"><input maxlength="35" type="text" class="form-control" name="nombre"
+          [(ngModel)]="nuevosDatos.nombre">
+      </div>
+    </div>
+    <div class="sm">
+      <div class="icono"> <img src="/assets/Images/icons8-agitar-teléfono-80.png" alt="celular"></div>
+      <label for="phone"><strong> Teléfono: </strong></label> {{nuevosDatos.telefono}}
+      <div class="Input" *ngIf="switch==true"> <input maxlength="35" type="text" class="form-control" name="telefono"
+          [(ngModel)]="nuevosDatos.telefono">
+      </div>
+    </div>
+    <div class="sm">
+      <div class="icono"><img src="/assets/Images/icons8-puente-80.png" alt="ciudad"></div>
+      <label for="city"><strong> Ciudad: </strong></label> {{nuevosDatos.ciudad}}<div class="Input"
+        *ngIf="switch==true"><input maxlength="35" type="text" class="form-control" name="ciudad"
+          [(ngModel)]="nuevosDatos.ciudad">
+      </div>
+    </div>
+    <div class="sm">
+      <div class="icono"><img src="/assets/Images/icons8-parlamento-80.png" alt="pais"></div>
+      <label for="country"><strong> País: </strong></label> {{nuevosDatos.pais}}<div class="Input" *ngIf="switch==true">
+        <input maxlength="35" type="text" class="form-control" name="pais" [(ngModel)]="nuevosDatos.pais">
+      </div>
+    </div>
+  </div>
+  <div class="bt">
+  <div *ngIf="mostrar==true">
+    <div *ngIf="switch==false">
+      <div><button class="btn btn-warning" (click)="edit()">Editar sección</button>
+      </div> 
+    </div>
+    <div class="sm" *ngIf="switch==true">
+      <a class="btn btn-primary " (click)="editarDatos()">Guardar Cambios</a>
+    </div>
   </div>
 </div>
 </div>
-
-<!-- <button class="fijo" routerLink="banner">Regresar</button> -->

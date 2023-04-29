@@ -1,14 +1,10 @@
 <ng-template #content let-c="close" let-d="dismiss" class="modal">
 	<div class="modal-body">
-		<button type="button" class="btn-close" aria-label="Close"(click)="d('Cross click')" style="float: right;"></button>
-		<ng-template [ngTemplateOutlet]="login"></ng-template></div>
-		<!-- <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Save</button> -->
+		<button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click')"
+			style="float: right;"></button>
+		<ng-template [ngTemplateOutlet]="login"></ng-template>
+	</div>
 	<ng-content></ng-content>
-
 </ng-template>
-
-<a (click)="open(content)" id="log">Login</a>
-
-
- <ng-template #login><app-login></app-login></ng-template>
-
+<a (click)="open(content)" id="log"><i class="bi bi-people-fill" style="font-size: 30px; color: white; "></i></a>
+<ng-template #login><app-login></app-login></ng-template>

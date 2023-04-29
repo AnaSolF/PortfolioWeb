@@ -1,49 +1,60 @@
-<div class="nav">
-    <ul ngbNav #nav="ngbNav" class="nav-tabs" style="width: 100%;">
-        <li ngbNavItem>
-            <a ngbNavLink>Mi cuenta</a>
-            <ng-template ngbNavContent>
-                <!-- <p>These navs will always stay in DOM and have no roles</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus recusandae fugit dolores excepturi
-                    porro perspiciatis commodi nesciunt doloribus eius perferendis sit amet voluptatibus, vel atque!
-                    Cumque mollitia ab libero blanditiis!
-                    Maxime quas fugit mollitia itaque, distinctio illum accusantium dolore nulla dolores perspiciatis,
-                    dolorem aspernatur ratione fuga alias consequatur voluptatem ullam natus earum quasi delectus odit!
-                    Provident adipisci eaque delectus illo?
-                    Nobis fuga eaque quos similique saepe libero repellat, voluptates tempora, soluta corporis enim
-                    distinctio at repellendus ratione perspiciatis esse ducimus? Autem odio facere voluptas, iure
-                    perferendis hic veritatis doloribus quae.
-                    Reprehenderit, pariatur? Earum unde in incidunt ut voluptatem, quisquam explicabo. Ducimus totam
-                    earum nesciunt quisquam consequuntur maiores numquam voluptatibus reprehenderit rerum, architecto in
-                    quibusdam tempore dolores. Voluptate eius earum eveniet?
-                    Ut deleniti doloremque consequuntur quasi vero, non dolores maiores a? Qui, corporis! Non,
-                    temporibus? Cum earum, obcaecati asperiores mollitia autem dolorem quidem, labore facilis soluta
-                    consequuntur tempore explicabo eum harum.</p> -->
-            </ng-template>
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><img src="/assets/Images/APLogo-20-20.png" alt="logo" id="logoAp"
+        style="width: 130px;height: 100px; margin-left: 30px; margin-bottom: 5px;"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+      aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation"
+      style="margin-right: 30px;">
+      <span><img src="/assets/Images/icons8-menú (2).gif" alt="menu"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li *ngIf="mostrar== true">
+          <a (click)="logOut()" routerLink="banner">
+            <img src="/assets/Images/acceso.png" alt="salir" id="salir" style="margin-bottom: 30px;">
+          </a>
         </li>
-        <li ngbNavItem>
-            <a ngbNavLink (click)="btnLog()">Editar secciones</a>
-            <ng-template ngbNavContent>
-                <div class="containerTres">
-                    <app-about-me mostrar="true"><button class="btn btn-warning ancho" (click)="mostrarButtons()"></button></app-about-me>
-                    <app-formacion></app-formacion>
-                    <app-proyectos></app-proyectos>
-                    <app-skills></app-skills>
-                    <app-footer></app-footer> 
-                </div>
-            </ng-template>
+        <li class="nav-log" id="aLog" *ngIf="mostrar ==false">
+          <app-modal #login></app-modal>
         </li>
-        <li ngbNavItem>
-            <a ngbNavLink routerLink="banner"> <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
-                    fill="white" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd"
-                        d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z" />
-                    <path fill-rule="evenodd"
-                        d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z" />
-                </svg>
-            </a>
+        <li class="nav-i" *ngIf="mostrar ==false">
+          <a (click)="registro()"> Registro</a>
         </li>
-    </ul>
-
-    <div [ngbNavOutlet]="nav" class="mt-2"></div>
-</div>
+        <li class="nav-i" routerLink="contact">
+          Contácto
+        </li>
+        <li class="nav-i" *ngIf="mostrar == (childMessage==false)" routerLink="mi-cuenta">
+          {{mensajeBoton}}
+        </li>
+        <li class="nav-i invitado" *ngIf="mostrar == childMessage" routerLink="mi-cuenta">
+          {{mensajeBoton}}
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<nav id="bar">
+  <div class="logo"><img src="/assets/Images/APLogo-20-20.png" alt="logo"></div>
+  <ul class="NavHome">
+    <li class="nav-item" id="aLog" *ngIf="mostrar ==false">
+      <app-modal></app-modal>
+    </li>
+    <li class="nav-item" *ngIf="mostrar ==false">
+      <a routerLink="register" (click)="registro()">Registro</a>
+    </li>
+    <li class="nav-item" *ngIf="mostrar == (childMessage==false)">
+      <a routerLink="mi-cuenta">{{mensajeBoton}}</a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="contact">Contácto</a>
+    </li>
+    <li class="nav-item invitado" *ngIf="mostrar == childMessage">
+      <a routerLink="mi-cuenta">{{mensajeBoton}}</a>
+    </li>
+    <li class="nav-item" *ngIf="mostrar== true">
+      <a (click)="logOut()" routerLink="banner">
+        <img src="/assets/Images/acceso.png" alt="salir" id="sal">
+      </a>
+    </li>
+  </ul>
+</nav>

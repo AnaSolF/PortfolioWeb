@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { Formacion } from 'src/app/Models/formacion/formacion.module';
+import { AuthService } from 'src/app/Services/auth.service';
 import { PortfolioService } from 'src/app/Services/portfolio.service';
 
 @Component({
@@ -15,15 +16,20 @@ export class FormacionComponent {
   nuevaFormacion: Formacion = { id: "", titulo: "", descripcion: "", imagen: "" };
 
   ruta: any = "formacion";
-  id: string = "";
-  mostrar: boolean= true;
+  mostrar!: boolean;
 
-  constructor(private portfolioService: PortfolioService,
-    private router: Router) { }
+  constructor(
+    private portfolioService: PortfolioService,
+    private router: Router,
+    private auth: AuthService
+  ) { }
   
-    ngOnInit(): void {
-      this.listarForm();
-    }
+  ngOnInit(): void {
+    this.auth.mostrarButtons().then((valorMostrar) => {
+      this.mostrar = valorMostrar;
+    }); 
+    this.listarForm();
+  }
   
   listarForm() {
     this.portfolioService.getElements(this.ruta).subscribe(
@@ -38,13 +44,4 @@ export class FormacionComponent {
       res => { this.ngOnInit() },
     );
   }
-
-  mostrarButtons() {
-    this.mostrar = !this.mostrar;
-  }
-  
-  guardarImg() {
-    
-  }
-
 }

@@ -1,76 +1,56 @@
-.container{
-    background-image: url(/assets/Images/rain-316580_1280.jpg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    width: 100%;
-    min-height: 100vh;
-}
 
 .circle {
-    color: white !important;
+    color: #222748;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
-}
-
-.circle {
-    color:white;
-}
-
-#btnSkill{
- float: right;
-}
-
-.btn-flotante {
-    position: fixed;
-    bottom: 100px;
-    z-index: 99;
-    left: 87%;
-}
-
-.btn-flotante a {
-    text-decoration: none;
-}
-
-.tarea{
-    color:#78C000;
-    margin-left: 30px;
-    background-image: url(/assets/Images/Fon.png);
-    text-align: center;
-    padding-bottom: 40px;
+    justify-content: space-around;
+    flex-wrap: wrap;
     border-radius: 10px;
+    margin: 0 auto;
 }
 
-.porcentaje{
+.botones {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.tarea {
+    color: #222748;
+    text-align: center;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    border-radius: 10px;
+    font-size: x-large;
+}
+
+.porcentaje {
     color: white !important;
-   
 }
 
+#aSk {
+    text-align: center;
+}
 
-@media screen and (min-width: 800px) {
+.bAgregar {
+    text-align: center;
+}
+
+img{
+    padding-top: 80px;
+}
+
+@media only screen and (min-width: 800px) {
     .circle {
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: center;
-        margin-top: 80px;
-    } 
-    
-    .tarea{
-    padding-top: 50px;
-    }
-
-    #btnSkill{
-        width: 20%;
     }
 
     .cont {
         display: flex;
         flex-direction: row;
         justify-content: center;
-        min-height: 100vh;
-    } 
+    }
 }

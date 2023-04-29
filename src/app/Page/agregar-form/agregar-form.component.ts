@@ -8,17 +8,20 @@ import { PortfolioService } from 'src/app/Services/portfolio.service';
   templateUrl: './agregar-form.component.html',
   styleUrls: ['./agregar-form.component.css']
 })
-export class AgregarFormComponent implements OnInit{
-  nuevaForm : Formacion = { id: "", titulo: "", descripcion: "", imagen: "" };
+
+export class AgregarFormComponent implements OnInit {
+  nuevaForm: Formacion = { id: "", titulo: "", descripcion: "", imagen: "" };
   ruta: string = "formacion";
 
-  constructor(private portfolioService: PortfolioService, private router: Router) { }
+  constructor(
+    private portfolioService: PortfolioService,
+    private router: Router) { }
 
   ngOnInit(): void { }
-  
+
   agregarForm() {
     this.portfolioService.saveElemento(this.ruta, this.nuevaForm).subscribe(
-      res =>this.router.navigate(["/formacion"])
+      res => this.router.navigate(["/formacion"])
     )
   }
 

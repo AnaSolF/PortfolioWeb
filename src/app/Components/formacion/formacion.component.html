@@ -1,26 +1,31 @@
-<a name="Education"></a>
 <div class="container">
   <h2>Formación</h2>
   <div class="cont">
-  <div class="tarjeta" *ngFor="let formacion of lista">
-    <div class="card">
-      <div class="card-header">
-        {{formacion.imagen}}
+    <div class="tarjeta" *ngFor="let formacion of lista">
+      <div class="card">
+        <div class="card-header">
+          <!-- {{formacion.imagen}}  -->
+          <img src="/assets/Images/formacion.png" alt="formacion" style="width: 70px; height: 70px;">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{formacion.titulo}}</h5>
+          <p class="card-text">{{formacion.descripcion}}
+        </div>
       </div>
-      <div class="card-body">
-        <h5 class="card-title">{{formacion.titulo}}</h5>
-        <p class="card-text">{{formacion.descripcion}}
+      <br>
+      <div *ngIf="mostrar == true" class="btnEdiciones">
+        <a (click)="eliminar(formacion.id)"><img class="icon" src="/assets/Images/trash.png"></a>
+        <a [routerLink]="['/edit-form', formacion.id]"><img class="icon" src="/assets/Images/pencil.png" alt="edit"></a>
       </div>
-      <!-- <button class="fijo" routerLink="banner">Regresar</button> -->
     </div>
-    <br>
-    <div *ngIf="mostrar==false">
-    <button class="hidden" (click)="eliminar(formacion.id)"><i class="bi bi-trash"></i></button>
-    <button class="hidden" [routerLink]="['/edit-form', formacion.id]"><i class="bi bi-pencil-square"></i></button>
+
+    </div>
+    <div class="formato">
+      <div class="bAgregar">
+        <div *ngIf="mostrar==true">
+          <a class="btnAgregar" [routerLink]="['/agregar-form']"><img src="/assets/Images/agregar.png" alt="agregar"></a>
+        </div>
+      </div>
+    </div>
   </div>
-  </div>
-</div>
-  <div *ngIf="mostrar==false">
-  <button class="btn btn-danger" [routerLink]="['/agregar-form']">Agregar</button>
-</div>
-</div>
+<app-btn-fixed></app-btn-fixed> 

@@ -1,23 +1,25 @@
-<div class="container">
-	
-    <h2>Editar</h2>
-<!-- <div class="formulario" *ngIf="switch==true" >	 -->
-<form id="formEdit">
-<div class="mb-3">
-  <label class="form-label">Destacado</label>
-  <input type="text" class="form-control" id="titulo" name="titulo" [(ngModel)]="formActual.titulo">
+<div class="fondo">
+  <form class="formEdit">
+    <div class="logoForm">
+      <img src="/assets/Images/logoLarge1.png" alt="logoLarge1">
+    </div>
+    <div class="mb-3">
+      <div class="mb-3">
+        <label class="form-label">Destacado *</label>
+        <input type="text" class="form-control" id="titulo" name="titulo" [(ngModel)]="formActual.titulo">
+      </div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Titulo *</label>
+      <input type="text" class="form-control" id="titulo" name="descripcion" [(ngModel)]="formActual.descripcion">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Descripcion *</label>
+      <input type="text" class="form-control" id="imagen" name="imagen" [(ngModel)]="formActual.imagen">
+    </div>
+    <div class="buttons">
+      <button class="btnForm" (click)="guardar()">Editar</button>
+      <button class=" btnForm" routerLink="formacion">Regresar</button>
+    </div>
+  </form>
 </div>
-<div class="mb-3">
-  <label class="form-label">Titulo</label>
-  <input type="text" class="form-control" id="titulo" name="descripcion" [(ngModel)]="formActual.descripcion">
-</div>
-<div class="mb-3">
-    <label class="form-label">Descripcion</label>
-    <input type="text" class="form-control" id="imagen" name="imagen" [(ngModel)]="formActual.imagen">
-  </div>
-<div class="buttons"><button class="btn btn-success" (click)="guardar()">Editar</button>
-<button class=" btn btn-warning volver" routerLink="formacion">Regresar</button></div>
-
-</form>
-</div>
-<!-- </div> -->

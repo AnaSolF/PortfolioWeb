@@ -1,42 +1,19 @@
-
-<!-- <div><h4>Editar</h4></div> 
-<form>
-	<div class="mb-3">
-		<label for="exampleInput" class="form-label">Skill</label>
-		<input type="email" class="form-control" id="skill" aria-describedby="emailHelp">
-	</div>
-	<div class="mb-3">
-		<label for="exampleInputUno" class="form-label">Porcentaje</label>
-		<input type="number" class="form-control" id="porcentaje">
-	</div>
-	<button type="submit" class="btn btn-primary">Guardar</button>
-</form>  -->
-<!-- <p>
-	Nombre: {{nombre}}
-	<br>
-	Cif: {{cif}}
-	<br>
-	direccion: {{direccion}}
-  </p>
- -->
- <div class="container">
-	
-		<h2>Editar</h2>
-<!-- <div class="formulario" *ngIf="switch==true" >	 -->
-<form id="formEdit">
-	<div class="mb-3">
-	  <label class="form-label">New Skill</label>
-	  <input type="text" class="form-control" id="tarea" name="tarea" [(ngModel)]="skillActual.tarea">
-	</div>
-	<div class="mb-3">
-	  <label class="form-label">Porcentaje</label>
-	  <input type="number" class="form-control" id="porcentaje" name="porcentaje" [(ngModel)]="skillActual.porcentaje">
-	</div>
-	<div class="buttons"><button class="btn btn-success" (click)="guardar()">Editar</button>
-    <button class=" btn btn-warning volver" routerLink="skills">Regresar</button></div>
-	
-  </form>
-  
+<div class="fondo">
+	<form class="formEdit">
+		<h3>Editar</h3>
+		<div class="mb-3">
+			<div class="mb-3">
+				<label class="form-label">New Skill</label>
+				<input type="text" class="form-control" id="tarea" name="tarea" [(ngModel)]="skillActual.tarea">
+			</div>
+		</div>
+		<div class="mb-3">
+			<label class="form-label">Porcentaje</label>
+			<input type="number" class="form-control" id="porcentaje" name="porcentaje"
+				[(ngModel)]="skillActual.porcentaje">
+		</div>
+		<div class="buttons"><button class="btn btn-success" (click)="guardar()">Editar</button>
+			<button class=" btn btn-warning volver" routerLink="skills">Regresar</button>
+		</div>
+	</form>
 </div>
-
-<!-- </div> -->

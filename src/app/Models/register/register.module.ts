@@ -10,6 +10,7 @@ import { CommonModule } from '@angular/common';
 export class RegisterModule {
   email: string = "";
   password: string = "";
-  
-  constructor(email: String, password: String) {}
- }
+  token: number = 0;
+
+  constructor(email: String, password: String, token: Number) { }
+}

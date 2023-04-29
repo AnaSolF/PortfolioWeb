@@ -1,25 +1,31 @@
-<a name="Proyectos"></a>
 <div class="container">
- <h2>Proyectos</h2>
- <div class="cont">
-<div class="tarjeta" *ngFor="let proyecto of lista">
-<div class="card">
-    <div class="card-header">
-      {{proyecto.destacado}}
+  <h2>Proyectos</h2>
+  <div class="cont">
+    <div class="tarjeta" *ngFor="let proyecto of lista">
+      <div class="card" style="margin-bottom: 20px;">
+        <div class="card-header">
+          <!-- {{proyectoActual.destacado}} -->
+          <img src="/assets/Images/proyecto1.png" alt="proyecto">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{proyecto.titulo}}</h5>
+          <p class="card-text">{{proyecto.texto}}
+        </div>
+      </div>
+      <div *ngIf="mostrar== true" class="btnEdiciones">
+        <a (click)="eliminar(proyecto.id)">
+        <img class="icon" src="/assets/Images/trash.png" alt="trash">
+        </a>
+        <a [routerLink]="['/edit-project', proyecto.id]"><img class="icon" src="/assets/Images/pencil.png" alt="edit"></a>
+      </div>
     </div>
-    <div class="card-body">
-      <h5 class="card-title">{{proyecto.titulo}}</h5>
-      <p class="card-text">{{proyecto.texto}}
+</div>
+<div class="formato">
+  <div class="bAgregar">
+    <div *ngIf="mostrar== true" class="bAgregar">
+      <a class="btnAgregar" [routerLink]="['/agregar-pro']"><img src="/assets/Images/agregar.png" alt="agregar"></a>
+    </div>
   </div>
-<!-- <button class="fijo" routerLink="banner">Regresar</button> -->
-
-</div>
-<div *ngIf="mostrar== true">
-<button class="hidden" [routerLink]="['/edit-project', proyecto.id]"><i class="bi bi-pencil-square"></i></button>
-<button class="hidden" (click)="eliminar(proyecto.id)"><i class="bi bi-trash"></i></button>
 </div>
 </div>
-<div *ngIf="mostrar== true">
-<button class="btn btn-primary" [routerLink]="['/agregar-pro']">Agregar proyecto</button> 
-</div>
-</div> 
+  <app-btn-fixed></app-btn-fixed>

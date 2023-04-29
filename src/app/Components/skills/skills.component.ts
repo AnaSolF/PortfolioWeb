@@ -5,8 +5,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Skills } from 'src/app/Models/skills/skills.module';
 import { PortfolioService } from 'src/app/Services/portfolio.service';
 import { NgCircleProgressModule } from 'ng-circle-progress';
-import { LoginComponent } from '../login/login.component';
-
+import { AuthService } from 'src/app/Services/auth.service';
 
 @Component({
   selector: 'app-skills',
@@ -20,21 +19,26 @@ export class SkillsComponent implements OnInit {
   @Input()
   skillActual: Skills = { id: "", tarea: "HTML", porcentaje: "80" };
   @Input()
-  nuevaSkill : Skills = { id: "", tarea: "", porcentaje: "" };
+  nuevaSkill: Skills = { id: "", tarea: "", porcentaje: "" };
   ruta: any = "tareas";
   id: string = "";
-  // content: any;
   switch: boolean = false;
   porcentaje!: number;
   content: any = "";
   titulo: any = "Editar";
-  mostrar: boolean = false;
+  mostrar!: boolean;
 
-  constructor(private portfolioService: PortfolioService,
+  constructor(
+    private portfolioService: PortfolioService,
+    private auth: AuthService,
     private router: Router,
-    private modalService: NgbModal) { };
+    private modalService: NgbModal
+  ) { };
 
   ngOnInit(): void {
+    this.auth.mostrarButtons().then((valorMostrar) => {
+      this.mostrar = valorMostrar;
+    });
     this.listarSkills();
   }
 
@@ -59,11 +63,5 @@ export class SkillsComponent implements OnInit {
   edit() {
     this.switch = !this.switch;
   }
-
-  mostrarButtons() {
-    this.mostrar = !this.mostrar;
-  }
-
-
 }
 

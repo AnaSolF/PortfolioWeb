@@ -13,7 +13,9 @@ export class EditProjectComponent implements OnInit{
   proyectoActual: Projects = { id: "", destacado: "", titulo: "", texto: "" };
   id!: string;
   ruta : string = "proyectos"
-  constructor( private portfolioService: PortfolioService, private activatedRoute: ActivatedRoute, private router: Router) { }
+  constructor(private portfolioService: PortfolioService,
+    private activatedRoute: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.id = this.activatedRoute.snapshot.params['id'];
@@ -28,6 +30,4 @@ export class EditProjectComponent implements OnInit{
          this.router.navigate(["/proyectos"])},
       )
   }
-
-  
 }

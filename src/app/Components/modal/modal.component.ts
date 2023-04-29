@@ -10,20 +10,9 @@ import { SkillsComponent } from '../skills/skills.component';
 })
 
 export class ModalComponent {
-	// @Input() childTitle!: string;
-	// @Input() parentMessage!: string;
-	// @Input() parentTitle: string = this.childTitle;
-
 	login!: any;
-
-	//Ejemplo
-    
-	mostrarSw!: any;
-	mostrarBtn!: any;
-
 	constructor(config: NgbModalConfig,
 		private modalService: NgbModal) {
-		// customize default values of modals used by this component tree
 		config.backdrop = 'static';
 		config.keyboard = false;
 	}
@@ -31,14 +20,4 @@ export class ModalComponent {
 	open(content: any) {
 		this.modalService.open(content);
 	}
-
-
-	// ngAfterViewInit() {
-	// 	this.parentTitle = this.login.parentTitle;
-	// }
-
-	// openEdit(contentEdit: any) {
-	// 	this.modalService.open(contentEdit);
-	// }
-
 }
