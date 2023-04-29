@@ -22,13 +22,11 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
 import { EditComponent } from './Page/edit/edit.component';
 import { AgregarComponent } from './Page/agregar/agregar.component';
 import { NavBarComponent } from './Page/nav-bar/nav-bar.component';
-import { MiCuentaComponent } from './Components/mi-cuenta/mi-cuenta.component';
 import { EditFormComponent } from './Page/edit-form/edit-form.component';
 import { EditProjectComponent } from './Page/edit-project/edit-project.component';
 import { AgregarProComponent } from './Page/agregar-pro/agregar-pro.component';
 import { AgregarFormComponent } from './Page/agregar-form/agregar-form.component';
 import { ButtonsComponent } from './Page/buttons/buttons.component';
-
 
 @NgModule({
   declarations: [
@@ -46,12 +44,11 @@ import { ButtonsComponent } from './Page/buttons/buttons.component';
     EditComponent,
     AgregarComponent,
     NavBarComponent,
-    MiCuentaComponent,
     EditFormComponent,
     EditProjectComponent,
     AgregarProComponent,
     AgregarFormComponent,
-    ButtonsComponent
+    ButtonsComponent,
   ],
 
   imports: [

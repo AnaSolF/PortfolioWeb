@@ -115,7 +115,7 @@ position: fixed;
 }  
 
 
- @media screen and (min-width: 800px) {
+ @media only screen and (min-width: 800px) {
     .navbar {
         display: none
     }
@@ -142,7 +142,7 @@ position: fixed;
     }
 
     h2{
-        width: 22%;
+        width: 25%;
         margin-left: 5%;
     }
 

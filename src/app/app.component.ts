@@ -7,11 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'PortfolioWeb';
-  mostrar: boolean = false;
-
-mostrarButtons() {
-    this.mostrar = !this.mostrar;
-  }
+  //mostrar: boolean = false;
   
 }
 
