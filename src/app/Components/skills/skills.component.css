@@ -1,3 +1,6 @@
+.cont{
+    background-color: #fefbfa;
+}
 
 .circle {
     color: #222748;
@@ -9,6 +12,7 @@
     flex-wrap: wrap;
     border-radius: 10px;
     margin: 0 auto;
+    background-color: #fefbfa;
 }
 
 .botones {
@@ -16,6 +20,11 @@
     justify-content: space-between;
 }
 
+.btnAgregar img,
+.btnAgregar,
+.formato{
+    background-color: #fefbfa;
+}
 
 .tarea {
     color: #222748;
@@ -24,6 +33,7 @@
     padding-top: 20px;
     border-radius: 10px;
     font-size: x-large;
+    background-color: #fefbfa;
 }
 
 .porcentaje {
@@ -34,12 +44,17 @@
     text-align: center;
 }
 
-.bAgregar {
-    text-align: center;
+img{
+    padding-top: 10px;
 }
 
-img{
-    padding-top: 80px;
+.bAgregar{
+    margin: 0 auto;
+}
+
+.vacio{
+    margin-top: 5px;
+    background-color:#fefbfa;
 }
 
 @media only screen and (min-width: 800px) {

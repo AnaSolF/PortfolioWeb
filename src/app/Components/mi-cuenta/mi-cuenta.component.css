@@ -1,8 +1,3 @@
-.botones {
-    display: flex;
-    justify-content: center;
-}
-
 .barra {
     background-color: #104d65;
     position: fixed;

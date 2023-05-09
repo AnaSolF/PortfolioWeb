@@ -1,14 +1,15 @@
 <div id="imagen"></div>
-<h2 style="padding-top: 50px
-;">Sobre mí</h2>
+<h2>Sobre mí</h2>
 <div class="cont">
   <div class="par3">
+    <div class="vacio" *ngIf="mostrar==true">Haga click en "editar sección" para comenzar.</div>
     <div class="sm" id="parrafo">
       <p>{{nuevosDatos.parrafo}}</p>
       <div *ngIf="switch==true">
         <div class="form-floating">
           <div class="form-floating">
-            <textarea maxlength="150" class="form-control" placeholder="Leave a comment here" id="floatingTextarea"
+            <textarea maxlength="150" class="form-control"
+              placeholder="Haga click en editar sección para agregar una descripción." id="floatingTextarea"
               name="parrafo" [(ngModel)]="nuevosDatos.parrafo"></textarea>
             <label for="floatingTextarea">Comments</label>
           </div>
@@ -41,19 +42,23 @@
     <div class="sm">
       <div class="icono"><img src="/assets/Images/icons8-parlamento-80.png" alt="pais"></div>
       <label for="country"><strong> País: </strong></label> {{nuevosDatos.pais}}<div class="Input" *ngIf="switch==true">
-        <input maxlength="35" type="text" class="form-control" name="pais" [(ngModel)]="nuevosDatos.pais">
+        <input maxlength="35"type="text" class="form-control" name="pais" [(ngModel)]="nuevosDatos.pais">
       </div>
     </div>
   </div>
   <div class="bt">
-  <div *ngIf="mostrar==true">
-    <div *ngIf="switch==false">
-      <div><button class="btn btn-warning" (click)="edit()">Editar sección</button>
-      </div> 
-    </div>
-    <div class="sm" *ngIf="switch==true">
-      <a class="btn btn-primary " (click)="editarDatos()">Guardar Cambios</a>
+    <div *ngIf="mostrar==true">
+      <div *ngIf="switch==false">
+        <div>
+          <button class="btn btn-success" type="button" (click)="edit()" ngbPopover="Editar"
+            popoverClass="my-edit-class">Editar sección</button>
+        </div>
+      </div>
+      <div class="sm" *ngIf="switch==true">
+        <a class="btn btn-primary" (click)="editarDatos()" type="button" ngbPopover="Guardar cambios"
+          popoverClass="my-edit-class">Guardar Cambios</a>
+      </div>
     </div>
   </div>
 </div>
-</div>
+<app-btn-fixed></app-btn-fixed>

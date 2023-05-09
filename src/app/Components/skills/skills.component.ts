@@ -1,16 +1,17 @@
-import { Component, Output, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Skills } from 'src/app/Models/skills/skills.module';
 import { PortfolioService } from 'src/app/Services/portfolio.service';
-import { NgCircleProgressModule } from 'ng-circle-progress';
 import { AuthService } from 'src/app/Services/auth.service';
+import { NgbPopoverConfig, NgbPopoverModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-skills',
   templateUrl: './skills.component.html',
-  styleUrls: ['./skills.component.css']
+  styleUrls: ['./skills.component.css'],
+  providers: [NgbPopoverConfig],
 })
 
 export class SkillsComponent implements OnInit {
@@ -32,8 +33,12 @@ export class SkillsComponent implements OnInit {
     private portfolioService: PortfolioService,
     private auth: AuthService,
     private router: Router,
-    private modalService: NgbModal
-  ) { };
+    private modalService: NgbModal,
+    config: NgbPopoverConfig
+  ) {
+  config.placement = 'end';
+  config.triggers = 'hover';
+  };
 
   ngOnInit(): void {
     this.auth.mostrarButtons().then((valorMostrar) => {
@@ -63,5 +68,8 @@ export class SkillsComponent implements OnInit {
   edit() {
     this.switch = !this.switch;
   }
+
+  
+  
 }
 

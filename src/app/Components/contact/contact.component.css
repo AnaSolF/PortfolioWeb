@@ -1,17 +1,15 @@
 .cont {
-  background-color: #f8efed;
+  background-color: #fefbfa;
+  width: 100%;
+  margin-top: 0;
 }
 
-#contact {
-  width: 80%;
-  box-sizing: border-box;
-}
-
-.contactos {
+/* .contactos {
   flex-direction: column;
   margin: 0 auto;
   width: 100%;
-}
+  background-color: white;
+} */
 
 #buttons {
   display: flex;
@@ -35,22 +33,13 @@ textarea {
   width: 100%;
 }
 
-#form{
-width: 100%;
-margin: 10px auto;
-padding: 40px;
-background-color: #17bab76d;
-border-top-left-radius: 10px;
-border-bottom-right-radius: 10px;
-}
-
-.map{
-text-align: center;
-}
-
-iframe{
-  width:280px;
-  height: 500px;
+#form {
+  width: 100%;
+  margin: 10px auto;
+  padding: 70px;
+  background-color: #165a75;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 @media screen and (min-width: 800px) {
@@ -58,24 +47,8 @@ iframe{
     width: 100%;
   }
 
-  .titulo {
-    margin: 50px 20px;
-  }
-  
-  .map {
-    width: 100%;
-    margin: 0 auto;
-    border-bottom: 1px solid rgb(188, 184, 184);
-    border-top: 1px solid rgb(188, 184, 184);
-    padding: 30px;
-  }
-
-  iframe{
+  #form {
     width: 70%;
-  }
-
-  #form{
-    width: 50% ;
   }
 
 }

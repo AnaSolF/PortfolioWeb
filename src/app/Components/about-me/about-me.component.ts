@@ -3,11 +3,13 @@ import { PortfolioService } from 'src/app/Services/portfolio.service';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { AboutMeModule } from 'src/app/Models/about-me/about-me.module';
 import { AuthService } from 'src/app/Services/auth.service';
+import { NgbPopoverConfig, NgbPopoverModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-about-me',
   templateUrl: './about-me.component.html',
-  styleUrls: ['./about-me.component.css']
+  styleUrls: ['./about-me.component.css'],
+  providers: [NgbPopoverConfig],
 })
 export class AboutMeComponent implements OnInit {
 
@@ -15,18 +17,25 @@ export class AboutMeComponent implements OnInit {
   datosActuales: AboutMeModule = { id: "", nombre: "", telefono: "", ciudad: "", pais: "", parrafo: "", imagen: "" };
   ruta: any = "SobreMi";
   switch: boolean = false;
+
   @Input()
-  nuevosDatos: AboutMeModule = { id: "", nombre: "Ana Sol", telefono: "3513285087", ciudad: "Córdoba", pais: "Argentina", parrafo: "Prueba.", imagen: "" };
+  nuevosDatos: AboutMeModule = { id: "", nombre: "Su nombre", telefono: "3510000000", ciudad: "Su ciudad", pais: "Su país", parrafo: "", imagen: "" };
+
   id: string = "31";
   token!: any;
   mostrar!: boolean;
+
 
   constructor(
     private portfolioService: PortfolioService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
     private authService: AuthService,
-  ) { }
+    config: NgbPopoverConfig
+  ) { 
+  config.placement = 'end';
+  config.triggers = 'hover';
+  }
 
   ngOnInit(): void {
     this.authService.mostrarButtons().then((valorMostrar) => {

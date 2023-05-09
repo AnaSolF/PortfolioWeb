@@ -14,10 +14,11 @@
     <div class="mb-3">
       <label class="form-label">Descripción *</label>
       <input type="text" class="form-control" id="texto" name="texto" [(ngModel)]="proyectoActual.texto">
-      <div class=" buttons mb-3">
-        <button class="btnForm" (click)="guardar()">Editar</button>
-        <button class="btnForm" routerLink="Proyectos">Regresar</button>
+      <div class="buttons">
+          <button class="btn btn-success" (click)="guardar()" routerLink="proyectos">Guardar cambios</button>
+          <button class="btn btn-danger" routerLink="mi-cuenta">Regresar</button>
       </div>
+     
     </div>
   </form>
 </div>

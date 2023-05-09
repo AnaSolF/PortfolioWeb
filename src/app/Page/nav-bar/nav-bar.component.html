@@ -20,11 +20,11 @@
         <li class="nav-i" *ngIf="mostrar ==false">
           <a (click)="registro()"> Registro</a>
         </li>
-        <li class="nav-i" routerLink="contact">
-          Contácto
-        </li>
         <li class="nav-i" *ngIf="mostrar == (childMessage==false)" routerLink="mi-cuenta">
           {{mensajeBoton}}
+        </li>
+        <li class="nav-i" routerLink="contact">
+          Contácto
         </li>
         <li class="nav-i invitado" *ngIf="mostrar == childMessage" routerLink="mi-cuenta">
           {{mensajeBoton}}
@@ -46,7 +46,7 @@
       <a routerLink="mi-cuenta">{{mensajeBoton}}</a>
     </li>
     <li class="nav-item">
-      <a routerLink="contact">Contácto</a>
+      <a (click)="contacto()">Contácto</a>
     </li>
     <li class="nav-item invitado" *ngIf="mostrar == childMessage">
       <a routerLink="mi-cuenta">{{mensajeBoton}}</a>

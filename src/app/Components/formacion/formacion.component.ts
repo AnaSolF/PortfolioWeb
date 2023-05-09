@@ -3,11 +3,13 @@ import { Router } from '@angular/router';
 import { Formacion } from 'src/app/Models/formacion/formacion.module';
 import { AuthService } from 'src/app/Services/auth.service';
 import { PortfolioService } from 'src/app/Services/portfolio.service';
+import { NgbPopoverConfig, NgbPopoverModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-formacion',
   templateUrl: './formacion.component.html',
-  styleUrls: ['./formacion.component.css']
+  styleUrls: ['./formacion.component.css'],
+  providers: [NgbPopoverConfig],
 })
 export class FormacionComponent {
 
@@ -21,8 +23,12 @@ export class FormacionComponent {
   constructor(
     private portfolioService: PortfolioService,
     private router: Router,
-    private auth: AuthService
-  ) { }
+    private auth: AuthService,
+    config: NgbPopoverConfig
+  ) { 
+    config.placement = 'end';
+    config.triggers = 'hover';
+  }
   
   ngOnInit(): void {
     this.auth.mostrarButtons().then((valorMostrar) => {

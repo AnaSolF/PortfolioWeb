@@ -1,5 +1,13 @@
 <div class="container">
-  <h2>Hard & Soft Skills</h2>
+    <h2>Hard & Soft Skills</h2>
+    <div class="formato">
+      <div class="vacio" *ngIf="mostrar==true">Continúe agregando una tarjeta, haciendo click en el botón verde de esta sección.</div>
+    <div class="bAgregar">
+      <div  class="btnAgregar"*ngIf="mostrar==true">
+        <a [routerLink]="['/agregar']"><img src="/assets/Images/agregar.png" alt="agregar" type="button" ngbPopover="Agregar Skill" popoverClass="my-edit-class" style="padding: 20px;"></a>
+      </div>
+    </div>
+  </div>
   <div class="cont">
     <div class="circle">
       <div *ngFor="let skill of lista">
@@ -11,15 +19,11 @@
         </div>
         <br>
         <div *ngIf="mostrar== true" class="btnEdiciones">
-        <a (click)="eliminar(skill.id)"><img class="icon" src="/assets/Images/trash.png" alt="trash"></a>
-        <a [routerLink]="['/edit', skill.id]"><img class="icon" src="/assets/Images/pencil.png" alt="edit"></a>
+        <a (click)="eliminar(skill.id)"><img class="icon" src="/assets/Images/trash1.png" alt="trash" type="button" ngbPopover="Eliminar Skill" popoverClass="my-delete-class"></a>
+        <a [routerLink]="['/edit', skill.id]"><img class="icon" src="/assets/Images/pencil.png" alt="edit" type="button" ngbPopover="Editar Skill" popoverClass="my-edit-class"></a>
         </div>
-      </div>
-    </div>
-    <div class="bAgregar">
-      <div *ngIf="mostrar== true">
-        <a class="btnAgregar" [routerLink]="['/agregar']"><img src="/assets/Images/agregar.png" alt="agregar"></a>
       </div>
     </div>
   </div>
 </div>
+<app-btn-fixed></app-btn-fixed>

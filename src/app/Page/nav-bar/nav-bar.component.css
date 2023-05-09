@@ -24,7 +24,6 @@ padding-bottom: 10px
 
 #LW {
     justify-content: center;
-    margin-top: 5%;
     width: 300px;
     height: 300px;
     border-top-right-radius: 10px;
@@ -70,9 +69,10 @@ padding-bottom: 10px
 
 #sal {
     width: 50px;
-    height: 50px;
+    height: 60px;
     margin-left: 10px;
     cursor: pointer;
+    padding-bottom: 25px;
 }
 
 .navbar li{
@@ -89,26 +89,7 @@ padding-bottom: 10px
     border: 1px solid white;
 }
 
-@media screen and (max-width: 800px) and (orientation: landscape) {
-
-    #LW {
-        display: none;
-    }
-
-    #logoAp {
-        display: none;
-    }
-
-    .nav-i {
-        padding-bottom: 5px;
-    }
-
-    .nav-log {
-        width: 10%;
-    }
-}
-
-@media only screen and (min-width: 799px) {
+@media only screen and (min-width: 801px) {
 
     #bar {
         display: flex;
@@ -149,19 +130,3 @@ padding-bottom: 10px
 
 }
 
-@media only screen and (min-width: 280px) {
-
-    .LogoWhite {
-        display: flex;
-    }
-
-    #LW {
-        width: 200px;
-        height: 200px;
-    }
-
-    .card {
-        width: 200px;
-    }
-
-}

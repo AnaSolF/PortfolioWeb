@@ -14,9 +14,10 @@ export class AuthService {
   rutaAuthenticate: any;
   usuario: any;
   modelo: RegisterModule = { email: "", password: "", token: 0 };
-  lista: any = [];
-  constructor(private portfolioService: PortfolioService) { }
+  lista: any = []; 
 
+  constructor(private portfolioService: PortfolioService) { }
+  
   logIn() {
     this.token = localStorage.getItem("auth_token");
     if (this.token != null) {
@@ -50,8 +51,8 @@ export class AuthService {
         }
       );
     });
-
   }
+
 }
   
 

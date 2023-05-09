@@ -20,7 +20,7 @@ export class LoginComponent {
   constructor(private portfolioService: PortfolioService,
     private router: Router,
     private modalService: NgbModal,
-    private authService: AuthService,) {
+    private authService: AuthService) {
 
   };
 

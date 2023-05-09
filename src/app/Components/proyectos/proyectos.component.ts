@@ -3,11 +3,14 @@ import { Router } from '@angular/router';
 import { Projects } from 'src/app/Models/projects/projects.module';
 import { AuthService } from 'src/app/Services/auth.service';
 import { PortfolioService } from 'src/app/Services/portfolio.service';
+import { NgbPopoverConfig, NgbPopoverModule } from '@ng-bootstrap/ng-bootstrap';
+import { ImagesService } from 'src/app/Services/images.service';
 
 @Component({
   selector: 'app-proyectos',
   templateUrl: './proyectos.component.html',
-  styleUrls: ['./proyectos.component.css']
+  styleUrls: ['./proyectos.component.css'],
+  providers: [NgbPopoverConfig],
 })
 
 export class ProyectosComponent implements OnInit {
@@ -17,18 +20,26 @@ export class ProyectosComponent implements OnInit {
   ruta: any = "proyectos";
   id: string = "";
   mostrar!: boolean;
- 
+  image!: any;
+
   constructor(
     private portfolioService: PortfolioService,
     private router: Router,
-    private auth: AuthService
-  ) { }
+    private auth: AuthService,
+    config: NgbPopoverConfig,
+    private imagesService: ImagesService
+  ) {
+
+    config.placement = 'end';
+    config.triggers = 'hover';
+  }
 
   ngOnInit(): void {
     this.auth.mostrarButtons().then((valorMostrar) => {
       this.mostrar = valorMostrar;
     });
     this.listarProyectos();
+    this.mostrarImagen();
   }
 
   listarProyectos() {
@@ -42,6 +53,14 @@ export class ProyectosComponent implements OnInit {
   eliminar(id: string) {
     this.portfolioService.deleteElemento(this.ruta, id).subscribe(
       res => { this.ngOnInit() },
+    );
+  }
+
+  mostrarImagen() {
+    this.imagesService.getDatos().subscribe(
+      res => {
+        return res = this.proyectoActual.destacado;
+      }
     );
   }
 }

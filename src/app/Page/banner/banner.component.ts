@@ -46,12 +46,12 @@ export class BannerComponent implements OnInit {
   }
 
   //cerrar sesión
-  logOut() {
-    localStorage.removeItem("token_auth");
-    this.reloadPage();
-  }
+  // logOut() {
+  //   localStorage.removeItem("token_auth");
+  //   this.reloadPage();
+  // }
 
-  reloadPage() {
-    window.location.reload();
-  }
+  // reloadPage() {
+  //   window.location.reload();
+  // }
 }

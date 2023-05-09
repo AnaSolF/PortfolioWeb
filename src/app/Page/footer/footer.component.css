@@ -1,20 +1,24 @@
 footer {
   display: flex;
-  text-align: center !important;
-  padding-top: 30px;
-  padding-left: 20%;
-  padding-bottom: 25px;
+  justify-content: center;
+  padding: 30px;
   color: white;
-  margin-left: 30px;
+  margin: 0 auto;
 }
 
 .foo {
   font-size: xx-small;
+  text-align: center;
 }
+
+.botones {
+  display: flex;
+  justify-content: center;
+} 
 
 @media only screen and (min-width: 800px) {
   footer {
-
     justify-content: center;
+    margin: 0 auto;
   }
 }

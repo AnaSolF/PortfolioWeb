@@ -53,13 +53,19 @@ export class NavBarComponent implements OnInit {
 
   //cerrar sesión
   logOut() {
-    this.messageHome == true
+    // this.messageHome == true;
+    this.authService.compararToken(this.ruta, this.id)
     localStorage.removeItem("token_auth");
-    this.reloadPage()
+    localStorage.removeItem("id");
+    this.reloadPage();
   }
 
   registro() {
     this.router.navigate(["/register"])
+  }
+
+  contacto() {
+    this.router.navigate(["/contact"])
   }
 
   reloadPage() {

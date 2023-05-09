@@ -5,13 +5,11 @@
   margin-left: 70%;
 }
 
-.flotante:hover{
-  width: 80px;
-}
 
 @media screen and (max-width: 800px) and (orientation: landscape) {
   .flotante {
     margin-left: 82%;
+    border: 1px solid black;
   }
 }
 

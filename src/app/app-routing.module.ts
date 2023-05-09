@@ -18,7 +18,6 @@ import { AgregarProComponent } from './Page/agregar-pro/agregar-pro.component';
 import { MiCuentaComponent } from './Components/mi-cuenta/mi-cuenta.component';
 import { NavBarComponent } from './Page/nav-bar/nav-bar.component';
 
-
 const routes: Routes = [
   { path: '', component: BannerComponent },
   { path: 'about-me', component: AboutMeComponent },

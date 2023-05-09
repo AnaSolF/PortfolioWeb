@@ -1,5 +1,13 @@
 <div class="container">
-  <h2>Formación</h2>
+  <h2>Formación</h2> 
+  <div class="formato">
+    <div class="vacio" *ngIf="mostrar==true">Continúe agregando una tarjeta, haciendo click en el botón verde de esta sección.</div>
+    <div class="bAgregar">
+      <div *ngIf="mostrar==true">
+        <a class="btnAgregar" [routerLink]="['/agregar-form']"><img src="/assets/Images/agregar.png" alt="agregar" ngbPopover="Agregar formación" popoverClass="my-edit-class" style="padding: 20px;"></a>
+      </div>
+    </div>
+  </div>
   <div class="cont">
     <div class="tarjeta" *ngFor="let formacion of lista">
       <div class="card">
@@ -14,18 +22,10 @@
       </div>
       <br>
       <div *ngIf="mostrar == true" class="btnEdiciones">
-        <a (click)="eliminar(formacion.id)"><img class="icon" src="/assets/Images/trash.png"></a>
-        <a [routerLink]="['/edit-form', formacion.id]"><img class="icon" src="/assets/Images/pencil.png" alt="edit"></a>
+        <a (click)="eliminar(formacion.id)" type="button" ><img class="icon" src="/assets/Images/trash1.png" ngbPopover="Eliminar formación" popoverClass="my-delete-class"></a>
+        <a [routerLink]="['/edit-form', formacion.id]" ><img class="icon" src="/assets/Images/pencil.png" alt="edit"ngbPopover="Editar formación" popoverClass="my-edit-class"></a>
       </div>
     </div>
-
-    </div>
-    <div class="formato">
-      <div class="bAgregar">
-        <div *ngIf="mostrar==true">
-          <a class="btnAgregar" [routerLink]="['/agregar-form']"><img src="/assets/Images/agregar.png" alt="agregar"></a>
-        </div>
-      </div>
     </div>
   </div>
-<app-btn-fixed></app-btn-fixed> 
+  <app-btn-fixed></app-btn-fixed>

@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { RegisterModule } from 'src/app/Models/register/register.module';
 import { PortfolioService } from 'src/app/Services/portfolio.service';
+import { NgbPopoverConfig, NgbPopoverModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-register',
@@ -13,10 +14,14 @@ export class RegisterComponent implements OnInit {
   confirmPassword!: string;
   ruta: string = "authenticate";
   respuesta: any = null;
-
+ 
   constructor(
     private portfolioService: PortfolioService,
-    private router: Router) { };
+    private router: Router,
+    config: NgbPopoverConfig) {
+     config.placement = 'end';
+     config.triggers = 'hover';
+     };
 
   ngOnInit(): void { };
 

@@ -4,6 +4,7 @@
       <img src="/assets/Images/logoLarge1.png" alt="logoLarge1">
     </div>
     <div class="mb-3">
+      <h6>Editar formación</h6>
       <div class="mb-3">
         <label class="form-label">Destacado *</label>
         <input type="text" class="form-control" id="titulo" name="titulo" [(ngModel)]="formActual.titulo">
@@ -18,8 +19,8 @@
       <input type="text" class="form-control" id="imagen" name="imagen" [(ngModel)]="formActual.imagen">
     </div>
     <div class="buttons">
-      <button class="btnForm" (click)="guardar()">Editar</button>
-      <button class=" btnForm" routerLink="formacion">Regresar</button>
+      <button class="btn btn-success" (click)="guardar()">Guardar cambios</button>
+      <button class="btn btn-danger " routerLink="formacion">Regresar</button>
     </div>
   </form>
 </div>

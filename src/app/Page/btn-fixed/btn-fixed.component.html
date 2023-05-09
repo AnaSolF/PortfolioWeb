@@ -1,1 +1,3 @@
-<a routerLink="banner"><img src="/assets/Images/icons8-página-principal-100.png" alt="inicio" class="flotante"></a>
+<div *ngIf="mostrar== true">
+<a class="flotante" (click)="inicio()" type="button" popoverClass="my-custom-class"><img src="/assets/Images/icons8-página-principal-100.png" alt="inicio" ngbPopover="Mi cuenta" ></a>
+</div>

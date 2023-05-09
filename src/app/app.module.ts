@@ -29,7 +29,9 @@ import { ButtonsComponent } from './Page/buttons/buttons.component';
 import { BtnFixedComponent } from './Page/btn-fixed/btn-fixed.component';
 import { MiCuentaComponent } from './Components/mi-cuenta/mi-cuenta.component';
 import { NavBarComponent } from './Page/nav-bar/nav-bar.component';
-
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+// import { environment } from '../environments/environment';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -71,7 +73,9 @@ import { NavBarComponent } from './Page/nav-bar/nav-bar.component';
       outerStrokeColor: "#78C000",
       innerStrokeColor: "#C7E596",
       animationDuration: 300,
-    })
+    }),
+    // provideFirebaseApp(() => initializeApp(environment.firebase)),
+    // provideFirestore(() => getFirestore())
   ],
 
   providers: [
