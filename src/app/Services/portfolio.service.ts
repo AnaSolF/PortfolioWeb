@@ -28,7 +28,7 @@ export class PortfolioService {
   constructor(private http: HttpClient,
     private baseUrl: UrlBaseService,
     private router: Router) { }
-  
+
 
   getElements(ruta: any): Observable<any> {
     return this.http.get(this.url + ruta)
@@ -50,23 +50,20 @@ export class PortfolioService {
     return this.http.delete(this.url + ruta + "/" + id);
   }
 
-    //poner en todos los componentes
   mostrarButtons() {
     this.mostrar = false;
-      this.idUsuario = localStorage.getItem("id") != null && localStorage.getItem("id") != "0" ? localStorage.getItem("id")?.toString() : "0";
-      this.rutaAuthenticate = "authenticate";
-      if (this.idUsuario != "0" && this.idUsuario != null) {
-        this.getUnElemento(this.rutaAuthenticate, this.idUsuario).subscribe(
-          res => {
-            this.modelo = res;
-            this.token = localStorage.getItem("token_auth")?.toString();
-            this.mostrar = this.token == (this.modelo.token).toString();
-            console.log(res);       
-          }
-        )
-      }
-      return this.mostrar;
+    this.idUsuario = localStorage.getItem("id") != null && localStorage.getItem("id") != "0" ? localStorage.getItem("id")?.toString() : "0";
+    this.rutaAuthenticate = "authenticate";
+    if (this.idUsuario != "0" && this.idUsuario != null) {
+      this.getUnElemento(this.rutaAuthenticate, this.idUsuario).subscribe(
+        res => {
+          this.modelo = res;
+          this.token = localStorage.getItem("token_auth")?.toString();
+          this.mostrar = this.token == (this.modelo.token).toString();
+          console.log(res);
+        }
+      )
+    }
+    return this.mostrar;
   }
-
 }
-

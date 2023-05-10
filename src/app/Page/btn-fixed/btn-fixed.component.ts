@@ -9,7 +9,7 @@ import { AuthService } from 'src/app/Services/auth.service';
   styleUrls: ['./btn-fixed.component.css'],
   providers: [NgbPopoverConfig],
 })
-export class BtnFixedComponent implements OnInit{
+export class BtnFixedComponent implements OnInit {
   parentMessage: any;
   mostrar!: boolean;
   constructor(

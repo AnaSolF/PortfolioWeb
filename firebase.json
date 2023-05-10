@@ -1,10 +1,6 @@
 {
-  "firestore": {
-    "rules": "firestore.rules",
-    "indexes": "y"
-  },
   "hosting": {
-    "public": "public",
+    "public": "dist/portfolio-web",
     "ignore": [
       "firebase.json",
       "**/.*",

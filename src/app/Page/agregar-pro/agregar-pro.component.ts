@@ -10,7 +10,7 @@ import { PortfolioService } from 'src/app/Services/portfolio.service';
 })
 export class AgregarProComponent implements OnInit {
 
-  nuevoPro: Projects = { id: "", destacado: "", titulo: "", texto: "" };
+  nuevoPro: Projects = { id: "", titulo: "", texto: "" };
   ruta: string = "proyectos"
   constructor(private portfolioService: PortfolioService, private router: Router) { }
 

@@ -1,10 +1,12 @@
 <div class="container">
   <h2>Proyectos</h2>
   <div class="formato">
-    <div class="vacio" *ngIf="mostrar==true">Continúe agregando una tarjeta, haciendo click en el botón verde de esta sección.</div>
+    <div class="vacio" *ngIf="mostrar==true">Continúe agregando una tarjeta, haciendo click en el botón verde de esta
+      sección.</div>
     <div class="bAgregar">
       <div *ngIf="mostrar== true" class="bAgregar">
-        <a class="btnAgregar" [routerLink]="['/agregar-pro']"><img src="/assets/Images/agregar.png" alt="agregar" type="button" ngbPopover="Agregar proyecto" popoverClass="my-edit-class" style="padding: 20px
+        <a class="btnAgregar" [routerLink]="['/agregar-pro']"><img src="/assets/Images/agregar.png" alt="agregar"
+            type="button" ngbPopover="Agregar proyecto" popoverClass="my-edit-class" style="padding: 20px
           ;"></a>
       </div>
     </div>
@@ -13,8 +15,7 @@
     <div class="tarjeta" *ngFor="let proyecto of lista">
       <div class="card" style="margin-bottom: 20px;">
         <div class="card-header">
-          <!-- {{proyectoActual.destacado}} -->
-        <img src="/assets/Images/proyecto1.png" alt="proyecto">
+          <img src="/assets/Images/proyecto1.png" alt="proyecto">
         </div>
         <div class="card-body">
           <h5 class="card-title">{{proyecto.titulo}}</h5>
@@ -23,11 +24,13 @@
       </div>
       <div *ngIf="mostrar== true" class="btnEdiciones">
         <a (click)="eliminar(proyecto.id)">
-        <img class="icon" src="/assets/Images/trash1.png" alt="trash" type="button" ngbPopover="Eliminar proyecto" popoverClass="my-delete-class">
+          <img class="icon" src="/assets/Images/trash1.png" alt="trash" type="button" ngbPopover="Eliminar proyecto"
+            popoverClass="my-delete-class">
         </a>
-        <a [routerLink]="['/edit-project', proyecto.id]"><img class="icon" src="/assets/Images/pencil.png" alt="edit" type="button" ngbPopover="Editar proyecto" popoverClass="my-edit-class"></a>
+        <a [routerLink]="['/edit-project', proyecto.id]"><img class="icon" src="/assets/Images/pencil.png" alt="edit"
+            type="button" ngbPopover="Editar proyecto" popoverClass="my-edit-class"></a>
       </div>
     </div>
-</div>
+  </div>
 </div>
 <app-btn-fixed></app-btn-fixed>

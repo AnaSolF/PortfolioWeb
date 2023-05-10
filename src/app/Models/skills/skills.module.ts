@@ -13,6 +13,6 @@ export class Skills {
   id!: string;
 
   constructor(id: String = "", tarea: String = "", porcentaje: String = "") {
-    
-   }
+
+  }
 }

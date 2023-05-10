@@ -32,9 +32,9 @@ export class AboutMeComponent implements OnInit {
     private router: Router,
     private authService: AuthService,
     config: NgbPopoverConfig
-  ) { 
-  config.placement = 'end';
-  config.triggers = 'hover';
+  ) {
+    config.placement = 'end';
+    config.triggers = 'hover';
   }
 
   ngOnInit(): void {

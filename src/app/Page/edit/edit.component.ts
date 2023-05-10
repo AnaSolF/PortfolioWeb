@@ -12,27 +12,13 @@ export class EditComponent implements OnInit {
   id: string = "";
   skillActual: any = { id: "", tarea: "", porcentaje: "" };
   ruta: string = "tareas";
-  // @Input()
-  // switch: boolean = true;
-  // @Input()
-  // mostrar: boolean = false;
-  // @Input()
-  // titulo: string = "Buenos días";
-  // lista: any;
-  // mostrarSw = 1;
-  // @Input()
-  // nombre = '';
-  // @Input()
-  // cif!: string;
-  // @Input()
-  // direccion: string = "Los Nogales 3804";
-  
-  constructor( private portfolioService: PortfolioService, private activatedRoute: ActivatedRoute, private router: Router) { }
+
+  constructor(private portfolioService: PortfolioService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.id = this.activatedRoute.snapshot.params['id'];
     this.portfolioService.getUnElemento(this.ruta, this.id).subscribe(
-        res => { this.skillActual = res },
+      res => { this.skillActual = res },
     )
   }
 
@@ -42,7 +28,7 @@ export class EditComponent implements OnInit {
         this.skillActual = res
         this.router.navigate(["/skills"])
       },
-      )
+    )
   }
 
   // edit() {

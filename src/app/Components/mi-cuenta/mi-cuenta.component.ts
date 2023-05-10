@@ -11,6 +11,7 @@ export class MiCuentaComponent implements OnInit {
   mostrar: boolean = false;
   parentMessage: any = false;
   buttonMessage: string = "Inicio";
+  
   constructor(private authService: AuthService) {
   }
 

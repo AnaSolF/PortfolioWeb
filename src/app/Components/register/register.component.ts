@@ -14,14 +14,14 @@ export class RegisterComponent implements OnInit {
   confirmPassword!: string;
   ruta: string = "authenticate";
   respuesta: any = null;
- 
+
   constructor(
     private portfolioService: PortfolioService,
     private router: Router,
     config: NgbPopoverConfig) {
-     config.placement = 'end';
-     config.triggers = 'hover';
-     };
+    config.placement = 'end';
+    config.triggers = 'hover';
+  };
 
   ngOnInit(): void { };
 

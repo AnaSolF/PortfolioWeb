@@ -9,9 +9,8 @@ import { CommonModule } from '@angular/common';
 })
 export class Projects {
 
-  destacado!: string;
   titulo!: string;
   texto!: string;
   id!: string;
-  constructor(destacado: String = "", titulo: String = "", text: String = "", id: String = "") { }
+  constructor( titulo: String = "", text: String = "", id: String = "") { }
 }

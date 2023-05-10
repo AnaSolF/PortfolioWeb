@@ -13,10 +13,7 @@ import { PortfolioService } from 'src/app/Services/portfolio.service';
 
 export class BannerComponent implements OnInit {
   content: any;
-  title!: string;
   message: any;
-  myModal: any;
-  data: any;
   mostrar: boolean = false;
   token: any;
   ruta: string = "authenticate";
@@ -44,14 +41,4 @@ export class BannerComponent implements OnInit {
       this.mostrar = valorMostrar;
     });
   }
-
-  //cerrar sesión
-  // logOut() {
-  //   localStorage.removeItem("token_auth");
-  //   this.reloadPage();
-  // }
-
-  // reloadPage() {
-  //   window.location.reload();
-  // }
 }

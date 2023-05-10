@@ -14,10 +14,10 @@ export class AuthService {
   rutaAuthenticate: any;
   usuario: any;
   modelo: RegisterModule = { email: "", password: "", token: 0 };
-  lista: any = []; 
+  lista: any = [];
 
   constructor(private portfolioService: PortfolioService) { }
-  
+
   logIn() {
     this.token = localStorage.getItem("auth_token");
     if (this.token != null) {
@@ -25,16 +25,13 @@ export class AuthService {
     }
     return this.mostrar;
   }
-  
 
-  mostrarButtons(): Promise<boolean> {
-    return Promise.all([
+  async mostrarButtons(): Promise<boolean> {
+    const [id, tokenValido] = await Promise.all([
       localStorage.getItem("id"),
       this.compararToken("authenticate", localStorage.getItem("id") ?? "0")
-    ]).then(([id, tokenValido]) => {
-      return id !== null && id !== "0" && tokenValido;
-     
-    });
+    ]);
+    return id !== null && id !== "0" && tokenValido;
   }
 
   compararToken(rutaAuthenticate: string, idUsuario: string): Promise<boolean> {
@@ -54,8 +51,3 @@ export class AuthService {
   }
 
 }
-  
-
-
-
-	

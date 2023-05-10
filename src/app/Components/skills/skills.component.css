@@ -1,4 +1,4 @@
-.cont{
+.cont {
     background-color: #fefbfa;
 }
 
@@ -22,7 +22,7 @@
 
 .btnAgregar img,
 .btnAgregar,
-.formato{
+.formato {
     background-color: #fefbfa;
 }
 
@@ -44,17 +44,17 @@
     text-align: center;
 }
 
-img{
+img {
     padding-top: 10px;
 }
 
-.bAgregar{
+.bAgregar {
     margin: 0 auto;
 }
 
-.vacio{
+.vacio {
     margin-top: 5px;
-    background-color:#fefbfa;
+    background-color: #fefbfa;
 }
 
 @media only screen and (min-width: 800px) {
