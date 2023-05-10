@@ -4,7 +4,6 @@ import { Projects } from 'src/app/Models/projects/projects.module';
 import { AuthService } from 'src/app/Services/auth.service';
 import { PortfolioService } from 'src/app/Services/portfolio.service';
 import { NgbPopoverConfig, NgbPopoverModule } from '@ng-bootstrap/ng-bootstrap';
-import { ImagesService } from 'src/app/Services/images.service';
 
 @Component({
   selector: 'app-proyectos',
@@ -27,7 +26,6 @@ export class ProyectosComponent implements OnInit {
     private router: Router,
     private auth: AuthService,
     config: NgbPopoverConfig,
-    private imagesService: ImagesService
   ) {
 
     config.placement = 'end';
@@ -39,7 +37,6 @@ export class ProyectosComponent implements OnInit {
       this.mostrar = valorMostrar;
     });
     this.listarProyectos();
-    this.mostrarImagen();
   }
 
   listarProyectos() {
@@ -56,11 +53,5 @@ export class ProyectosComponent implements OnInit {
     );
   }
 
-  mostrarImagen() {
-    this.imagesService.getDatos().subscribe(
-      res => {
-        return res = this.proyectoActual.destacado;
-      }
-    );
-  }
+
 }
