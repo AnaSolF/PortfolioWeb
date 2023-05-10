@@ -1,15 +1,30 @@
 <div class="container">
-<h2>Formacion</h2>
-<div class="card" style="width: 18rem;">
-    <img [src]="" class="card-img-top" alt="...">
-    <div class="card-body">
-      <p class="card-text">Un texto de ejemplo rápido para colocar cerca del título de la tarjeta y componer la mayor parte del contenido de la tarjeta.</p>
+  <h2>Formación</h2> 
+  <div class="formato">
+    <div class="vacio" *ngIf="mostrar==true">Continúe agregando una tarjeta, haciendo click en el botón verde de esta sección.</div>
+    <div class="bAgregar">
+      <div *ngIf="mostrar==true">
+        <a class="btnAgregar" [routerLink]="['/agregar-form']"><img src="/assets/Images/agregar.png" alt="agregar" ngbPopover="Agregar formación" popoverClass="my-edit-class" style="padding: 20px;"></a>
+      </div>
     </div>
   </div>
-<button class="fijo" routerLink="banner">Regresar</button>
-
-  <div class="Ed" *ngIf="mostrar==false" >
-  <app-edit>[titulo]="titulo"</app-edit>
-</div>
-  <button class="btn btn-danger" (click)="mostrarInput()">Editar</button>
-</div>
+  <div class="cont">
+    <div class="tarjeta" *ngFor="let formacion of lista">
+      <div class="card">
+        <div class="card-header">
+          <img src="/assets/Images/formacion.png" alt="formacion" style="width: 70px; height: 70px;">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{formacion.titulo}}</h5>
+          <p class="card-text">{{formacion.descripcion}}
+        </div>
+      </div>
+      <br>
+      <div *ngIf="mostrar == true" class="btnEdiciones">
+        <a (click)="eliminar(formacion.id)" type="button" ><img class="icon" src="/assets/Images/trash1.png" ngbPopover="Eliminar formación" popoverClass="my-delete-class"></a>
+        <a [routerLink]="['/edit-form', formacion.id]" ><img class="icon" src="/assets/Images/pencil.png" alt="edit"ngbPopover="Editar formación" popoverClass="my-edit-class"></a>
+      </div>
+    </div>
+    </div>
+  </div>
+  <app-btn-fixed></app-btn-fixed>

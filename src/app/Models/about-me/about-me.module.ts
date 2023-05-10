@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-
-
 @NgModule({
   declarations: [],
   imports: [
@@ -16,7 +14,8 @@ export class AboutMeModule {
   ciudad!: String
   pais!: String
   parrafo!: String
+  imagen!: String
 
-  constructor(id: String, nombre: String, telefono: String, ciudad: String, pais: String, parrafo: String) {
+  constructor(id: String, nombre: String, telefono: String, ciudad: String, pais: String, parrafo: String, imagen: String) {
   }
- }
+}

@@ -1,0 +1,8 @@
+.barra {
+    background-color: #104d65;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    height: 110px;
+    border-bottom: 1px solid black;
+}

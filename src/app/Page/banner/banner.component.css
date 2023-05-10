@@ -1,81 +1,72 @@
 .contentBanner {
     margin: 0;
-    width: 100%;
-    height: 100vh;
-    background-image: url(/assets/Images/Fondo1.gif);
-    background-position: no-repeat no-repeat;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
 }
 
-.NavHome,
 #logoA,
 .logo {
     display: none;
 }
 
-.nav-item a {
-    color: white;
+#alog {
+    padding-bottom: 10px;
 }
 
 .LogoWhite {
     display: flex;
+    flex-direction: column;
     width: 100%;
     justify-content: center;
+    align-items: center;
+}
+
+.logo img {
+    margin-top: 15px;
 }
 
 #LW {
     justify-content: center;
+    margin-top: 5%;
     width: 300px;
     height: 300px;
+    border-top-right-radius: 10px;
 }
 
-.nav-item {
+#myVideo {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+}
+
+h3 {
+    margin-top: 5%;
     color: white;
-    cursor: pointer;
+    font-weight: bolder;
+    font-size: 30px;
+    text-align: center;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (max-width: 800px) and (orientation: landscape) {
 
-    #bar {
-        display: flex;
-        flex-wrap: nowrap;
-        justify-content: space-around;
+    #LW {
+        display: none;
     }
 
-    .NavHome {
-        display: flex;
-        flex-direction: row;
-        float: right;
-        padding-top: 70px;
+    #logoAp {
+        display: none;
     }
+}
 
-    .NavHome li {
-        padding: 10px 20px;
-        color: white;
-    }
-
-    .NavHome li :hover {
-        background-color: rgba(255, 255, 255, 0.319);
-        padding: 10px 30px;
-    }
-
-    .NavHome li a {
-        color: white;
-    }
+@media only screen and (min-width: 800px) {
 
     .logo {
         display: flex;
         width: 100px;
         height: 100px;
-        float: left;
+        margin-right: 3%;
         margin-top: 35px;
-    }
-
-    #logoAp {
-        width: 20px;
-        float: right;
     }
 
     .LogoWhite {
@@ -88,11 +79,12 @@
     #LW {
         width: 100%;
         height: 100%;
+        margin-top: 5%;
     }
 
 }
 
-@media screen and (min-width: 280px) {
+@media only screen and (min-width: 280px) {
 
     .LogoWhite {
         display: flex;
@@ -101,10 +93,6 @@
     #LW {
         width: 200px;
         height: 200px;
-    }
-
-    .card {
-        width: 200px;
     }
 
 }

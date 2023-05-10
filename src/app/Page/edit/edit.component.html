@@ -1,40 +1,22 @@
-
-<!-- <div><h4>Editar</h4></div> 
-<form>
-	<div class="mb-3">
-		<label for="exampleInput" class="form-label">Skill</label>
-		<input type="email" class="form-control" id="skill" aria-describedby="emailHelp">
-	</div>
-	<div class="mb-3">
-		<label for="exampleInputUno" class="form-label">Porcentaje</label>
-		<input type="number" class="form-control" id="porcentaje">
-	</div>
-	<button type="submit" class="btn btn-primary">Guardar</button>
-</form>  -->
-<!-- <p>
-	Nombre: {{nombre}}
-	<br>
-	Cif: {{cif}}
-	<br>
-	direccion: {{direccion}}
-  </p>
- -->
- <div class="container">
-
-<div class="formulario" *ngIf="switch==true" >
-<form id="formEdit">
-	<div class="mb-3">
-	  <label class="form-label">New Skill</label>
-	  <input type="text" class="form-control" id="tarea" name="tarea" [(ngModel)]="skillActual.tarea">
-	</div>
-	<div class="mb-3">
-	  <label class="form-label">Porcentaje</label>
-	  <input type="number" class="form-control" id="porcentaje" name="porcentaje" [(ngModel)]="skillActual.porcentaje">
-	</div>
-	<button class="btn btn-primary" (click)="guardar()">Editar</button>
-  </form>
-</div>
-<div class="formulario" *ngIf="mostrar==true">
-<h4>Titulo:{{titulo}}</h4>
-</div>
+<div class="fondo">
+	<form class="formEdit">
+		<div class="logoForm">
+			<img src="/assets/Images/logoLarge1.png" alt="logoLarge1">
+		</div>
+		<h6>Editar skill</h6>
+		<div class="mb-3">
+			<div class="mb-3">
+				<label class="form-label">New Skill</label>
+				<input type="text" class="form-control" id="tarea" name="tarea" [(ngModel)]="skillActual.tarea">
+			</div>
+		</div>
+		<div class="mb-3">
+			<label class="form-label">Porcentaje</label>
+			<input type="number" class="form-control" id="porcentaje" name="porcentaje"
+				[(ngModel)]="skillActual.porcentaje">
+		</div>
+		<div class="buttons"><button class="btn btn-success" (click)="guardar()">Guardar cambios</button>
+			<button class=" btn btn-danger volver" routerLink="skills">Regresar</button>
+		</div>
+	</form>
 </div>

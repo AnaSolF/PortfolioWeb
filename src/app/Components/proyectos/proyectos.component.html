@@ -1,13 +1,36 @@
 <div class="container">
-<h2>Proyectos</h2>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam ea, et repudiandae suscipit, hic illum ducimus rerum tenetur minima vero eius excepturi eos numquam ipsa temporibus enim dignissimos odio dolor!
-Velit, ratione. Animi incidunt numquam eligendi mollitia? Ad minima error iure enim laborum, quisquam impedit, fuga tempore quis dignissimos qui beatae vel ut sequi, nam nemo neque? Facilis, provident expedita.
-Rerum laudantium ipsum facere provident quas quidem at totam voluptas perspiciatis consequatur a eos dolorem, consectetur dignissimos vero nesciunt numquam reiciendis iusto dolores veniam deleniti? Quia consequatur dicta nobis. Voluptatum.
-Laudantium eos, ipsum, numquam hic architecto voluptatibus aut iste itaque eveniet modi, labore cupiditate cum ut a commodi adipisci. Consequatur labore assumenda qui recusandae facere commodi sed ipsam sit delectus?
-Fuga, hic facilis, itaque atque corporis et aspernatur, aut maiores minima provident voluptatem. Fugit quas optio autem consequuntur earum unde, quo quisquam obcaecati veniam commodi dicta necessitatibus quos nesciunt architecto?
-Porro eligendi impedit sequi ratione? Dicta tempore esse earum, qui dolore, deserunt, quo voluptatum sed ipsa doloremque nam nostrum aliquid libero? Dolores, consequuntur. Recusandae exercitationem quae voluptates rem nam earum.
-Odit, et atque laudantium facere vel error possimus vitae non eum dignissimos iure itaque quidem, qui cumque voluptatum! Ut voluptatibus numquam impedit earum magni sunt. Nobis quaerat in eos sunt.
-Odio ipsam eaque eveniet, voluptatum amet ex voluptates corporis autem sint. Beatae quis, ipsum incidunt aliquid, error dolor repudiandae explicabo alias ipsa corporis asperiores odio modi numquam, nostrum optio earum?
-Fugit velit aut doloribus voluptate, quaerat dicta animi eum itaque blanditiis repudiandae delectus libero, et reiciendis! Recusandae quas quasi nisi, dignissimos enim modi fugiat assumenda inventore, praesentium fuga itaque nam.!</p>
-<button class="fijo" routerLink="banner">Regresar</button>
+  <h2>Proyectos</h2>
+  <div class="formato">
+    <div class="vacio" *ngIf="mostrar==true">Continúe agregando una tarjeta, haciendo click en el botón verde de esta
+      sección.</div>
+    <div class="bAgregar">
+      <div *ngIf="mostrar== true" class="bAgregar">
+        <a class="btnAgregar" [routerLink]="['/agregar-pro']"><img src="/assets/Images/agregar.png" alt="agregar"
+            type="button" ngbPopover="Agregar proyecto" popoverClass="my-edit-class" style="padding: 20px
+          ;"></a>
+      </div>
+    </div>
+  </div>
+  <div class="cont">
+    <div class="tarjeta" *ngFor="let proyecto of lista">
+      <div class="card" style="margin-bottom: 20px;">
+        <div class="card-header">
+          <img src="/assets/Images/proyecto1.png" alt="proyecto">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{proyecto.titulo}}</h5>
+          <p class="card-text">{{proyecto.texto}}
+        </div>
+      </div>
+      <div *ngIf="mostrar== true" class="btnEdiciones">
+        <a (click)="eliminar(proyecto.id)">
+          <img class="icon" src="/assets/Images/trash1.png" alt="trash" type="button" ngbPopover="Eliminar proyecto"
+            popoverClass="my-delete-class">
+        </a>
+        <a [routerLink]="['/edit-project', proyecto.id]"><img class="icon" src="/assets/Images/pencil.png" alt="edit"
+            type="button" ngbPopover="Editar proyecto" popoverClass="my-edit-class"></a>
+      </div>
+    </div>
+  </div>
 </div>
+<app-btn-fixed></app-btn-fixed>

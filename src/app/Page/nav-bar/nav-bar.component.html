@@ -1,0 +1,60 @@
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><img src="/assets/Images/APLogo-20-20.png" alt="logo" id="logoAp"
+        style="width: 130px;height: 100px; margin-left: 30px; margin-bottom: 5px;"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+      aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation"
+      style="margin-right: 30px;">
+      <span><img src="/assets/Images/icons8-menú (2).gif" alt="menu"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li *ngIf="mostrar== true">
+          <a (click)="logOut()" routerLink="banner">
+            <img src="/assets/Images/acceso.png" alt="salir" id="salir" style="margin-bottom: 30px;">
+          </a>
+        </li>
+        <li class="nav-log" id="aLog" *ngIf="mostrar ==false">
+          <app-modal #login></app-modal>
+        </li>
+        <li class="nav-i" *ngIf="mostrar ==false">
+          <a (click)="registro()"> Registro</a>
+        </li>
+        <li class="nav-i" *ngIf="mostrar == (childMessage==false)" routerLink="mi-cuenta">
+          {{mensajeBoton}}
+        </li>
+        <li class="nav-i" routerLink="contact">
+          Contácto
+        </li>
+        <li class="nav-i invitado" *ngIf="mostrar == childMessage" routerLink="mi-cuenta">
+          {{mensajeBoton}}
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<nav id="bar">
+  <div class="logo"><img src="/assets/Images/APLogo-20-20.png" alt="logo"></div>
+  <ul class="NavHome">
+    <li class="nav-item" id="aLog" *ngIf="mostrar ==false">
+      <app-modal></app-modal>
+    </li>
+    <li class="nav-item" *ngIf="mostrar ==false">
+      <a routerLink="register" (click)="registro()">Registro</a>
+    </li>
+    <li class="nav-item" *ngIf="mostrar == (childMessage==false)">
+      <a routerLink="mi-cuenta">{{mensajeBoton}}</a>
+    </li>
+    <li class="nav-item">
+      <a (click)="contacto()">Contácto</a>
+    </li>
+    <li class="nav-item invitado" *ngIf="mostrar == childMessage">
+      <a routerLink="mi-cuenta">{{mensajeBoton}}</a>
+    </li>
+    <li class="nav-item" *ngIf="mostrar== true">
+      <a (click)="logOut()" routerLink="banner">
+        <img src="/assets/Images/acceso.png" alt="salir" id="sal">
+      </a>
+    </li>
+  </ul>
+</nav>

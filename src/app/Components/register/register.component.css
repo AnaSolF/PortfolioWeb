@@ -1,0 +1,86 @@
+.cont {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.304);
+    min-height: 100vh;
+}
+
+h6 {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.regForm {
+    width: 80%;
+    background-color:#104d65;
+    padding: 4% 5% 3% 5%;
+    height: 70vh;
+    margin: 0 auto;
+    color: white;
+    box-shadow: -10px 9px 20px -6px rgba(151, 159, 162, 0.75);
+    -webkit-box-shadow: -10px 9px 20px -6px rgba(148, 153, 155, 0.75);
+    -moz-box-shadow: -10px 9px 20px -6px rgba(148, 153, 155, 0.75);
+}
+
+#floatingInput {
+    margin-bottom: 10%;
+}
+
+.crear {
+    display: flex;
+    flex-direction: column;
+    background-color: #1c7395;
+    width: 80%;
+    height: 55%;
+    margin: 0 auto;
+    padding: 1% 20px 0px 20px;
+    color: white;
+}
+
+.quest,
+.nav-item {
+    font-size: smaller;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    margin:  0 auto;
+    text-align: center;
+    color: white;
+}
+ 
+
+.small {
+    font-size: x-small;
+    text-align: center;
+    color: white;
+}
+
+.form-text {
+    font-size: x-small;
+    color: white;
+}
+
+
+@media only screen and (min-width: 800px) {
+    .cont {
+        width: 100%;
+        margin: 0 auto;
+        /* min-height: 100vh; */
+    }
+
+    h6 {
+        padding-bottom: 30px;
+    }
+
+    .regForm {
+        width: 30%;
+        margin: 0 auto;
+        height: 70vh;
+    }
+
+    .crear {
+        width: 30%;
+        height: 50%;
+        padding: 8px;
+        margin: 0 auto;
+    }
+}

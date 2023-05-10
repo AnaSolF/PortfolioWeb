@@ -1,0 +1,30 @@
+.menuFoo {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+}
+
+.menuFoo li {
+    padding: 20px;
+    margin-right: 20px;
+}
+
+.bi {
+    color: rgb(46, 46, 44);
+}
+
+.bi:hover {
+    color: white;
+    background-color: black;
+    padding: 5px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+@media only screen and (min-width: 800px) {
+    .menuFoo {
+        justify-content: center;
+
+    }
+}

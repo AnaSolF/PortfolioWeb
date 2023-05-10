@@ -1,20 +1,119 @@
-.container{
+.cont {
+    background-color: rgb(252, 252, 252);
+}
+
+#imagen {
+    background-image: url(/assets/Images/keyboard-70506_1920.jpg);
+    width: 100%;
+    height: 40vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.AM {
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+
+.sm {
+    padding-bottom: 30px;
+    color: black;
     display: flex;
     flex-direction: column;
-    justify-content:space-around;
 }
 
-.AM{
-    background-color: azure;
-    padding: 30px; 
-    text-align:center ;
-   
+#parrafo {
+    width: 300px;
+    z-index: -1;
+    padding: 30px;
+    font-weight: 500;
+    text-align: center;
+    align-items: center;
+    margin: 0 auto;
 }
 
-.btn-primary{
-    margin: 20px;
+p {
+    text-align: center;
+    font-size: 3vh;
+    padding-bottom: 30px;
+    justify-content: center;
+    border-bottom: 1px solid rgb(219, 207, 207);
 }
 
-.fijo{
-width: 180px;
+#parrafo:first-letter {
+    font-size: xx-large;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont,
+        'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+        'Helvetica Neue', sans-serif;
+}
+
+.par2 {
+    display: flex;
+    flex-direction: column;
+}
+
+.icono {
+    margin: 30px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+textarea {
+    resize: both;
+    width: 250px;
+    min-width: 200px;
+    min-height: 100px;
+    margin: 0 auto;
+}
+
+.bt {
+    margin: 0 auto;
+}
+
+.label {
+    color: rgb(4, 49, 4);
+}
+
+.vacio {
+    padding-bottom: 20px;
+    background-color: #fefbfa;
+}
+
+@media only screen and (min-width: 800px) {
+    .AM {
+        width: 100%;
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .par2 {
+        flex-direction: row;
+    }
+
+    #parrafo {
+        font-weight: 500;
+        width: 600px;
+        z-index: -1;
+        padding: 30px;
+        text-align: center;
+        align-items: center;
+    }
+
+    p {
+        width: 80%;
+    }
+
+    textarea {
+        width: 600px;
+    }
+
+    btn {
+        width: 30%;
+    }
+
 }

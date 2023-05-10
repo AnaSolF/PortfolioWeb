@@ -1,126 +1,324 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-size: large;
-    font-family: 'Alumni Sans Pinstripe', sans-serif;
-    font-family: 'Roboto', sans-serif;
-}
+ * {
+     box-sizing: border-box;
+     margin: 0;
+     font-family: 'Comfortaa';
+     -webkit-text-size-adjust: 100%;
+     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+     font-size: 2.3vh;
+     color: #313535;
+ }
 
-body {
-    min-height: 100vh;
-    min-width: 100%;
-    background-color: black;
-    /* letter-spacing: 0.10em; */
-    /* word-spacing: 0.10em; */
-}
+ body {
+     display: flex;
+     flex-direction: column;
+     width: 100% auto;
+     margin: 0 auto;
+     padding: 0;
+     background-color: #fefbfa;
+ }
 
-a {
-    text-decoration: none;
-}
+ a {
+     text-decoration: none;
+ }
 
-ul li {
-    list-style-type: none;
-}
+ ul li {
+     list-style-type: none;
+ }
 
-.container {
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-    padding: 30px 30px 60px;
-    text-align: justify;
-    margin-bottom: 5%;
-    background-color: bisque;
-}
+ .cont {
+     display: flex;
+     flex-direction: column;
+     justify-content: flex-start;
+     min-height: 100%;
+     background-color: white;
+     margin: 0 auto;
+     border-radius: 10px;
+     padding: 5%;
+ }
 
-h2 {
-    margin: 30px 45px 30px 5px;
-    padding: 25px 35px;
-    background-color: azure;
-    border-radius: 20px;
-}
+ h2 {
+     font-size: 2rem;
+     text-align: center;
+     width: 100%;
+     padding: 40px;
+     border-radius: 20px;
+     font-family: 'Roboto', sans-serif;
+     font-weight: 900;
+     background-color: white;
+     margin: 10px auto;
+ }
 
+ h3 {
+     text-align: center;
+     color: rgb(11, 22, 32);
+     margin: 20px;
+ }
 
-.fijo {
-    padding: 10px 15px;
-    border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0.56);
-    float: right;
-}
+ .btnAgregar {
+     margin-top: 30px;
+     text-align: center;
+     margin: 0 auto;
+     background-color: white;
+ }
 
-.fijo a {
-    color: white;
-}
+ .btnEdiciones {
+     text-align: center;
+     cursor: pointer;
+     justify-content: center;
+     margin-bottom: 10px;
+ }
 
-#aLog a {
-    color: white;
-    margin-left: 0;
-    cursor: pointer;
-}
+ .icon {
+     width: 30px;
+     margin: 20px;
+ }
 
-.hidden {
-    border: none;
-    background: none;
-    padding: 10px;
-}
+ .card {
+     width: 220px;
+     height: 250px;
+     align-items: center;
+     font-size: small;
+     overflow-y: auto;
+     overflow: auto;
+     overflow: overlay;
+     margin-left: 10px;
+     box-shadow: -10px 9px 20px -6px rgba(148, 153, 155, 0.75);
+     -webkit-box-shadow: -10px 9px 20px -6px rgba(148, 153, 155, 0.75);
+     -moz-box-shadow: -10px 9px 20px -6px rgba(148, 153, 155, 0.75);
+     border: 1px solid #032c3c;
+ }
 
-.bi-trash {
-    color: red;
-}
+ .card-title {
+     border: 1px solid #0cabea;
+     padding: 5px;
+     border-radius: 5px;
 
-.bi-pencil-square {
-    color: blue;
-}
+     color: rgb(54, 54, 54);
+ }
 
-.sm {
-    margin-top: 30px;
-}
+ .card-text {
+     text-align: center;
+ }
 
-.formulario {
-    width: 30%;
-    min-width: 200px;
-    background-color: azure;
-    margin-left: 15%;
-    margin-top: 15%;
-    padding: 10%;
-    display: flex;
-}
+ .card::-webkit-scrollbar {
+     display: none;
+ }
 
+ .card:hover::-webkit-scrollbar {
+     display: initial;
+ }
 
+ .card-header {
+     background-color: #83b0c2;
+     border: 1px solid black;
+ }
 
-@media screen and (min-width: 800px) {
-    .navbar {
-        display: none
-    }
+ .card-header:hover,
+ .icono:hover {
+     -webkit-transform: rotateY(180deg);
+     -webkit-transform-style: preserve-3d;
+     transform: rotateY(180deg);
+     transform-style: preserve-3d;
+ }
 
-    .container {
-        width: 100%;
-        height: 100%;
-        min-height: 100vh;
-        margin-bottom: 5%;
-    }
+ .card-title {
+     text-align: center;
+ }
 
-    .fijo {
-        padding: 10px 30px 10px 30px;
-        border-radius: 10px;
-        background-color: rgba(0, 0, 0, 0.239);
-        float: right;
+ #aLog a {
+     color: white;
+     margin-left: 0;
+     cursor: pointer;
+ }
 
-    }
+ .vacio {
+     text-align: center;
+     margin: 0 auto;
+     padding-top: 20px;
+     background-color: white;
+     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+ }
 
-    .fijo a {
-        color: white;
-    }
+ .sm {
+     margin-top: 30px;
+ }
 
-    .formulario {
-        width: 30%;
-        min-width: 200px;
-        background-color: azure;
-        margin-left: 33%;
-        margin-top: 15%;
-        padding: 10%;
-        display: flex;
-    }
+ .formAgregar,
+ .formEdit {
+     width: 80%;
+     padding: 20px;
+     margin: 20px auto;
+     background-color: #104d65;
+     height: 90vh;
+     box-shadow: -10px 9px 20px -6px rgba(148, 153, 155, 0.75);
+     -webkit-box-shadow: -10px 9px 20px -6px rgba(148, 153, 155, 0.75);
+     -moz-box-shadow: -10px 9px 20px -6px rgba(148, 153, 155, 0.75);
+ }
 
+ .buttons {
+     display: flex;
+     flex-direction: column;
+     padding: 20px;
+ }
 
-}
+ .buttons,
+ .btn {
+     margin-bottom: 10px;
+ }
+
+ h6 {
+     color: white;
+     text-align: center;
+ }
+
+ .my-edit-class {
+     background-color: #7aa35e;
+     color: white;
+ }
+
+ .my-delete-class {
+     background-color: rgb(236, 89, 89);
+ }
+
+ .logoForm {
+     text-align: center;
+     margin-bottom: 20px;
+     margin-top: 20px;
+ }
+
+ .logoForm img {
+     width: 80px;
+     height: 80px;
+ }
+
+ label {
+     color: white;
+ }
+
+ .tarjeta {
+     margin: 0 auto;
+     padding-top: 0;
+ }
+
+ .fondo {
+     display: flex;
+     justify-content: center;
+     flex-direction: column;
+     background-color: rgba(0, 0, 0, 0.409);
+     height: 100vh;
+     align-items: center;
+     margin: 0 auto;
+     box-shadow: -10px 9px 20px -6px rgba(148, 153, 155, 0.75);
+     -webkit-box-shadow: -10px 9px 20px -6px rgba(148, 153, 155, 0.75);
+     -moz-box-shadow: -10px 9px 20px -6px rgba(148, 153, 155, 0.75);
+ }
+
+ .formato {
+     background-color: white;
+ }
+
+ @media only screen and (min-width: 800px) {
+     .navbar {
+         display: none
+     }
+
+     h2 {
+         width: 100%;
+     }
+
+     .card {
+         padding: 10px;
+         margin: 10% 20px 40px 20px;
+     }
+
+     .buttons {
+         flex-direction: column;
+         justify-content: center;
+         justify-content: space-around;
+     }
+
+     .btnForm {
+         background-color: #096c94;
+         color: white;
+         border: none;
+         width: 45%;
+     }
+
+     .formAgregar,
+     .formEdit,
+     .regForm {
+         width: 30%;
+         box-shadow: -10px 9px 20px -6px rgba(91, 95, 96, 0.75);
+         -webkit-box-shadow: -10px 9px 20px -6px rgba(148, 153, 155, 0.75);
+         -moz-box-shadow: -10px 9px 20px -6px rgba(148, 153, 155, 0.75);
+     }
+
+     .cont {
+         display: flex;
+         flex-direction: row;
+         justify-content: center;
+         flex-wrap: wrap;
+         width: 100%;
+     }
+
+     .formato {
+         display: flex;
+         flex-direction: column;
+         justify-content: flex-start;
+         background-color: white;
+     }
+
+ }
+
+ @media screen and (max-width: 800px) and (orientation: landscape) {
+
+     #LW {
+         display: none;
+     }
+
+     .logoForm img {
+         display: none;
+     }
+
+     .buttons {
+         margin: 5px;
+         padding: 5px;
+     }
+
+     #LW {
+         display: none;
+     }
+
+     #logoAp {
+         display: none;
+     }
+
+     .nav-i {
+         padding-bottom: 5px;
+     }
+
+     .nav-log {
+         width: 10%;
+     }
+
+     .container-fluid {
+         width: 80%;
+     }
+ }
+
+ @media only screen and (min-width: 280px) {
+
+     .LogoWhite {
+         display: flex;
+     }
+
+     #LW {
+         width: 200px;
+         height: 200px;
+     }
+
+     .card {
+         width: 200px;
+     }
+
+ }

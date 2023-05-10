@@ -1,10 +1,24 @@
-.foo{
-    text-align: center;
-    padding-bottom: 25px;
-    position: relative;
-    padding-top: 25px;
-    font-size: smaller;
+footer {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  color: white;
+  margin: 0 auto;
 }
 
-  
+.foo {
+  font-size: xx-small;
+  text-align: center;
+}
 
+.botones {
+  display: flex;
+  justify-content: center;
+}
+
+@media only screen and (min-width: 800px) {
+  footer {
+    justify-content: center;
+    margin: 0 auto;
+  }
+}

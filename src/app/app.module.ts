@@ -16,13 +16,22 @@ import { UrlBaseService } from './Services/url-base.service';
 import { AuthService } from './Services/auth.service';
 import { ContactComponent } from './Components/contact/contact.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModalComponent } from './Components/modal/modal.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { EditComponent } from './Page/edit/edit.component';
 import { AgregarComponent } from './Page/agregar/agregar.component';
-
-
+import { EditFormComponent } from './Page/edit-form/edit-form.component';
+import { EditProjectComponent } from './Page/edit-project/edit-project.component';
+import { AgregarProComponent } from './Page/agregar-pro/agregar-pro.component';
+import { AgregarFormComponent } from './Page/agregar-form/agregar-form.component';
+import { ButtonsComponent } from './Page/buttons/buttons.component';
+import { BtnFixedComponent } from './Page/btn-fixed/btn-fixed.component';
+import { MiCuentaComponent } from './Components/mi-cuenta/mi-cuenta.component';
+import { NavBarComponent } from './Page/nav-bar/nav-bar.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+// import { environment } from '../environments/environment';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -38,7 +47,15 @@ import { AgregarComponent } from './Page/agregar/agregar.component';
     ContactComponent,
     ModalComponent,
     EditComponent,
-    AgregarComponent
+    AgregarComponent,
+    EditFormComponent,
+    EditProjectComponent,
+    AgregarProComponent,
+    AgregarFormComponent,
+    ButtonsComponent,
+    BtnFixedComponent,
+    MiCuentaComponent,
+    NavBarComponent,
   ],
 
   imports: [
@@ -46,7 +63,7 @@ import { AgregarComponent } from './Page/agregar/agregar.component';
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
-    FormsModule, 
+    FormsModule,
     NgbModalModule,
     NgCircleProgressModule.forRoot({
       // set defaults here
@@ -56,7 +73,9 @@ import { AgregarComponent } from './Page/agregar/agregar.component';
       outerStrokeColor: "#78C000",
       innerStrokeColor: "#C7E596",
       animationDuration: 300,
-    })
+    }),
+    // provideFirebaseApp(() => initializeApp(environment.firebase)),
+    // provideFirestore(() => getFirestore())
   ],
 
   providers: [
@@ -64,8 +83,14 @@ import { AgregarComponent } from './Page/agregar/agregar.component';
     UrlBaseService,
     NgbModalConfig,
     NgbModal,
-    AuthService //Ver si usar
+    AuthService, //Ver si usar
+    ReactiveFormsModule,
   ],
+
+  exports: [
+    ReactiveFormsModule,
+  ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

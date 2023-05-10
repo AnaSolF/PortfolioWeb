@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Skills } from 'src/app/Models/skills/skills.module';
+// import { Skills} from 'src/app/Models/skills/skills.module';
 import { PortfolioService } from 'src/app/Services/portfolio.service';
 
 @Component({
@@ -12,27 +12,13 @@ export class EditComponent implements OnInit {
   id: string = "";
   skillActual: any = { id: "", tarea: "", porcentaje: "" };
   ruta: string = "tareas";
-  @Input()
-  switch: boolean = true;
-  @Input()
-  mostrar: boolean = false;
-  @Input()
-  titulo: string = "Buenos días";
-  lista: any;
-  mostrarSw = 1;
-  // @Input()
-  // nombre = '';
-  // @Input()
-  // cif!: string;
-  // @Input()
-  // direccion: string = "Los Nogales 3804";
-  
-  constructor( private portfolioService: PortfolioService, private activatedRoute: ActivatedRoute, private router: Router) { }
+
+  constructor(private portfolioService: PortfolioService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.id = this.activatedRoute.snapshot.params['id'];
     this.portfolioService.getUnElemento(this.ruta, this.id).subscribe(
-        res => { this.skillActual = res },
+      res => { this.skillActual = res },
     )
   }
 
@@ -40,15 +26,13 @@ export class EditComponent implements OnInit {
     this.portfolioService.editarElemento(this.ruta, this.id, this.skillActual).subscribe(
       res => {
         this.skillActual = res
-        this.router.navigate(["/skills"])},
+        this.router.navigate(["/skills"])
+      },
     )
   }
 
-  edit() {
-    this.switch = !this.switch;
-  }
+  // edit() {
+  //   this.switch = !this.switch;
+  // }
 
-  mostrarInput() {
-    this.mostrar = !this.mostrar;
-  }
 }

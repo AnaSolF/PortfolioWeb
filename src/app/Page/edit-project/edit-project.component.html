@@ -1,0 +1,19 @@
+<div class="container">
+  <form class="formEdit">
+    <div class="logoForm">
+      <img src="/assets/Images/logoLarge1.png" alt="logoLarge1">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Título *</label>
+      <input type="text" class="form-control" id="titulo" name="titulo" [(ngModel)]="proyectoActual.titulo">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Descripción *</label>
+      <input type="text" class="form-control" id="texto" name="texto" [(ngModel)]="proyectoActual.texto">
+      <div class="buttons">
+        <button class="btn btn-success" (click)="guardar()" routerLink="proyectos">Guardar cambios</button>
+        <button class="btn btn-danger" routerLink="mi-cuenta">Regresar</button>
+      </div>
+    </div>
+  </form>
+</div>

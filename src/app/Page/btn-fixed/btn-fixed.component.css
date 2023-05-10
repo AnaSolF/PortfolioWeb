@@ -1,0 +1,21 @@
+.flotante {
+  position: fixed;
+  bottom: 7%;
+  z-index: 99;
+  margin-left: 70%;
+}
+
+
+@media screen and (max-width: 800px) and (orientation: landscape) {
+  .flotante {
+    margin-left: 82%;
+    border: 1px solid black;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .flotante {
+    margin-left: 90%;
+    bottom: 8%;
+  }
+}

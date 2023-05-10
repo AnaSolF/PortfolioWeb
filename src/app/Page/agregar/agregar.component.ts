@@ -8,21 +8,21 @@ import { PortfolioService } from 'src/app/Services/portfolio.service';
   templateUrl: './agregar.component.html',
   styleUrls: ['./agregar.component.css']
 })
-export class AgregarComponent implements OnInit{
-  nuevaSkill : Skills = { id: "", tarea: "", porcentaje: "" };
+export class AgregarComponent implements OnInit {
+  nuevaSkill: Skills = { id: "", tarea: "", porcentaje: "" };
   ruta: any = "tareas";
   id: string = "";
-  // content: any;
   switch: boolean = false;
   porcentaje!: number;
 
-  constructor(private portfolioService: PortfolioService, private router: Router) { }
+  constructor(private portfolioService: PortfolioService, private router: Router) {
+  }
 
   ngOnInit(): void { }
-  
+
   agregarSkill() {
     this.portfolioService.saveElemento(this.ruta, this.nuevaSkill).subscribe(
-      res =>this.router.navigate(["/skills"])
+      res => this.router.navigate(["/skills"])
     )
   }
 
