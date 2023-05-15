@@ -14,8 +14,8 @@ import { NgbPopoverConfig, NgbPopoverModule } from '@ng-bootstrap/ng-bootstrap';
 export class FormacionComponent {
 
   lista: any = [];
-  formacionActual: Formacion = { id: "", titulo: "", descripcion: "", imagen: "" };
-  nuevaFormacion: Formacion = { id: "", titulo: "", descripcion: "", imagen: "" };
+  formacionActual: Formacion = { id: "", titulo: "", descripcion: ""};
+  nuevaFormacion: Formacion = { id: "", titulo: "", descripcion: "" };
 
   ruta: any = "formacion";
   mostrar!: boolean;
