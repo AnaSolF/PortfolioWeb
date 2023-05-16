@@ -12,7 +12,6 @@ import { AuthService } from 'src/app/Services/auth.service';
 })
 export class ContactComponent implements OnInit {
   id!: string;
-  registro: RegisterModule = { email: "", password: "", token: 0 };
   suEmail!: any;
   ruta: any;
 
