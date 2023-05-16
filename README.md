@@ -8,4 +8,5 @@
 <h2 align="center">Tecnologías utilizadas durante el desarrollador de la interfaz de usuario web (Front End).</h2>
 <p>Lenguaje: TypeScript</p>
 <p>Framework: Angular</p>
+<p>Estilos: CSS</p>
 <p>Deploy front end: Firebase</p>
