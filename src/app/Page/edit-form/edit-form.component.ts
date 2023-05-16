@@ -10,7 +10,7 @@ import { PortfolioService } from 'src/app/Services/portfolio.service';
 })
 export class EditFormComponent implements OnInit {
   ruta: string = "formacion";
-  formActual: Formacion = { id: "", titulo: "", descripcion: "", imagen: "" };
+  formActual: Formacion = { id: "", titulo: "", descripcion: ""};
   id!: string;
 
   constructor(private portfolioService: PortfolioService, private activatedRoute: ActivatedRoute, private router: Router) { }

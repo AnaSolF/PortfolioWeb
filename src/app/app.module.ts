@@ -74,8 +74,6 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
       innerStrokeColor: "#C7E596",
       animationDuration: 300,
     }),
-    // provideFirebaseApp(() => initializeApp(environment.firebase)),
-    // provideFirestore(() => getFirestore())
   ],
 
   providers: [

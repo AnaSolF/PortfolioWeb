@@ -14,8 +14,8 @@ import { NgbPopoverConfig, NgbPopoverModule } from '@ng-bootstrap/ng-bootstrap';
 
 export class ProyectosComponent implements OnInit {
   lista: any = [];
-  nuevoProyecto: Projects = { destacado: "", titulo: "", texto: "", id: "" }
-  proyectoActual: any = { destacado: "", titulo: "", texto: "", id: "" }
+  nuevoProyecto: Projects = { titulo: "", texto: "", id: "" }
+  proyectoActual: any = { titulo: "", texto: "", id: "" }
   ruta: any = "proyectos";
   id: string = "";
   mostrar!: boolean;

@@ -10,7 +10,7 @@ import { PortfolioService } from 'src/app/Services/portfolio.service';
 })
 export class EditProjectComponent implements OnInit{
   
-  proyectoActual: Projects = { id: "", destacado: "", titulo: "", texto: "" };
+  proyectoActual: Projects = { id: "", titulo: "", texto: "" };
   id!: string;
   ruta : string = "proyectos"
   constructor(private portfolioService: PortfolioService,

@@ -14,8 +14,7 @@ export class AboutMeModule {
   ciudad!: String
   pais!: String
   parrafo!: String
-  imagen!: String
 
-  constructor(id: String, nombre: String, telefono: String, ciudad: String, pais: String, parrafo: String, imagen: String) {
+  constructor(id: String, nombre: String, telefono: String, ciudad: String, pais: String, parrafo: String) {
   }
 }

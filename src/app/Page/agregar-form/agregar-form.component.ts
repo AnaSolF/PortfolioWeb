@@ -10,7 +10,7 @@ import { PortfolioService } from 'src/app/Services/portfolio.service';
 })
 
 export class AgregarFormComponent implements OnInit {
-  nuevaForm: Formacion = { id: "", titulo: "", descripcion: "", imagen: "" };
+  nuevaForm: Formacion = { id: "", titulo: "", descripcion: ""};
   ruta: string = "formacion";
 
   constructor(
