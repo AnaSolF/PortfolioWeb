@@ -10,9 +10,6 @@ export class AppComponent implements OnInit {
    
   }
   title = 'PortfolioWeb';
-  //imagen: any;
-  //images!: any[];
-
 }
 
 

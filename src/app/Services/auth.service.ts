@@ -40,8 +40,12 @@ export class AuthService {
         res => {
           this.modelo = res;
           this.token = localStorage.getItem("token_auth")?.toString();
-          const resultado = this.token === (this.modelo.token).toString();
-          resolve(resultado);
+          if (this.modelo && this.token && this.modelo.token) {
+            const resultado = this.token === this.modelo.token.toString();
+            resolve(resultado);
+          } else {
+            resolve(false); 
+          }
         },
         error => {
           reject(error);

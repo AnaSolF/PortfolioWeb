@@ -31,8 +31,4 @@ export class EditComponent implements OnInit {
     )
   }
 
-  // edit() {
-  //   this.switch = !this.switch;
-  // }
-
 }
