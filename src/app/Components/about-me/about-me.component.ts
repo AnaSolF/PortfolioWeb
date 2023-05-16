@@ -56,13 +56,13 @@ export class AboutMeComponent implements OnInit {
     this.portfolioService.saveElemento(this.ruta, this.nuevosDatos).subscribe(
       res => {
         this.nuevosDatos = res;
-        this.edit();
+        this.switch = false;
       }
     )
   }
 
   edit() {
-    this.switch = !this.switch;
+    this.switch = true;
     this.mostrar == false;
   }
 
