@@ -14,12 +14,12 @@ import { NgbPopoverConfig, NgbPopoverModule } from '@ng-bootstrap/ng-bootstrap';
 export class AboutMeComponent implements OnInit {
 
   @Input()
-  datosActuales: AboutMeModule = { id: "", nombre: "", telefono: "", ciudad: "", pais: "", parrafo: "", imagen: "" };
+  datosActuales: AboutMeModule = { id: "", nombre: "", telefono: "", ciudad: "", pais: "", parrafo: ""};
   ruta: any = "SobreMi";
   switch: boolean = false;
 
   @Input()
-  nuevosDatos: AboutMeModule = { id: "", nombre: "Su nombre", telefono: "3510000000", ciudad: "Su ciudad", pais: "Su país", parrafo: "", imagen: "" };
+  nuevosDatos: AboutMeModule = { id: "", nombre: "Su nombre", telefono: "3510000000", ciudad: "Su ciudad", pais: "Su país", parrafo: ""};
 
   id: string = "31";
   token!: any;
