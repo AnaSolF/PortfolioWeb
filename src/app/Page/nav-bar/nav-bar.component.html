@@ -23,9 +23,7 @@
         <li class="nav-i" *ngIf="mostrar == (childMessage==false)" routerLink="mi-cuenta">
           {{mensajeBoton}}
         </li>
-        <li class="nav-i" routerLink="contact">
-          Contácto
-        </li>
+      
         <li class="nav-i invitado" *ngIf="mostrar == childMessage" routerLink="mi-cuenta">
           {{mensajeBoton}}
         </li>
@@ -45,9 +43,9 @@
     <li class="nav-item" *ngIf="mostrar == (childMessage==false)">
       <a routerLink="mi-cuenta">{{mensajeBoton}}</a>
     </li>
-    <li class="nav-item">
+    <!-- <li class="nav-item">
       <a (click)="contacto()">Contácto</a>
-    </li>
+    </li> -->
     <li class="nav-item invitado" *ngIf="mostrar == childMessage">
       <a routerLink="mi-cuenta">{{mensajeBoton}}</a>
     </li>

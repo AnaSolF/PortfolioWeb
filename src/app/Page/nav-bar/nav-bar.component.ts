@@ -64,9 +64,6 @@ export class NavBarComponent implements OnInit {
     this.router.navigate(["/register"])
   }
 
-  contacto() {
-    this.router.navigate(["/contact"])
-  }
 
   reloadPage() {
     window.location.reload();
